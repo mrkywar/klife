@@ -22,7 +22,7 @@ If you are interesting of being part of the team, please contact me.
 
 I will be glad to here from you!
 
-### Credits
+## Credits
 **Designer and publisher of the board game:** Alexandre Seba
 
 **Owner of the numeric adaptation:** Board Game Arena

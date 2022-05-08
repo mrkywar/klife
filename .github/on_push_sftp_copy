@@ -1,0 +1,26 @@
+name: On push sftp copy
+
+on:
+  push:
+    branches: 
+    - dev
+  workflow_dispatch:
+  
+jobs:
+  copy_to_sftp:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: FTP Deployer
+      uses: sand4rt/ftp-deployer@v1.4
+      with:
+        sftp: true
+        host: ${{ secrets.SFTP_HOST }}
+        port: 22
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        remote_folder: /${{ github.event.repository.name }}
+        local_folder: .
+        cleanup: false

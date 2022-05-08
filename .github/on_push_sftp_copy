@@ -19,8 +19,8 @@ jobs:
         sftp: true
         host: ${{ secrets.SFTP_HOST }}
         port: 22
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        username: ${{ secrets.SFTP_USERNAME }}
+        password: ${{ secrets.SFTP_PASSWORD }}
         remote_folder: /${{ github.event.repository.name }}
         local_folder: .
         cleanup: false

@@ -24,7 +24,7 @@
     
     Please REMOVE this comment before publishing your game on BGA
 -->
-
+Test
 <!-- BEGIN player -->
 <div id="player_{PLAYER_ID}" class="player whiteblock">
 	<div id="player_name_{PLAYER_ID}" class="player-name" style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</div>

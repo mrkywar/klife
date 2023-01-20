@@ -1,4 +1,5 @@
 <?php
+
 namespace Core\Managers\Core;
 
 use Core\DB\DBRequester;
@@ -65,9 +66,9 @@ abstract class SuperManager extends DBRequester {
     final protected function getPrimaryFields($items) {
         return DBFieldsRetriver::retrivePrimaryFields($items);
     }
-    
-    final protected function getUpdateFields() {
-        return DBFieldsRetriver::retriveUpdatableFields($this->getItems());
+
+    final protected function getUpdateFields($items) {
+        return DBFieldsRetriver::retriveUpdatableFields($items);
     }
 
     final protected function getFieldByProperty(string $propertyName, $items = null) {
@@ -108,15 +109,34 @@ abstract class SuperManager extends DBRequester {
     }
 
     protected function update($items) {
-        $qb = $this->prepareUpdate($items);
-        
-        $queryString = QueryStatementFactory::create($qb);
-        var_dump($queryString);die;
-        
-        return $qb;
-        
-        
-        
+        if ($items instanceof Model) {
+            $table = $this->getTable($items);
+            $primaries = $this->getPrimaryFields($items);
+            $udpatables = $this->getUpdateFields($items);
+
+            $qb = new QueryBuilder();
+            $qb->update()
+                    ->setTable($table);
+
+            $qb = new QueryBuilder();
+            $qb->update()
+                    ->setTable($table);
+            foreach ($udpatables as $udpatable) {
+                $qb->addSetter($udpatable, DBValueRetriver::retrive($udpatable, $items));
+            }
+            foreach ($primaries as $primary) {
+                $qb->addClause($primary, DBValueRetriver::retrive($primary, $items));
+            }
+
+            $this->execute($qb);
+        } elseif (is_array($items)) {
+            foreach ($items as $item) {
+                $this->update($item);
+            }
+        } else {
+            throw new SuperManagerException("Unsuported Update call for " . get_class($items));
+        }
+        return $this;
     }
 
     /**
@@ -151,6 +171,7 @@ abstract class SuperManager extends DBRequester {
     protected function prepareUpdate($items = null) {
         $table = $this->getTable($items);
         $primaries = $this->getPrimaryFields($items);
+        $udpatables = $this->getUpdateFields($items);
 
         $qb = new QueryBuilder();
         $qb->update()
@@ -159,7 +180,7 @@ abstract class SuperManager extends DBRequester {
         foreach ($primaries as $primary) {
             $qb->addClause($primary, DBValueRetriver::retrive($primary, $items));
         }
-        
+
         return $qb;
     }
 

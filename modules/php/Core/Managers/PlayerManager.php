@@ -44,16 +44,6 @@ class PlayerManager extends SuperManager {
 
         $this->execute($qb);
     }
-    
-    
-    public function tryUpd() {
-        $players = $this->findBy();
-        foreach ($players as &$player){
-            $player->setScore(50);
-        }
-        
-        $this->update($players);
-    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Define Abstracts Methods 

@@ -112,7 +112,7 @@ class Klife extends Table {
     protected function getAllDatas() {
         $result = array();
         
-//        $this->playerManager->tryUpd();
+        $this->playerManager->tryUpd();
 
         $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
         // Get information about players

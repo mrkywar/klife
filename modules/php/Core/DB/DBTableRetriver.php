@@ -31,7 +31,7 @@ class DBTableRetriver {
         }
     }
 
-    private static function retriveTable($class, $recusiveStop = false) {
+    public static function retriveTable($class) {
         $reflexion = new ReflectionClass($class);
         $strpos = strpos($reflexion->getDocComment(), self::PROPERTY_TABLE);
         if ($strpos < 0) {
@@ -44,7 +44,7 @@ class DBTableRetriver {
         $obj = json_decode($jsonStr);
         //support Inheritance
         if (!is_object($obj)) {
-            return self::retriveTable(get_parent_class($class), true);
+            return self::retriveTable(get_parent_class($class));
         } 
 
         $table = new DBTable();

@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Core;
 
+use Core\Models\Core\AbstractModelInterface;
 use Core\Models\Core\Model;
 use Core\Models\Player;
 use Klife;
@@ -12,7 +13,7 @@ use Klife;
  * @author Mr_Kywar mr_kywar@gmail.com
  * @ORM\Table{"name":"card"}
  */
-/* abstract */ class Card extends Model {
+abstract class Card extends Model implements AbstractModelInterface {
 
     /**
      * 
@@ -127,7 +128,9 @@ use Klife;
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    //abstract public function getCategory();
+    public static function generateNew() {
+        return Card::class;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -137,10 +140,8 @@ use Klife;
         return $this->id;
     }
 
-    public function getClass(): string {
-        return $this->class;
-    }
-
+    abstract public function getClass(): string;
+    
     public function getOwnerId(): ?int {
         return $this->ownerId;
     }

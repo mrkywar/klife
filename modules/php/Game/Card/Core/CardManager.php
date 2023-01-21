@@ -31,13 +31,19 @@ class CardManager extends SuperManager {
 ////            }
 ////        }
 //        die;
-        $this->setIsDebug(true);
-        $job = new Job();
+        $players = \Klife::getInstance()->getPlayerManager()->findBy();
+        $cards = $this->findBy();
+        echo "<pre>";
+        var_dump($cards, $players);
+        die;
 
-        $job->setLocation("job");
-
-        $this->create($job);
 //        $this->setIsDebug(true);
+//        $job = new Job();
+//
+//        $job->setLocation("job");
+//
+//        $this->create($job);
+////        $this->setIsDebug(true);
 //        $card = new Card();
 //        $card->setClass(Card::class);
 //        

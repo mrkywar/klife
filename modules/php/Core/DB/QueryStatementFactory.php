@@ -72,7 +72,7 @@ abstract class QueryStatementFactory {
         if (null !== $qb->getLimit()) {
             $statement .= " LIMIT " . $qb->getLimit();
         }
-        $statement .=";";
+        $statement .= ";";
     }
 
     /**
@@ -122,7 +122,7 @@ abstract class QueryStatementFactory {
 
         //-- Clauses
         $statement .= self::generateClauses($qb);
-        $statement .=";";
+        $statement .= ";";
     }
 
     /* -------------------------------------------------------------------------
@@ -194,7 +194,7 @@ abstract class QueryStatementFactory {
 //                $cleanedValues[$field->getDBName()] = DBValueTransformer::transform($field, $rawValue[$field->getDBName()]);
                 $cleanedValues[] = DBValueTransformer::transform($field, $rawValue[$field->getDBName()]);
             } else {
-                $cleanedValues[] = $field->getDefault();
+                $cleanedValues[] = DBValueTransformer::transform($field, $field->getDefault());
             }
         }
         return "(" . implode(",", $cleanedValues) . ")";

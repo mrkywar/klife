@@ -13,6 +13,7 @@ class DBField {
     const INTEGER_FORMAT = "integer";
     const INT_FORMAT = "int";
     const BOOLEAN_FORMAT = "boolean";
+    const BOOL_FORMAT = "bool";
     const BINARY_FORMAT = "binary";
     const DATETIME_FORMAT = "datetime";
     const JSON_FORMAT = "json";

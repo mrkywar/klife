@@ -17,6 +17,7 @@ class CardManager extends SuperManager{
     
     
     public function tryCard() {
+        $this->setIsDebug(true);
         $card = new Card();
         $card->setClass(Card::class);
         

@@ -32,7 +32,7 @@ use Klife;
     /**
      * 
      * @var int|null
-     * @ORM\Column{"type":"integer", "name":"card_owner_id", "default":"0"}
+     * @ORM\Column{"type":"integer", "name":"card_owner_id"}
      */
     protected $ownerId;
 
@@ -46,30 +46,65 @@ use Klife;
     /**
      * 
      * @var int|null
-     * @ORM\Column{"type":"integer", "name":"card_location_arg", "default":"0"}
+     * @ORM\Column{"type":"integer", "name":"card_location_arg"}
      */
     protected $locationArg = 0;
 
     /**
      * 
-     * @var int
-     * @ORM\Column{"type":"integer", "name":"card_discarder_id", "default":"0"}
+     * @var int|null
+     * @ORM\Column{"type":"integer", "name":"card_discarder_id"}
      */
-    protected $discarderId = 0;
+    protected $discarderId;
 
     /**
      * 
      * @var bool
      * @ORM\Column{"type":"bool", "name":"card_is_flipped", "default":"false"}
      */
-    protected $isFlipped = false;
+    protected $isFlipped;
 
     /**
      * 
      * @var bool
      * @ORM\Column{"type":"bool", "name":"card_is_rotated", "default":"false"}
      */
-    protected $isRotated = false;
+    protected $isRotated;
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Unpersisted property
+     * ---------------------------------------------------------------------- */
+
+    /**
+     * 
+     * @var int
+     */
+    protected $smile_points;
+
+    /**
+     * 
+     * @var array
+     */
+    protected $texts;
+
+    /**
+     * 
+     * @var array
+     */
+    protected $help;
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Constructor
+     * ---------------------------------------------------------------------- */
+
+    public function __construct() {
+        $this->setLocation("deck")
+                ->setIsFlipped(false)
+                ->setIsRotated(false);
+
+        $this->texts = [];
+        $this->help = [];
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
@@ -123,7 +158,7 @@ use Klife;
         return $this;
     }
 
-    public function setOwnerId(int $ownerId) {
+    public function setOwnerId(?int $ownerId) {
         $this->ownerId = $ownerId;
         return $this;
     }
@@ -133,12 +168,12 @@ use Klife;
         return $this;
     }
 
-    public function setLocationArg(int $locationArg) {
+    public function setLocationArg(?int $locationArg) {
         $this->locationArg = $locationArg;
         return $this;
     }
 
-    public function setDiscarderId(int $discarderId) {
+    public function setDiscarderId(?int $discarderId) {
         $this->discarderId = $discarderId;
         return $this;
     }

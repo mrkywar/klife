@@ -18,7 +18,7 @@ abstract class DBFieldsRetriver {
 
     static public function retrive($item) {
         if (is_array($item)) {
-            if(empty($item)){
+            if (empty($item)) {
                 return;
             }
             return self::retrive($item[array_keys($item)[0]]); //recursive call shoud called with first item in array<Model> parameter
@@ -38,6 +38,11 @@ abstract class DBFieldsRetriver {
             //-- Retrive property first
             $obj = self::getColumDeclaration($property);
             $field = new DBField();
+            if (!is_object($obj)) {
+                continue;
+//                echo '<pre>';
+//                var_dump($obj,$property);die;
+            }
             $field->setDbName($obj->name)
                     ->setType($obj->type)
                     ->setProperty($property->getName())
@@ -83,7 +88,7 @@ abstract class DBFieldsRetriver {
         }
         return $fielteredFields;
     }
-    
+
     static public function retriveUpdatableFields($items) {
         $fields = self::retrive($items);
         $fielteredFields = [];
@@ -94,17 +99,18 @@ abstract class DBFieldsRetriver {
         }
         return $fielteredFields;
     }
-    
+
     static public function retriveFieldByPropertyName(string $propertyName, $items) {
         $fields = self::retrive($items);
-        foreach ($fields as $field){
-            if($field->getProperty() === $propertyName ){
+        foreach ($fields as $field) {
+            if ($field->getProperty() === $propertyName) {
                 return $field;
             }
         }
-        
+
         throw new DBFieldsRetriverException("Property Name '$propertyName' missing - ERROR CODE : DBFR-02");
     }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Primary Tools
      * ---------------------------------------------------------------------- */

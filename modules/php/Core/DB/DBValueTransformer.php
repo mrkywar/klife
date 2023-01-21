@@ -16,6 +16,7 @@ abstract class DBValueTransformer {
     static public function transform(DBField $field, $value) {
         switch ($field->getType()) {
             case DBField::STRING_FORMAT:
+            case DBField::VARCHAR_FORMAT:
                 return "'" . addslashes($value) . "'";
             case DBField::JSON_FORMAT:
                 return "'" . json_encode($value) . "'";
@@ -28,6 +29,7 @@ abstract class DBValueTransformer {
             case DBField::DATETIME_FORMAT:
                 return "'" . self::transposeDateTime($value) . "'";
             default:
+                echo '<pre>';
                 var_dump($field, $value);
                 throw new DBValueTransformerException("UNIMPLEMENTED Please contact me with full message log - DBVT-01");
 //                return $value;

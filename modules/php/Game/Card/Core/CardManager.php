@@ -1,12 +1,28 @@
 <?php
 
-namespace Game\Card\Core;
+namespace SmileLife\Game\Card\Core;
+
+use Core\Managers\Core\SuperManager;
+use Core\Serializers\Serializer;
 
 /**
  * Description of CardManager
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class CardManager {
-    //put your code here
+class CardManager extends SuperManager{
+    protected function initSerializer(): Serializer {
+        return new Serializer(Card::class);
+    }
+    
+    
+    public function tryCard() {
+        $card = new Card();
+        $card->setClass(Card::class);
+        
+        $this->create($card);
+                
+        
+    }
+
 }

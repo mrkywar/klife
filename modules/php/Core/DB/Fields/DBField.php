@@ -10,6 +10,7 @@ namespace Core\DB\Fields;
 class DBField {
 
     const STRING_FORMAT = "string";
+    const VARCHAR_FORMAT = "varchar";
     const INTEGER_FORMAT = "integer";
     const INT_FORMAT = "int";
     const BOOLEAN_FORMAT = "boolean";

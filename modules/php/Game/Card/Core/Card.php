@@ -1,6 +1,6 @@
 <?php
 
-namespace Game\Card\Core;
+namespace SmileLife\Game\Card\Core;
 
 use Core\Models\Core\Model;
 use Core\Models\Player;
@@ -12,12 +12,12 @@ use Klife;
  * @author Mr_Kywar mr_kywar@gmail.com
  * @ORM\Table{"name":"card"}
  */
-abstract class Card extends Model {
+/* abstract */ class Card extends Model {
 
     /**
      * 
      * @var int|null
-     * @ORM\Column{"type":"integer", "name":"card_id"}
+     * @ORM\Column{"type":"integer", "name":"card_id" ,"exclude":["insert"]}
      * @ORM\Id
      */
     protected $id;
@@ -25,57 +25,57 @@ abstract class Card extends Model {
     /**
      * 
      * @var string
-     * @ORM\Column{"type":"varchar", "name":"card_class"}
+     * @ORM\Column{"type":"string", "name":"card_class"}
      */
     protected $class;
 
     /**
      * 
-     * @var int
+     * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_owner_id", "default":"0"}
      */
     protected $ownerId;
 
     /**
      * 
-     * @var string
-     * @ORM\Column{"type":"varchar", "name":"card_location", "default":"deck"}
+     * @var string|null
+     * @ORM\Column{"type":"string", "name":"card_location", "default":"deck"}
      */
     protected $location;
 
     /**
      * 
-     * @var int
-     * @ORM\Column{"type":"integer", "name":"card_location_arg, "default":"0"}
+     * @var int|null
+     * @ORM\Column{"type":"integer", "name":"card_location_arg", "default":"0"}
      */
-    protected $locationArg;
+    protected $locationArg = 0;
 
     /**
      * 
      * @var int
-     * @ORM\Column{"type":"integer", "name":"card_discarder_id, "default":"0"}
+     * @ORM\Column{"type":"integer", "name":"card_discarder_id", "default":"0"}
      */
-    protected $discarderId;
+    protected $discarderId = 0;
 
     /**
      * 
-     * @var boolean
-     * @ORM\Column{"type":"bool", "name":"card_is_flipped, "default":"0"}
+     * @var bool
+     * @ORM\Column{"type":"bool", "name":"card_is_flipped", "default":"false"}
      */
-    protected $isFlipped;
+    protected $isFlipped = false;
 
     /**
      * 
-     * @var boolean
-     * @ORM\Column{"type":"bool", "name":"card_is_rotated, "default":"0"}
+     * @var bool
+     * @ORM\Column{"type":"bool", "name":"card_is_rotated", "default":"false"}
      */
-    protected $isRotated;
+    protected $isRotated = false;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    abstract public function getCategory();
+    //abstract public function getCategory();
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -89,60 +89,68 @@ abstract class Card extends Model {
         return $this->class;
     }
 
-    public function getOwnerId(): int {
+    public function getOwnerId(): ?int {
         return $this->ownerId;
     }
 
-    public function getLocation(): string {
+    public function getLocation(): ?string {
         return $this->location;
     }
 
-    public function getLocationArg(): int {
+    public function getLocationArg(): ?int {
         return $this->locationArg;
     }
 
-    public function getDiscarderId(): int {
+    public function getDiscarderId(): ?int {
         return $this->discarderId;
     }
 
-    public function getIsFlipped(): boolean {
+    public function getIsFlipped(): bool {
         return $this->isFlipped;
     }
 
-    public function getIsRotated(): boolean {
+    public function getIsRotated(): bool {
         return $this->isRotated;
     }
 
-    public function setId(?int $id): void {
+    public function setId(?int $id) {
         $this->id = $id;
+        return $this;
     }
 
-    public function setClass(string $class): void {
+    public function setClass(string $class) {
         $this->class = $class;
+        return $this;
     }
 
-    public function setOwnerId(int $ownerId): void {
+    public function setOwnerId(int $ownerId) {
         $this->ownerId = $ownerId;
+        return $this;
     }
 
-    public function setLocation(string $location): void {
+    public function setLocation(string $location) {
         $this->location = $location;
+        return $this;
     }
 
-    public function setLocationArg(int $locationArg): void {
+    public function setLocationArg(int $locationArg) {
         $this->locationArg = $locationArg;
+        return $this;
     }
 
-    public function setDiscarderId(int $discarderId): void {
+    public function setDiscarderId(int $discarderId) {
         $this->discarderId = $discarderId;
+        return $this;
     }
 
-    public function setIsFlipped(boolean $isFlipped): void {
+    public function setIsFlipped(bool $isFlipped) {
         $this->isFlipped = $isFlipped;
+        return $this;
     }
 
-    public function setIsRotated(boolean $isRotated): void {
+    public function setIsRotated(bool $isRotated) {
         $this->isRotated = $isRotated;
+        return $this;
     }
 
     /* -------------------------------------------------------------------------
@@ -150,12 +158,12 @@ abstract class Card extends Model {
      * ---------------------------------------------------------------------- */
 
     public function getPlayerOwner(): ?Player {
-        if (0 !== $this->getOwnerId()) {
+        if (null !== $this->getOwnerId()) {
             return Klife::getInstance()
                             ->getPlayerManager()
                             ->findBy(["id" => $this->getOwnerId()]);
         }
-        return;
+        return null;
     }
 
     public function setPlayerOwner(Player $player) {
@@ -163,12 +171,12 @@ abstract class Card extends Model {
     }
 
     public function getPlayerDiscarder(): ?Player {
-        if (0 !== $this->getDiscarderId()) {
+        if (null !== $this->getDiscarderId()) {
             return Klife::getInstance()
                             ->getPlayerManager()
                             ->findBy(["id" => $this->getDiscarderId()]);
         }
-        return;
+        return null;
     }
 
     public function setPlayerDiscarder(Player $player) {

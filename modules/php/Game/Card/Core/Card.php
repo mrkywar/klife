@@ -79,7 +79,7 @@ use Klife;
      * 
      * @var int
      */
-    protected $smile_points;
+    protected $smilePoints;
 
     /**
      * 
@@ -94,7 +94,7 @@ use Klife;
     protected $help;
 
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Constructor
+     *                  BEGIN - Constructor & Display
      * ---------------------------------------------------------------------- */
 
     public function __construct() {
@@ -104,6 +104,23 @@ use Klife;
 
         $this->texts = [];
         $this->help = [];
+    }
+
+    function __toString() {
+        $str = get_class($this);
+        $str .= '<br />';
+        $str .= $this->smilePoints . ($this->smilePoints <= 1 ? ' smile' : ' smiles');
+        if (count($this->texts) > 0) {
+            $str .= '<br /><br />';
+            foreach ($this->texts as $text) {
+                $str .= $text['str'] . '<br />';
+            }
+        }
+        if (count($this->help) > 0) {
+            $str .= '<br /><br />';
+            $str .= implode('<br />', $this->help);
+        }
+        return $str;
     }
 
     /* -------------------------------------------------------------------------

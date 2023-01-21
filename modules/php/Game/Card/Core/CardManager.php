@@ -4,6 +4,7 @@ namespace SmileLife\Game\Card\Core;
 
 use Core\Managers\Core\SuperManager;
 use Core\Serializers\Serializer;
+use SmileLife\Game\Card\Category\Job;
 
 /**
  * Description of CardManager
@@ -18,10 +19,16 @@ class CardManager extends SuperManager{
     
     public function tryCard() {
         $this->setIsDebug(true);
-        $card = new Card();
-        $card->setClass(Card::class);
+        $job = new Job();
         
-        $this->create($card);
+        $job->setLocation("job");
+        
+        $this->create($job);
+//        $this->setIsDebug(true);
+//        $card = new Card();
+//        $card->setClass(Card::class);
+//        
+//        $this->create($card);
                 
         
     }

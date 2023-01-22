@@ -14,7 +14,6 @@ use SmileLife\Game\Card\Core\CardException;
 
     protected int $requiredStudies;
     protected int $maxSalary;
-    protected bool $isReturnable;
 
     public function __construct() {
         parent::__construct();
@@ -22,7 +21,6 @@ use SmileLife\Game\Card\Core\CardException;
         $this->setClass(self::class);
 
         $this->setSmilePoints(2)
-                ->setIsReturnable(true)
                 ->addHelp(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));
     }
 
@@ -31,7 +29,7 @@ use SmileLife\Game\Card\Core\CardException;
      * ---------------------------------------------------------------------- */
 
     public function canBePlayed(): bool {
-        throw new CardException("J01 TODO: check if the required studies are fulfilled");
+        throw new CardException("CJ01 TODO: check if the required studies are fulfilled");
         //return true;
     }
 
@@ -51,10 +49,6 @@ use SmileLife\Game\Card\Core\CardException;
         return $this->maxSalary;
     }
 
-    public function getIsReturnable(): bool {
-        return $this->isReturnable;
-    }
-
     public function setRequiredStudies(int $requiredStudies) {
         $this->requiredStudies = $requiredStudies;
         return $this;
@@ -62,11 +56,6 @@ use SmileLife\Game\Card\Core\CardException;
 
     public function setMaxSalary(int $maxSalary) {
         $this->maxSalary = $maxSalary;
-        return $this;
-    }
-
-    public function setIsReturnable(bool $isReturnable) {
-        $this->isReturnable = $isReturnable;
         return $this;
     }
 

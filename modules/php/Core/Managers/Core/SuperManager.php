@@ -7,9 +7,9 @@ use Core\DB\DBTableRetriver;
 use Core\DB\DBValueRetriver;
 use Core\DB\Fields\DBFieldsRetriver;
 use Core\DB\QueryBuilder;
-use Core\DB\QueryStatementFactory;
 use Core\Models\Core\Model;
 use Core\Serializers\Serializer;
+use ReflectionClass;
 
 /**
  * Description of SuperManager
@@ -50,9 +50,14 @@ abstract class SuperManager extends DBRequester {
     final private function getItems($items = null) {
         if (null === $items) {
             $className = $this->getSerializer()->getClassModel();
-            $items = new $className();
+            $reflection = new ReflectionClass($className);
+
+            if (!$reflection->isAbstract()) {
+                return new $className();
+            } else {
+                throw new SuperManagerException("Unsuported call for " . get_class($items) . " - ERROR code : SM-02 ");
+            }
         }
-        return $items;
     }
 
     final protected function getInsertFields($items) {
@@ -60,7 +65,9 @@ abstract class SuperManager extends DBRequester {
     }
 
     final protected function getSelectFields() {
-        return DBFieldsRetriver::retriveSelectFields($this->getItems());
+//        var_dump(DBFieldsRetriver::retrive($this->getSerializer()->getClassModel()));
+//        die('Sel');
+        return DBFieldsRetriver::retriveSelectFields($this->getSerializer()->getClassModel());
     }
 
     final protected function getPrimaryFields($items) {
@@ -82,7 +89,10 @@ abstract class SuperManager extends DBRequester {
     final protected function getTable($items = null) {
         if (null === $items) {
             $className = $this->getSerializer()->getClassModel();
-            $items = new $className();
+            return DBTableRetriver::retriveFromClassName($className);
+            
+//            var_dump($className);die;
+//            $items = new $className();
         }
         return DBTableRetriver::retrive($items);
     }
@@ -134,7 +144,7 @@ abstract class SuperManager extends DBRequester {
                 $this->update($item);
             }
         } else {
-            throw new SuperManagerException("Unsuported Update call for " . get_class($items));
+            throw new SuperManagerException("Unsuported Update call for " . get_class($items) . " - ERROR code : SM-01 ");
         }
         return $this;
     }

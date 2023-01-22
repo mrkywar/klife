@@ -1,6 +1,7 @@
 <?php
 
 use Core\Managers\PlayerManager;
+use SmileLife\Game\Card\Core\CardManager;
 
 /**
  * ------
@@ -58,6 +59,11 @@ class Klife extends Table {
      * @var PlayerManager
      */
     private $playerManager;
+    /**
+     * 
+     * @var CardManager
+     */
+    private $cardManager;
 
     function __construct() {
         parent::__construct();
@@ -65,6 +71,7 @@ class Klife extends Table {
         self::$instance = $this;
 
         $this->playerManager = new PlayerManager();
+        $this->cardManager = new CardManager();
 
         self::initGameStateLabels(array(
                 //    "my_first_global_variable" => 10,
@@ -91,9 +98,9 @@ class Klife extends Table {
 
     protected function setupNewGame($players, $options = array()) {
         $this->playerManager->initNewGame($players, $options);
-        
+
         //Logger::log("Message", "Test");
-        
+
         $this->activeNextPlayer();
 
         /*         * ********** End of the game initialization **** */
@@ -111,8 +118,8 @@ class Klife extends Table {
 
     protected function getAllDatas() {
         $result = array();
-        
-        $this->playerManager->tryUpd();
+
+        $this->cardManager->tryCard();
 
         $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
         // Get information about players
@@ -315,8 +322,7 @@ class Klife extends Table {
 //
 //
     }
-    
-    
+
     public static function getInstance(): Klife {
         return self::$instance;
     }
@@ -324,7 +330,5 @@ class Klife extends Table {
     public function getPlayerManager(): PlayerManager {
         return $this->playerManager;
     }
-
-
 
 }

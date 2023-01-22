@@ -89,7 +89,10 @@ abstract class SuperManager extends DBRequester {
     final protected function getTable($items = null) {
         if (null === $items) {
             $className = $this->getSerializer()->getClassModel();
-            $items = new $className();
+            return DBTableRetriver::retriveFromClassName($className);
+            
+//            var_dump($className);die;
+//            $items = new $className();
         }
         return DBTableRetriver::retrive($items);
     }

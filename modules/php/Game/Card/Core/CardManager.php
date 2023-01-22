@@ -32,7 +32,7 @@ class CardManager extends SuperManager {
 ////        }
 //        die;
         $players = \Klife::getInstance()->getPlayerManager()->findBy();
-        $cards = $this->findBy();
+        $cards = null;//$this->findBy();
         echo "<pre>";
         var_dump($cards, $players);
         die;

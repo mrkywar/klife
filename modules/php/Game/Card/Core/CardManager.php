@@ -4,8 +4,7 @@ namespace SmileLife\Game\Card\Core;
 
 use Core\Managers\Core\SuperManager;
 use Core\Serializers\Serializer;
-use ReflectionClass;
-use SmileLife\Game\Card\Category\Job;
+use Klife;
 
 /**
  * Description of CardManager
@@ -15,7 +14,7 @@ use SmileLife\Game\Card\Category\Job;
 class CardManager extends SuperManager {
 
     protected function initSerializer(): Serializer {
-        return new Serializer(Card::class);
+        return new CardSerializer(Card::class);
     }
 
     public function tryCard() {
@@ -31,15 +30,19 @@ class CardManager extends SuperManager {
 ////            }
 ////        }
 //        die;
-        
-//        var_dump(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));die;
-        $this->setIsDebug(true);
-        $job = new Job();
+        $players = Klife::getInstance()->getPlayerManager()->findBy();
+        $cards = $this->findBy();
+        echo "<pre>";
+        var_dump($cards, $players);
+        die;
 
-        $job->setLocation("job");
-
-        $this->create($job);
 //        $this->setIsDebug(true);
+//        $job = new Job();
+//
+//        $job->setLocation("job");
+//
+//        $this->create($job);
+////        $this->setIsDebug(true);
 //        $card = new Card();
 //        $card->setClass(Card::class);
 //        

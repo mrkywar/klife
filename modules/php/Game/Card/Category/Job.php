@@ -66,4 +66,8 @@ use SmileLife\Game\Card\Core\CardException;
         return $this;
     }
 
+    public function getClass(): string {
+        return self::class;
+    }
+
 }

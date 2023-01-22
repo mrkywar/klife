@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Core;
 
+use Core\Models\Core\AbstractModelInterface;
 use Core\Models\Core\Model;
 use Core\Models\Player;
 use Klife;
@@ -138,10 +139,8 @@ abstract class Card extends Model {
         return $this->id;
     }
 
-    public function getClass(): string {
-        return $this->class;
-    }
-
+    abstract public function getClass(): string;
+    
     public function getOwnerId(): ?int {
         return $this->ownerId;
     }

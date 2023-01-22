@@ -2,10 +2,9 @@
 
 namespace Core\DB\Fields;
 
-use Core\Models\Core\Model;
-use Core\Models\Player;
 use Core\DB\Exceptions\DBFieldsRetriverException;
 use Core\DB\QueryString;
+use Core\Models\Core\Model;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -25,8 +24,10 @@ abstract class DBFieldsRetriver {
         } elseif ($item instanceof Model) {
             $allField = self::retriveFields($item);
             return $allField;
+        } elseif (is_string($item)) {
+            return self::retriveFields($item);
         } else {
-            var_dump($item, $item instanceof Player);
+            var_dump($item);
             throw new DBFieldsRetriverException("Unsupported call for : " . $item . " - ERROR CODE : DBFR-01");
         }
     }

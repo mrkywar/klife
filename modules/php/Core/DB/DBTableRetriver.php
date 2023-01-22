@@ -24,15 +24,15 @@ class DBTableRetriver {
         if (is_array($item)) {
             return self::retrive($item[array_keys($item)[0]]);
         } elseif ($item instanceof Model) {
-            return self::retriveTable(get_class($item));
+            return self::retriveFromClassName(get_class($item));
         } else {
             //var_dump($item);
             throw new DBTableRetriverException("Unsupported call for : " . $item . " - ERROR CODE : DBTR-01");
         }
     }
 
-    private static function retriveTable($class, $recusiveStop = false) {
-        $reflexion = new ReflectionClass($class);
+    public static function retriveFromClassName($classname) {
+        $reflexion = new ReflectionClass($classname);
         $strpos = strpos($reflexion->getDocComment(), self::PROPERTY_TABLE);
         if ($strpos < 0) {
             return;
@@ -44,7 +44,7 @@ class DBTableRetriver {
         $obj = json_decode($jsonStr);
         //support Inheritance
         if (!is_object($obj)) {
-            return self::retriveTable(get_parent_class($class), true);
+            return self::retriveFromClassName(get_parent_class($classname));
         } 
 
         $table = new DBTable();

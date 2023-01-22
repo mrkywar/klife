@@ -76,7 +76,7 @@ class Serializer {
         } elseif (!is_array($rawItems)) {
             throw new SerializerException("Array expected");
         }
-        $fields = DBFieldsRetriver::retrive(new $classModel());
+        $fields = DBFieldsRetriver::retrive($classModel);
 
         if (1 === sizeof($rawItems) && !$this->isForcedArray) {
             return $this->unserializeOnce($rawItems[array_keys($rawItems)[0]], $fields);
@@ -95,14 +95,23 @@ class Serializer {
     }
 
     /**
+     * 
+     * @param type $rawItem
+     * @return Model
+     */
+    protected function generateNewModel($rawItem): Model {
+        $modelStr = $this->classModel;
+        return new $modelStr();
+    }
+
+    /**
      * Allow you Data To Object transform
      * @param array $rawItem : Raw item to transform
      * @param array<DBField> $fields : Field to use for unserialization
      * @return Model
      */
     private function unserializeOnce($rawItem, $fields) {
-        $modelStr = $this->classModel;
-        $model = new $modelStr();
+        $model = $this->generateNewModel($rawItem);
 
         foreach ($fields as $field) {
             if (isset($rawItem[$field->getDbName()])) {

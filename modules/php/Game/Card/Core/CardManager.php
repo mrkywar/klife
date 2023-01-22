@@ -31,6 +31,8 @@ class CardManager extends SuperManager {
 ////            }
 ////        }
 //        die;
+        
+//        var_dump(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));die;
         $this->setIsDebug(true);
         $job = new Job();
 

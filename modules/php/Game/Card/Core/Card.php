@@ -12,7 +12,7 @@ use Klife;
  * @author Mr_Kywar mr_kywar@gmail.com
  * @ORM\Table{"name":"card"}
  */
-/* abstract */ class Card extends Model {
+abstract class Card extends Model {
 
     /**
      * 
@@ -91,7 +91,7 @@ use Klife;
      * 
      * @var array
      */
-    protected $help;
+    protected $helps;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Constructor & Display
@@ -100,25 +100,26 @@ use Klife;
     public function __construct() {
         $this->setLocation("deck")
                 ->setIsFlipped(false)
-                ->setIsRotated(false);
+                ->setIsRotated(false)
+                ->setSmilePoints(0);
 
         $this->texts = [];
-        $this->help = [];
+        $this->helps = [];
     }
 
     function __toString() {
         $str = get_class($this);
         $str .= '<br />';
-        $str .= $this->smilePoints . ($this->smilePoints <= 1 ? ' smile' : ' smiles');
-        if (count($this->texts) > 0) {
+        $str .= $this->getSmilePoints() . ($this->getSmilePoints() <= 1 ? ' smile' : ' smiles');
+        if (count($this->getTexts()) > 0) {
             $str .= '<br /><br />';
-            foreach ($this->texts as $text) {
+            foreach ($this->getTexts() as $text) {
                 $str .= $text['str'] . '<br />';
             }
         }
-        if (count($this->help) > 0) {
+        if (count($this->getHelps()) > 0) {
             $str .= '<br /><br />';
-            $str .= implode('<br />', $this->help);
+            $str .= implode('<br />', $this->getHelps());
         }
         return $str;
     }
@@ -127,7 +128,7 @@ use Klife;
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    //abstract public function getCategory();
+    abstract public function canBePlayed(): bool;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -202,6 +203,37 @@ use Klife;
 
     public function setIsRotated(bool $isRotated) {
         $this->isRotated = $isRotated;
+        return $this;
+    }
+
+    public function getSmilePoints(): int {
+        return $this->smilePoints;
+    }
+
+    public function setSmilePoints(int $smilePoints) {
+        $this->smilePoints = $smilePoints;
+        return $this;
+    }
+
+    public function getTexts(): array {
+        return $this->texts;
+    }
+
+    public function getHelps(): array {
+        return $this->helps;
+    }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Array Add Item
+     * ---------------------------------------------------------------------- */
+
+    public function addText(string $text) {
+        $this->texts[] = $text;
+        return $this;
+    }
+
+    public function addHelp(string $help) {
+        $this->helps[] = $help;
         return $this;
     }
 

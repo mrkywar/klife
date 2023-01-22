@@ -29,7 +29,7 @@ use SmileLife\Game\Card\Core\CardException;
      * ---------------------------------------------------------------------- */
 
     public function canBePlayed(): bool {
-        throw new CardException("CJ01 TODO: check if the required studies are fulfilled");
+        throw new CardException("C-Job-01 : check if the required studies are fulfilled");
         //return true;
     }
 

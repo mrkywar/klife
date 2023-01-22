@@ -130,6 +130,8 @@ abstract class Card extends Model {
      * ---------------------------------------------------------------------- */
 
     abstract public function canBePlayed(): bool;
+    
+    abstract public function canBeAttacked(): bool;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 

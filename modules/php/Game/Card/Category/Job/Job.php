@@ -1,6 +1,6 @@
 <?php
 
-namespace SmileLife\Game\Card\Category;
+namespace SmileLife\Game\Card\Category\Job;
 
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\CardException;
@@ -33,6 +33,10 @@ use SmileLife\Game\Card\Core\CardException;
     public function canBePlayed(): bool {
         throw new CardException("J01 TODO: check if the required studies are fulfilled");
         //return true;
+    }
+
+    public function canBeAttacked(): bool {
+        return true;
     }
 
     /* -------------------------------------------------------------------------

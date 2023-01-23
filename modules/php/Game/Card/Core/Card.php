@@ -21,56 +21,56 @@ abstract class Card extends Model {
      * @ORM\Column{"type":"integer", "name":"card_id" ,"exclude":["insert"]}
      * @ORM\Id
      */
-    protected $id;
+    private $id;
 
     /**
      * 
      * @var string
      * @ORM\Column{"type":"string", "name":"card_class"}
      */
-    protected $class;
+    private $class;
 
     /**
      * 
      * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_owner_id"}
      */
-    protected $ownerId;
+    private $ownerId;
 
     /**
      * 
      * @var string|null
      * @ORM\Column{"type":"string", "name":"card_location", "default":"deck"}
      */
-    protected $location;
+    private $location;
 
     /**
      * 
      * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_location_arg"}
      */
-    protected $locationArg = 0;
+    private $locationArg = 0;
 
     /**
      * 
      * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_discarder_id"}
      */
-    protected $discarderId;
+    private $discarderId;
 
     /**
      * 
      * @var bool
      * @ORM\Column{"type":"bool", "name":"card_is_flipped", "default":"false"}
      */
-    protected $isFlipped;
+    private $isFlipped;
 
     /**
      * 
      * @var bool
      * @ORM\Column{"type":"bool", "name":"card_is_rotated", "default":"false"}
      */
-    protected $isRotated;
+    private $isRotated;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Unpersisted property
@@ -80,13 +80,13 @@ abstract class Card extends Model {
      * 
      * @var array
      */
-    protected $texts;
+    private $texts;
 
     /**
      * 
      * @var array
      */
-    protected $helps;
+    private $helps;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Constructor & Display

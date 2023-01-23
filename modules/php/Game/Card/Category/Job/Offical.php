@@ -23,4 +23,8 @@ class Offical extends Job {
         return false;
     }
 
+    public function getClass(): string {
+        return self::class;
+    }
+
 }

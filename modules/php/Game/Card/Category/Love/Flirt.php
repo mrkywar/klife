@@ -13,7 +13,7 @@ class Flirt extends Love {
 
     private const SMILE_POINTS = 1;
 
-    protected bool $canGenerateChild;
+    private bool $canGenerateChild;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract

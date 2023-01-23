@@ -1,42 +1,32 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Studies;
+namespace SmileLife\Game\Card\Category\Acquisition;
 
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\CardException;
 
 /**
- * Description of Studies
+ * Description of Acquisition
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-abstract class Studies extends Card {
-
-    private const SMILE_POINT = 1;
-
+abstract class Acquisition extends Card {
     /* -------------------------------------------------------------------------
      *                  BEGIN - new Abstract
      * ---------------------------------------------------------------------- */
 
-    abstract public function getLevel(): int;
+    abstract public function getPrice(): int;
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
     public function canBeAttacked(): bool {
-        return true;
+        throw new CardException("C-Acquisition-01 : check the rules !");
     }
 
     public function canBePlayed(): bool {
-        throw new CardException("C-Studies-01 : check if the max studies are not reached");
-    }
-
-    public function getClass(): string {
-        return self::class;
-    }
-
-    public function getSmilePoints(): int {
-        return self::SMILE_POINT;
+        new CardException("C-Studies-01 : check if the price requirements are reached");
     }
 
 }

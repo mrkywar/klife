@@ -10,10 +10,10 @@ use SmileLife\Game\Card\Core\CardException;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-/* abstract */ class Job extends Card {
+class Job extends Card {
 
-    protected int $requiredStudies;
-    protected int $maxSalary;
+    private int $requiredStudies;
+    private int $maxSalary;
 
     private const SMILE_POINTS = 1;
 
@@ -21,6 +21,14 @@ use SmileLife\Game\Card\Core\CardException;
         parent::__construct();
 
         $this->addHelp(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));
+    }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Override
+     * ---------------------------------------------------------------------- */
+
+    public function getClass(): string {
+        return self::class;
     }
 
     /* -------------------------------------------------------------------------
@@ -60,10 +68,6 @@ use SmileLife\Game\Card\Core\CardException;
     public function setMaxSalary(int $maxSalary) {
         $this->maxSalary = $maxSalary;
         return $this;
-    }
-
-    public function getClass(): string {
-        return self::class;
     }
 
 }

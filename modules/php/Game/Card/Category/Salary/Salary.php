@@ -12,11 +12,11 @@ use SmileLife\Game\Card\Core\CardException;
  */
 class Salary extends Card {
 
-    public function __construct() {
-        parent::__construct();
+    private const SMILE_POINTS = 1;
 
-        $this->setSmilePoints(1);
-    }
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Abstract
+     * ---------------------------------------------------------------------- */
 
     public function canBeAttacked(): bool {
         return true;
@@ -28,6 +28,10 @@ class Salary extends Card {
 
     public function getClass(): string {
         return self::class;
+    }
+
+    public function getSmilePoints(): int {
+        return self::SMILE_POINTS;
     }
 
 }

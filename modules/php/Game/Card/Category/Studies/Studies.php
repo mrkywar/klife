@@ -3,6 +3,7 @@
 namespace SmileLife\Game\Card\Category\Studies;
 
 use SmileLife\Game\Card\Core\Card;
+use SmileLife\Game\Card\Core\CardException;
 
 /**
  * Description of Studies
@@ -11,13 +12,13 @@ use SmileLife\Game\Card\Core\Card;
  */
 class Studies extends Card {
 
+    private const SMILE_POINT = 1;
+
     protected int $level;
 
-    public function __construct() {
-        parent::__construct();
-
-        $this->setSmilePoints(1);
-    }
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Abstract
+     * ---------------------------------------------------------------------- */
 
     public function canBeAttacked(): bool {
         return true;
@@ -29,6 +30,10 @@ class Studies extends Card {
 
     public function getClass(): string {
         return self::class;
+    }
+
+    public function getSmilePoints(): int {
+        return self::SMILE_POINT;
     }
 
 }

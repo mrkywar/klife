@@ -78,12 +78,6 @@ abstract class Card extends Model {
 
     /**
      * 
-     * @var int
-     */
-    protected $smilePoints;
-
-    /**
-     * 
      * @var array
      */
     protected $texts;
@@ -130,8 +124,10 @@ abstract class Card extends Model {
      * ---------------------------------------------------------------------- */
 
     abstract public function canBePlayed(): bool;
-    
+
     abstract public function canBeAttacked(): bool;
+
+    abstract public function getSmilePoints(): int;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -142,7 +138,7 @@ abstract class Card extends Model {
     }
 
     abstract public function getClass(): string;
-    
+
     public function getOwnerId(): ?int {
         return $this->ownerId;
     }
@@ -204,15 +200,6 @@ abstract class Card extends Model {
 
     public function setIsRotated(bool $isRotated) {
         $this->isRotated = $isRotated;
-        return $this;
-    }
-
-    public function getSmilePoints(): int {
-        return $this->smilePoints;
-    }
-
-    public function setSmilePoints(int $smilePoints) {
-        $this->smilePoints = $smilePoints;
         return $this;
     }
 

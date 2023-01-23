@@ -15,6 +15,10 @@ class Offical extends Job {
         $this->addText(clienttranslate("An official cannot be fired (but can still quit)."));
     }
 
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Override
+     * ---------------------------------------------------------------------- */
+
     final public function canBeAttacked(): bool {
         return false;
     }

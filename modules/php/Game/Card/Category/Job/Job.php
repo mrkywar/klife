@@ -15,13 +15,12 @@ use SmileLife\Game\Card\Core\CardException;
     protected int $requiredStudies;
     protected int $maxSalary;
 
+    private const SMILE_POINTS = 1;
+
     public function __construct() {
         parent::__construct();
 
-        $this->setClass(self::class);
-
-        $this->setSmilePoints(2)
-                ->addHelp(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));
+        $this->addHelp(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));
     }
 
     /* -------------------------------------------------------------------------
@@ -35,6 +34,10 @@ use SmileLife\Game\Card\Core\CardException;
 
     public function canBeAttacked(): bool {
         return true;
+    }
+
+    public function getSmilePoints(): int {
+        return self::SMILE_POINTS;
     }
 
     /* -------------------------------------------------------------------------

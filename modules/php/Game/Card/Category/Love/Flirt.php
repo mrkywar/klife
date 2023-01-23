@@ -11,7 +11,13 @@ use SmileLife\Game\Card\Core\CardException;
  */
 class Flirt extends Love {
 
+    private const SMILE_POINTS = 1;
+
     protected bool $canGenerateChild;
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Abstract
+     * ---------------------------------------------------------------------- */
 
     public function canBeAttacked(): bool {
         return false;
@@ -27,6 +33,10 @@ class Flirt extends Love {
 
     public function getClass(): string {
         return self::class;
+    }
+
+    public function getSmilePoints(): int {
+        return self::SMILE_POINTS;
     }
 
     /* -------------------------------------------------------------------------

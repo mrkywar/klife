@@ -11,6 +11,12 @@ use SmileLife\Game\Card\Core\CardException;
  */
 class Wedding extends Love {
 
+    private const SMILE_POINTS = 3;
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Abstract
+     * ---------------------------------------------------------------------- */
+
     public function canBeAttacked(): bool {
         return true;
     }
@@ -25,6 +31,10 @@ class Wedding extends Love {
 
     public function getClass(): string {
         return self::class;
+    }
+
+    public function getSmilePoints(): int {
+        return self::SMILE_POINTS;
     }
 
 }

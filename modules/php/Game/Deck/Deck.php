@@ -2,7 +2,9 @@
 
 namespace SmileLife\Game\Deck;
 
+use ReflectionClass;
 use SmileLife\Game\Card\Core\CardLoader;
+use SmileLife\Game\Card\Module\BaseGame;
 use const BASE_GAME;
 
 /**
@@ -16,8 +18,16 @@ class Deck {
 
     private const AVIABLE_MODULE = [BASE_GAME];
 
-    public function generateDeck(array $activatedModules) {
+    public function __construct() {
         CardLoader::load();
+    }
+
+    public function generateDeck(array $activatedModules) {
+        echo "<pre>";
+//        var_dump(get_declared_classes());
+
+        $aviableClasses = get_declared_classes();
+        $this->getBaseGameCards($aviableClasses);
 //        $aviableModule = array_merge(self::AVIABLE_MODULE, $activatedModules);
 //        //$wedd = new Wedding();
 //        echo "<pre>";
@@ -27,6 +37,17 @@ class Deck {
 //        die;
     }
 
-        
+    private function getBaseGameCards(array $classes) {
+        $baseInterface = BaseGame::class;
+
+        foreach ($classes as $class) {
+            $reflexion = new ReflectionClass($class);
+            if ($reflexion->implementsInterface($baseInterface)) {
+                echo " # " . $class . " OK<br/>";
+            } else {
+                echo " - " . $class . " <br/>";
+            }
+        }
+    }
 
 }

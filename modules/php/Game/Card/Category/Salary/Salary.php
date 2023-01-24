@@ -10,9 +10,15 @@ use SmileLife\Game\Card\Core\Exception\CardException;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Salary extends Card {
+abstract class Salary extends Card {
 
     private const SMILE_POINTS = 1;
+    
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - new Abstract
+     * ---------------------------------------------------------------------- */
+
+    abstract public function getAmount(): int;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
@@ -24,10 +30,6 @@ class Salary extends Card {
 
     public function canBePlayed(): bool {
         throw new CardException("C-Salary-01 : check if the required job are fulfilled");
-    }
-
-    public function getClass(): string {
-        return self::class;
     }
 
     public function getSmilePoints(): int {

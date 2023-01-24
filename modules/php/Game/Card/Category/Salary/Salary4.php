@@ -1,41 +1,25 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Love;
+namespace SmileLife\Game\Card\Category\Salary;
 
-use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Adultery
+ * Description of Salary1
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Adultery extends Love implements BaseGame {
-
-    private const SMILE_POINTS = 1;
-
+class Salary4 extends Salary implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    public function canBeAttacked(): bool {
-        return false;
-    }
-
-    public function canBePlayed(): bool {
-        throw new CardException("C-Adultery01 : Check that the player is already married");
-    }
-
-    public function canGenerateChild(): bool {
-        return false;
+    public function getAmount(): int {
+        return 4;
     }
 
     public function getClass(): string {
         return self::class;
-    }
-
-    public function getSmilePoints(): int {
-        return self::SMILE_POINTS;
     }
 
     /* -------------------------------------------------------------------------
@@ -43,7 +27,7 @@ class Adultery extends Love implements BaseGame {
      * ---------------------------------------------------------------------- */
 
     public function getBaseCardCount(): int {
-        return 2;
+        return 10;
     }
 
 }

@@ -127,10 +127,6 @@ abstract class SuperManager extends DBRequester {
             $qb = new QueryBuilder();
             $qb->update()
                     ->setTable($table);
-
-            $qb = new QueryBuilder();
-            $qb->update()
-                    ->setTable($table);
             foreach ($udpatables as $udpatable) {
                 $qb->addSetter($udpatable, DBValueRetriver::retrive($udpatable, $items));
             }
@@ -181,7 +177,7 @@ abstract class SuperManager extends DBRequester {
     protected function prepareUpdate($items = null) {
         $table = $this->getTable($items);
         $primaries = $this->getPrimaryFields($items);
-        $udpatables = $this->getUpdateFields($items);
+//        $udpatables = $this->getUpdateFields($items);
 
         $qb = new QueryBuilder();
         $qb->update()

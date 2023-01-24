@@ -1,5 +1,10 @@
 <?php
+namespace SmileLife\Game\Deck;
 
+use ReflectionClass;
+use SmileLife\Game\Card\Module\BaseGame;
+use const BASE_GAME;
+use SmileLife\Game\Card\Category\Love\Wedding;
 /**
  * Description of Deck
  *
@@ -13,11 +18,9 @@ class Deck {
 
     public function generateDeck(array $activatedModules) {
         $aviableModule = array_merge(self::AVIABLE_MODULE, $activatedModules);
+        //$wedd = new Wedding();
+
         
-        
-        foreach ($activatedModules as $module){
-            
-        }
     }
 
 }

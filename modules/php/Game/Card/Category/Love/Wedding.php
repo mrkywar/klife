@@ -3,13 +3,14 @@
 namespace SmileLife\Game\Card\Category\Love;
 
 use SmileLife\Game\Card\Core\CardException;
+use SmileLife\Game\Card\Module\BaseGame;
 
 /**
  * Description of Wedded
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Wedding extends Love {
+class Wedding extends Love implements BaseGame{
 
     private const SMILE_POINTS = 3;
 

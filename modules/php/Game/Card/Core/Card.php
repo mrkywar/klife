@@ -95,8 +95,7 @@ abstract class Card extends Model {
     public function __construct() {
         $this->setLocation("deck")
                 ->setIsFlipped(false)
-                ->setIsRotated(false)
-                ->setSmilePoints(0);
+                ->setIsRotated(false);
 
         $this->texts = [];
         $this->helps = [];

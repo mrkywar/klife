@@ -2,12 +2,14 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition;
 
+use SmileLife\Game\Card\Module\BaseGame;
+
 /**
  * Description of Travel
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Travel extends Acquisition {
+class Travel extends Acquisition implements BaseGame {
 
     private const TRAVEL_PRICE = 3;
     private const SMILE_POINTS = 1;
@@ -26,6 +28,14 @@ class Travel extends Acquisition {
 
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
+    }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Implement BaseGame
+     * ---------------------------------------------------------------------- */
+
+    public function getBaseCardCount(): int {
+        return 5;
     }
 
 }

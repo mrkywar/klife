@@ -12,10 +12,6 @@ use SmileLife\Game\Card\Module\BaseGame;
  * @author Mr_Kywar mr_kywar@gmail.com
  */
 class Child extends Card implements BaseGame {
-
-    private const SMILE_POINTS = 2;
-    private const BG_CARDS_COUNT = 6;
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -33,15 +29,15 @@ class Child extends Card implements BaseGame {
     }
 
     public function getSmilePoints(): int {
-        return self::SMILE_POINTS;
+        return 2;
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */
 
-    public function getBaseCardCount(): int  {
-        return self::BG_CARDS_COUNT;
+    public function getBaseCardCount(): int {
+        return 10;
     }
 
 }

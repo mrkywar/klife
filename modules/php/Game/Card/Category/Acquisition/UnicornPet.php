@@ -1,33 +1,21 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Love;
+namespace SmileLife\Game\Card\Category\Acquisition;
 
-use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Wedded
+ * Description of UnicornPet
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Wedding extends Love implements BaseGame{
-
-    private const SMILE_POINTS = 3;
-
+class UnicornPet extends Acquisition implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    public function canBeAttacked(): bool {
-        return true;
-    }
-
-    public function canBePlayed(): bool {
-        throw new CardException("C-Wedding01 : Check that the player is not married and has already at least a flirt");
-    }
-
-    public function canGenerateChild(): bool {
-        return true;
+    public function getPrice(): int {
+        return 0;
     }
 
     public function getClass(): string {
@@ -35,15 +23,14 @@ class Wedding extends Love implements BaseGame{
     }
 
     public function getSmilePoints(): int {
-        return self::SMILE_POINTS;
+        return 3;
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */
-    
-    public function getBaseCardCount(): int {
-        return 7;
-    }
 
+    public function getBaseCardCount(): int {
+        return 1;
+    }
 }

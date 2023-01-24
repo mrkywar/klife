@@ -1,28 +1,20 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Acquisition;
+namespace SmileLife\Game\Card\Category\Studies;
 
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Pet
+ * Description of Studies1
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Pet extends Acquisition implements BaseGame {
+class Studies1 extends Studies implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    public function getPrice(): int {
-        return 0;
-    }
-
-    public function getClass(): string {
-        return self::class;
-    }
-
-    public function getSmilePoints(): int {
+    public function getLevel(): int {
         return 1;
     }
 
@@ -31,7 +23,7 @@ class Pet extends Acquisition implements BaseGame {
      * ---------------------------------------------------------------------- */
 
     public function getBaseCardCount(): int {
-        return 4;
+        return 22;
     }
 
 }

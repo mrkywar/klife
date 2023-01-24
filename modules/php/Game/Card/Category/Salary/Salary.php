@@ -3,7 +3,7 @@
 namespace SmileLife\Game\Card\Category\Salary;
 
 use SmileLife\Game\Card\Core\Card;
-use SmileLife\Game\Card\Core\CardException;
+use SmileLife\Game\Card\Core\Exception\CardException;
 
 /**
  * Description of Salary

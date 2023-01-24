@@ -2,7 +2,9 @@
 
 namespace SmileLife\Game\Card\Category\Love;
 
-use SmileLife\Game\Card\Core\CardException;
+use SmileLife\Game\Card\Core\Exception\CardException;
+
+
 
 /**
  * Description of Flirt

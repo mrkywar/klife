@@ -2,6 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job;
 
+use SmileLife\Game\Card\Core\Exception\CardException;
+
 /**
  * Description of JobBonus
  *

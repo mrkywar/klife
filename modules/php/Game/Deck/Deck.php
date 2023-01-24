@@ -1,10 +1,10 @@
 <?php
+
 namespace SmileLife\Game\Deck;
 
-use ReflectionClass;
-use SmileLife\Game\Card\Module\BaseGame;
+use SmileLife\Game\Card\Core\CardLoader;
 use const BASE_GAME;
-use SmileLife\Game\Card\Category\Love\Wedding;
+
 /**
  * Description of Deck
  *
@@ -17,10 +17,16 @@ class Deck {
     private const AVIABLE_MODULE = [BASE_GAME];
 
     public function generateDeck(array $activatedModules) {
-        $aviableModule = array_merge(self::AVIABLE_MODULE, $activatedModules);
-        //$wedd = new Wedding();
+        CardLoader::load();
+//        $aviableModule = array_merge(self::AVIABLE_MODULE, $activatedModules);
+//        //$wedd = new Wedding();
+//        echo "<pre>";
+//        $dir = dirname(__FILE__);
+//        $dir = substr($dir, 0, strripos($dir, "/"));
+//        var_dump(get_declared_classes(), $this->smk_get_classes_from_project($dir), $dir);
+//        die;
+    }
 
         
-    }
 
 }

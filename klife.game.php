@@ -124,7 +124,7 @@ class Klife extends Table {
         
         $deck = new Deck();
         $deck->generateDeck(array());
-        var_dump($deck);
+        //var_dump($deck);
         die('OK');
 
         $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!

@@ -13,6 +13,7 @@ use SmileLife\Game\Card\Module\BaseGame;
 class Wedding extends Love implements BaseGame{
 
     private const SMILE_POINTS = 3;
+    private const BG_CARDS_COUNT = 7;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
@@ -36,6 +37,14 @@ class Wedding extends Love implements BaseGame{
 
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
+    }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Implement BaseGame
+     * ---------------------------------------------------------------------- */
+    
+    public function getBaseCardCount(): int {
+        return self::BG_CARDS_COUNT;
     }
 
 }

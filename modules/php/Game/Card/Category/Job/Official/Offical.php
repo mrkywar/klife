@@ -1,13 +1,15 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Job;
+namespace SmileLife\Game\Card\Category\Job\Official;
+
+use SmileLife\Game\Card\Category\Job\Job;
 
 /**
  * Description of Offical
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Offical extends Job {
+abstract class Offical extends Job {
 
     public function __construct() {
         parent::__construct();
@@ -21,10 +23,6 @@ class Offical extends Job {
 
     final public function canBeAttacked(): bool {
         return false;
-    }
-
-    public function getClass(): string {
-        return self::class;
     }
 
 }

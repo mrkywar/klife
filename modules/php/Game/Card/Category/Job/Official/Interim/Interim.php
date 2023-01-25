@@ -1,13 +1,15 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Job;
+namespace SmileLife\Game\Card\Category\Job\Interim;
+
+use SmileLife\Game\Card\Category\Job\Job;
 
 /**
  * Description of Interim
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Interim extends Job {
+abstract class Interim extends Job {
 
     public function __construct() {
         parent::__construct();

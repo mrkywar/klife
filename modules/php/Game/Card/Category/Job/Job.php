@@ -10,10 +10,7 @@ use SmileLife\Game\Card\Core\Exception\CardException;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Job extends Card{
-
-    private int $requiredStudies;
-    private int $maxSalary;
+abstract class Job extends Card {
 
     private const SMILE_POINTS = 1;
 
@@ -22,6 +19,14 @@ class Job extends Card{
 
         $this->addHelp(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));
     }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - new Abstract
+     * ---------------------------------------------------------------------- */
+
+    abstract public function getRequiredStudies(): int;
+
+    abstract public function getMaxSalary(): int;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Override
@@ -46,30 +51,6 @@ class Job extends Card{
 
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
-    }
-    
-    
-
-    /* -------------------------------------------------------------------------
-     *                  BEGIN - Getters & Setters 
-     * ---------------------------------------------------------------------- */
-
-    public function getRequiredStudies(): int {
-        return $this->requiredStudies;
-    }
-
-    public function getMaxSalary(): int {
-        return $this->maxSalary;
-    }
-
-    public function setRequiredStudies(int $requiredStudies) {
-        $this->requiredStudies = $requiredStudies;
-        return $this;
-    }
-
-    public function setMaxSalary(int $maxSalary) {
-        $this->maxSalary = $maxSalary;
-        return $this;
     }
 
 }

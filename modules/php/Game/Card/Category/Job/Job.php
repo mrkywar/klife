@@ -53,4 +53,12 @@ abstract class Job extends Card {
         return self::SMILE_POINTS;
     }
 
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Base Game Forced (1 card in each job)
+     * ---------------------------------------------------------------------- */
+
+    public function getBaseCardCount(): int {
+        return 1;
+    }
+
 }

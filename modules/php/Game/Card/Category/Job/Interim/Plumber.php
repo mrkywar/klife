@@ -28,11 +28,7 @@ class Plumber extends Job implements BaseGame {
     }
 
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Implement BaseGame
+     *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
-    public function getBaseCardCount(): int {
-        return 1;
-    }
 
 }

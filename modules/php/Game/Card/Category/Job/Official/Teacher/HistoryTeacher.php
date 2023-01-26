@@ -1,15 +1,15 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Job\Interim;
+namespace SmileLife\Game\Card\Category\Job\Official\Teacher;
 
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Stripteaser
+ * Description of MathTeacher
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Stripteaser extends Interim implements BaseGame {
+class HistoryTeacher extends Teacher implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -19,15 +19,14 @@ class Stripteaser extends Interim implements BaseGame {
     }
 
     public function getMaxSalary(): int {
-        return 1;
+        return 2;
     }
 
     public function getRequiredStudies(): int {
-        return 0;
+        return 2;
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
 }

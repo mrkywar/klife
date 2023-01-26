@@ -5,11 +5,11 @@ namespace SmileLife\Game\Card\Category\Job\Interim;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Stripteaser
+ * Description of Plumber
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Stripteaser extends Interim implements BaseGame {
+class Gardener extends Interim implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -23,7 +23,7 @@ class Stripteaser extends Interim implements BaseGame {
     }
 
     public function getRequiredStudies(): int {
-        return 0;
+        return 1;
     }
 
     /* -------------------------------------------------------------------------

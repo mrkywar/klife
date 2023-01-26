@@ -1,15 +1,13 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Job\Interim;
-
-use SmileLife\Game\Card\Module\BaseGame;
+namespace SmileLife\Game\Card\Category\Job\Official;
 
 /**
- * Description of Stripteaser
+ * Description of Military
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Stripteaser extends Interim implements BaseGame {
+class Military extends Official implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -29,5 +27,4 @@ class Stripteaser extends Interim implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
 }

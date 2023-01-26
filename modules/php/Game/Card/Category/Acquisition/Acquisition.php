@@ -5,7 +5,6 @@ namespace SmileLife\Game\Card\Category\Acquisition;
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
-
 /**
  * Description of Acquisition
  *
@@ -27,7 +26,7 @@ abstract class Acquisition extends Card {
     }
 
     public function canBePlayed(): bool {
-        new CardException("C-Studies-01 : check if the price requirements are reached");
+        throw new CardException("C-Acquisition-02 : check if the price requirements are reached");
     }
 
 }

@@ -2,7 +2,6 @@
 
 namespace SmileLife\Game\Card\Category\Job\Interim;
 
-use SmileLife\Game\Card\Category\Job\Job;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -10,7 +9,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Plumber extends Job implements BaseGame {
+class Plumber extends Interim implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */

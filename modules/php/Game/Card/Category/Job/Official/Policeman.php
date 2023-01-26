@@ -2,6 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official;
 
+use SmileLife\Game\Card\Module\BaseGame;
+
 /**
  * Description of Military
  *

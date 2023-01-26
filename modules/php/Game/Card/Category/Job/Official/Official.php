@@ -9,7 +9,7 @@ use SmileLife\Game\Card\Category\Job\Job;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-abstract class Offical extends Job {
+abstract class Official extends Job {
 
     public function __construct() {
         parent::__construct();

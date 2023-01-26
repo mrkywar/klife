@@ -2,6 +2,9 @@
 
 namespace SmileLife\Game\Card\Category\Job\Job;
 
+use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Module\BaseGame;
+
 /**
  * Description of PizzaMaker
  *

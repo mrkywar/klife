@@ -27,7 +27,7 @@ class Deck {
     public function generateDeck(array $activatedModules) {
         $cards = BaseGameCardRetriver::retrive();
         $test = $this->testCategories($cards);
-        var_dump($cards);
+        var_dump( $cards);
         die("DECK");
     }
 

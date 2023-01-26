@@ -12,8 +12,6 @@ use SmileLife\Game\Card\Effect\CardEffectInterface;
  */
 abstract class Special extends Card implements CardEffectInterface{
 
-    
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -29,5 +27,14 @@ abstract class Special extends Card implements CardEffectInterface{
     public function getSmilePoints(): int {
         return 0;
     }
+    
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Base Game Forced (1 card in each special card)
+     * ---------------------------------------------------------------------- */
+
+    public function getBaseCardCount(): int {
+        return 1;
+    }
+
 
 }

@@ -19,8 +19,8 @@ abstract class BaseGameCardRetriver {
         foreach ($classes as $class) {
             self::generateCard($cards, $class);
         }
-        var_dump($cards);
-        die;
+        
+        return $cards;
     }
 
     static private function retriveClasses() {

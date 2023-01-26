@@ -23,7 +23,7 @@ class Jail extends Attack implements BaseGame {
      * ---------------------------------------------------------------------- */
 
     public function getBaseCardCount(): int {
-        return 5;
+        return 1;
     }
 
 }

@@ -43,7 +43,7 @@ class Adultery extends Love implements BaseGame {
      * ---------------------------------------------------------------------- */
 
     public function getBaseCardCount(): int {
-        return 2;
+        return 3;
     }
 
 }

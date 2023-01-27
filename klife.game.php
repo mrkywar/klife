@@ -60,6 +60,7 @@ class Klife extends Table {
      * @var PlayerManager
      */
     private $playerManager;
+
     /**
      * 
      * @var CardManager
@@ -120,10 +121,10 @@ class Klife extends Table {
     protected function getAllDatas() {
         $result = array();
 
-       // $this->cardManager->tryCard();
-        
-        $deck = new Deck();
-        $deck->generateDeck(array());
+        // $this->cardManager->tryCard();
+        $this->cardManager->initNewGame();
+//        $deck = new Deck();
+//        $deck->generateDeck(array());
         //var_dump($deck);
         die('OK');
 

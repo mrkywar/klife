@@ -77,7 +77,7 @@ abstract class SuperManager extends DBRequester {
 
     final protected function getInsertFields($items) {
         if (true === $this->getUseSerializerClass()) {
-            return DBFieldsRetriver::retriveFields($this->getSerializer()->getClassModel());
+            return DBFieldsRetriver::retriveInsertFieldsFormClassName($this->getSerializer()->getClassModel());
         }
         return DBFieldsRetriver::retriveInsertFields($items);
     }

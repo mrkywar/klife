@@ -24,6 +24,12 @@ abstract class SuperManager extends DBRequester {
      */
     private $serializer;
 
+    /**
+     * 
+     * @var bool
+     */
+    private $useSerializerClass = false;
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - SERIALIZER
      * ---------------------------------------------------------------------- */
@@ -36,6 +42,15 @@ abstract class SuperManager extends DBRequester {
             $this->serializer = $this->initSerializer();
         }
         return $this->serializer;
+    }
+
+    public function setUseSerializerClass(bool $useSerializerClass) {
+        $this->useSerializerClass = $useSerializerClass;
+        return $this;
+    }
+
+    public function getUseSerializerClass(): bool {
+        return $this->useSerializerClass;
     }
 
     /**
@@ -61,6 +76,9 @@ abstract class SuperManager extends DBRequester {
     }
 
     final protected function getInsertFields($items) {
+        if (true === $this->getUseSerializerClass()) {
+            return DBFieldsRetriver::retriveInsertFieldsFormClassName($this->getSerializer()->getClassModel());
+        }
         return DBFieldsRetriver::retriveInsertFields($items);
     }
 
@@ -90,7 +108,7 @@ abstract class SuperManager extends DBRequester {
         if (null === $items) {
             $className = $this->getSerializer()->getClassModel();
             return DBTableRetriver::retriveFromClassName($className);
-            
+
 //            var_dump($className);die;
 //            $items = new $className();
         }
@@ -123,10 +141,6 @@ abstract class SuperManager extends DBRequester {
             $table = $this->getTable($items);
             $primaries = $this->getPrimaryFields($items);
             $udpatables = $this->getUpdateFields($items);
-
-            $qb = new QueryBuilder();
-            $qb->update()
-                    ->setTable($table);
 
             $qb = new QueryBuilder();
             $qb->update()
@@ -181,7 +195,7 @@ abstract class SuperManager extends DBRequester {
     protected function prepareUpdate($items = null) {
         $table = $this->getTable($items);
         $primaries = $this->getPrimaryFields($items);
-        $udpatables = $this->getUpdateFields($items);
+//        $udpatables = $this->getUpdateFields($items);
 
         $qb = new QueryBuilder();
         $qb->update()

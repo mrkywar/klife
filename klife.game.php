@@ -2,6 +2,7 @@
 
 use Core\Managers\PlayerManager;
 use SmileLife\Game\Card\Core\CardManager;
+use SmileLife\Game\Deck\Deck;
 
 /**
  * ------
@@ -59,6 +60,7 @@ class Klife extends Table {
      * @var PlayerManager
      */
     private $playerManager;
+
     /**
      * 
      * @var CardManager
@@ -98,6 +100,7 @@ class Klife extends Table {
 
     protected function setupNewGame($players, $options = array()) {
         $this->playerManager->initNewGame($players, $options);
+        $this->cardManager->initNewGame();
 
         //Logger::log("Message", "Test");
 
@@ -119,7 +122,12 @@ class Klife extends Table {
     protected function getAllDatas() {
         $result = array();
 
-        $this->cardManager->tryCard();
+        // $this->cardManager->tryCard();
+        
+//        $deck = new Deck();
+//        $deck->generateDeck(array());
+        //var_dump($deck);
+//        die('OK');
 
         $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
         // Get information about players

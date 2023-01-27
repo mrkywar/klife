@@ -13,7 +13,7 @@ use Klife;
  * @author Mr_Kywar mr_kywar@gmail.com
  * @ORM\Table{"name":"card"}
  */
-abstract class Card extends Model implements AbstractModelInterface {
+abstract class Card extends Model {
 
     /**
      * 
@@ -21,56 +21,56 @@ abstract class Card extends Model implements AbstractModelInterface {
      * @ORM\Column{"type":"integer", "name":"card_id" ,"exclude":["insert"]}
      * @ORM\Id
      */
-    protected $id;
+    private $id;
 
     /**
      * 
      * @var string
      * @ORM\Column{"type":"string", "name":"card_class"}
      */
-    protected $class;
+    private $class;
 
     /**
      * 
      * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_owner_id"}
      */
-    protected $ownerId;
+    private $ownerId;
 
     /**
      * 
      * @var string|null
      * @ORM\Column{"type":"string", "name":"card_location", "default":"deck"}
      */
-    protected $location;
+    private $location;
 
     /**
      * 
      * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_location_arg"}
      */
-    protected $locationArg = 0;
+    private $locationArg = 0;
 
     /**
      * 
      * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_discarder_id"}
      */
-    protected $discarderId;
+    private $discarderId;
 
     /**
      * 
      * @var bool
      * @ORM\Column{"type":"bool", "name":"card_is_flipped", "default":"false"}
      */
-    protected $isFlipped;
+    private $isFlipped;
 
     /**
      * 
      * @var bool
      * @ORM\Column{"type":"bool", "name":"card_is_rotated", "default":"false"}
      */
-    protected $isRotated;
+    private $isRotated;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Unpersisted property
@@ -78,21 +78,15 @@ abstract class Card extends Model implements AbstractModelInterface {
 
     /**
      * 
-     * @var int
+     * @var array
      */
-    protected $smilePoints;
+    private $texts;
 
     /**
      * 
      * @var array
      */
-    protected $texts;
-
-    /**
-     * 
-     * @var array
-     */
-    protected $help;
+    private $helps;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Constructor & Display
@@ -104,22 +98,22 @@ abstract class Card extends Model implements AbstractModelInterface {
                 ->setIsRotated(false);
 
         $this->texts = [];
-        $this->help = [];
+        $this->helps = [];
     }
 
     function __toString() {
         $str = get_class($this);
         $str .= '<br />';
-        $str .= $this->smilePoints . ($this->smilePoints <= 1 ? ' smile' : ' smiles');
-        if (count($this->texts) > 0) {
+        $str .= $this->getSmilePoints() . ($this->getSmilePoints() <= 1 ? ' smile' : ' smiles');
+        if (count($this->getTexts()) > 0) {
             $str .= '<br /><br />';
-            foreach ($this->texts as $text) {
+            foreach ($this->getTexts() as $text) {
                 $str .= $text['str'] . '<br />';
             }
         }
-        if (count($this->help) > 0) {
+        if (count($this->getHelps()) > 0) {
             $str .= '<br /><br />';
-            $str .= implode('<br />', $this->help);
+            $str .= implode('<br />', $this->getHelps());
         }
         return $str;
     }
@@ -128,9 +122,11 @@ abstract class Card extends Model implements AbstractModelInterface {
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    public static function generateNew() {
-        return Card::class;
-    }
+    abstract public function canBePlayed(): bool;
+
+    abstract public function canBeAttacked(): bool;
+
+    abstract public function getSmilePoints(): int;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -141,7 +137,7 @@ abstract class Card extends Model implements AbstractModelInterface {
     }
 
     abstract public function getClass(): string;
-    
+
     public function getOwnerId(): ?int {
         return $this->ownerId;
     }
@@ -203,6 +199,28 @@ abstract class Card extends Model implements AbstractModelInterface {
 
     public function setIsRotated(bool $isRotated) {
         $this->isRotated = $isRotated;
+        return $this;
+    }
+
+    public function getTexts(): array {
+        return $this->texts;
+    }
+
+    public function getHelps(): array {
+        return $this->helps;
+    }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Array Add Item
+     * ---------------------------------------------------------------------- */
+
+    public function addText(string $text) {
+        $this->texts[] = $text;
+        return $this;
+    }
+
+    public function addHelp(string $help) {
+        $this->helps[] = $help;
         return $this;
     }
 

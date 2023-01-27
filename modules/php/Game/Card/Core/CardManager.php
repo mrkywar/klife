@@ -18,10 +18,12 @@ class CardManager extends SuperManager {
     public function __construct() {
         //parent::__construct();
 
+        $this->setUseSerializerClass(true);
         CardLoader::load();
     }
 
     public function initNewGame() {
+//        $this->setIsDebug(true); 
         $cards = BaseGameCardRetriver::retrive();
         $this->create($cards);
     }
@@ -33,4 +35,5 @@ class CardManager extends SuperManager {
     protected function initSerializer(): Serializer {
         return new CardSerializer(Card::class);
     }
+
 }

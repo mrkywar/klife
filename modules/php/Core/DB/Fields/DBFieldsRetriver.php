@@ -32,9 +32,10 @@ abstract class DBFieldsRetriver {
         }
     }
 
-    static private function retriveFields($classModel) {
+    static public function retriveFields($classModel) {
         $reflexion = new ReflectionClass($classModel);
         $fields = [];
+        var_dump(self::EXCLUDE_PROPERTY, $reflexion->getProperties());
         foreach ($reflexion->getProperties() as $property) {
             //-- Retrive property first
             $obj = self::getColumDeclaration($property);
@@ -50,6 +51,7 @@ abstract class DBFieldsRetriver {
                     ->setIsPrimary(self::isIdDeclaration($property)); //-- Retrive Id status
 
             $excludeProperty = self::EXCLUDE_PROPERTY;
+            
             if (property_exists($obj, $excludeProperty)) {
                 $field->setExclusions($obj->$excludeProperty);
             }
@@ -72,6 +74,10 @@ abstract class DBFieldsRetriver {
     }
 
     static public function retriveInsertFields($items) {
+        echo '<pre>';
+        var_dump( self::retriveFilteredFields($items, QueryString::TYPE_INSERT));
+        die ('DBFR');
+
         return self::retriveFilteredFields($items, QueryString::TYPE_INSERT);
     }
 

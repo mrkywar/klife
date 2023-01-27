@@ -15,7 +15,6 @@ abstract class BaseGameCardRetriver {
     static public function retrive() {
         $classes = self::retriveClasses();
         $cards = [];
-        echo '<pre>';
         foreach ($classes as $class) {
             self::generateCard($cards, $class);
         }

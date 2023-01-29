@@ -22,10 +22,30 @@ class CardManager extends SuperManager {
         CardLoader::load();
     }
 
-    public function initNewGame() {
+    public function initNewGame(array $options) {
 //        $this->setIsDebug(true); 
         $cards = BaseGameCardRetriver::retrive();
+
+        //** TODO To redo Cards To keep from options 
+
+
         $this->create($cards);
+    }
+
+    private function getCardToKeepCount(array $cards, array $options) {
+        $count = sizeof($cards);
+        if (!isset($options[OPTION_LENGTH])) {
+            $options[OPTION_LENGTH] = CHOICE_LENGTH_ALL;
+        }
+
+        switch ($options[OPTION_LENGTH]) {
+            case CHOICE_LENGTH_HALF:
+                return round($count / 2);
+            case CHOICE_LENGTH_THREE_QUARTERS:
+                return round($count * 3 / 4);
+            default :
+                return $count;
+        }
     }
 
     /* -------------------------------------------------------------------------

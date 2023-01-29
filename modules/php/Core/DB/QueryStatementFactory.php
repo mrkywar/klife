@@ -175,7 +175,7 @@ abstract class QueryStatementFactory {
 
         if (is_array($values)) {
             $serializer = new Serializer(get_class($values[0]));
-            $serializedValues = $serializer->serialize($values);
+            $serializedValues = $serializer->serialize($values, $fields);
             foreach ($serializedValues as $rawValue) {
                 $rawValues [] = self::createOneValue($rawValue, $fields);
             }

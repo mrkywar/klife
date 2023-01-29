@@ -61,7 +61,6 @@ abstract class DBFieldsRetriver {
             }
             $fields[] = $field;
         }
-
         return $fields;
     }
 

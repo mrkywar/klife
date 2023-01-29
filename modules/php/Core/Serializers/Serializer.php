@@ -37,8 +37,10 @@ class Serializer {
      * @param array<Model>|Model $items Model(s) to transform
      * @return array
      */
-    public function serialize($items) {
-        $fields = DBFieldsRetriver::retrive($items);
+    public function serialize($items, array $fields = null) {
+        if (null === $fields) {
+            $fields = DBFieldsRetriver::retrive($items);
+        }
 
         if (is_array($items)) {
             $results = [];

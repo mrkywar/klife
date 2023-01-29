@@ -47,6 +47,7 @@ $swdNamespaceAutoload = function ($class) {
 spl_autoload_register($swdNamespaceAutoload, true, true);
 
 require_once( APP_GAMEMODULE_PATH . 'module/table/table.game.php' );
+require_once('modules/constants.inc.php');
 
 class Klife extends Table {
 
@@ -100,7 +101,7 @@ class Klife extends Table {
 
     protected function setupNewGame($players, $options = array()) {
         $this->playerManager->initNewGame($players, $options);
-        $this->cardManager->initNewGame();
+        $this->cardManager->initNewGame($options);
 
         //Logger::log("Message", "Test");
 

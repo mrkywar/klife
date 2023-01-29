@@ -1,7 +1,7 @@
 <?php
 
 /**
- *------
+ * ------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
  * klife implementation : © <Your name here> <Your email address here>
  *
@@ -23,36 +23,43 @@
  * !! It is not a good idea to modify this file when a game is running !!
  *
  */
+require_once 'modules/constants.inc.php';
 
 $game_options = array(
-
-    /*
-    
-    // note: game variant ID should start at 100 (ie: 100, 101, 102, ...). The maximum is 199.
-    100 => array(
-                'name' => totranslate('my game option'),    
-                'values' => array(
-
-                            // A simple value for this option:
-                            1 => array( 'name' => totranslate('option 1') )
-
-                            // A simple value for this option.
-                            // If this value is chosen, the value of "tmdisplay" is displayed in the game lobby
-                            2 => array( 'name' => totranslate('option 2'), 'tmdisplay' => totranslate('option 2') ),
-
-                            // Another value, with other options:
-                            //  description => this text will be displayed underneath the option when this value is selected to explain what it does
-                            //  beta=true => this option is in beta version right now (there will be a warning)
-                            //  alpha=true => this option is in alpha version right now (there will be a warning, and starting the game will be allowed only in training mode except for the developer)
-                            //  nobeginner=true  =>  this option is not recommended for beginners
-                            //  firstgameonly=true  =>  this option is recommended only for the first game (discovery option)
-                            3 => array( 'name' => totranslate('option 3'), 'description' => totranslate('this option does X'), 'beta' => true, 'nobeginner' => true )
-                        ),
-                'default' => 1
+    OPTION_LENGTH => array(
+        'name' => totranslate("Game length"),
+        'values' => array(
+            CHOICE_LENGTH_ALL => array(
+                'name' => totranslate("Normal"),
+                'description' => totranslate("Play with the full deck")
             ),
-
-    */
-
+            CHOICE_LENGTH_HALF => array(
+                'name' => totranslate("1/2 deck"),
+                'tm_display' => totranslate("1/2 deck"),
+                'description' => totranslate("Play with only one half of the deck (100 cards)")
+            ),
+            CHOICE_LENGTH_THREE_QUARTERS => array(
+                'name' => totranslate("3/4 deck"),
+                'tm_display' => totranslate("3/4 deck"),
+                'description' => totranslate("Play with only three quarters of the deck (150 cards)")
+            ),
+            CHOICE_LENGTH_TWO_THIRDS => array(
+                'name' => totranslate("2/3 deck"),
+                'tm_display' => totranslate("2/3 deck"),
+                'description' => totranslate("Play with only two thirds of the deck (133 cards)")
+            ),
+            CHOICE_LENGTH_QUARTER => array(
+                'name' => totranslate("1/4 deck"),
+                'tm_display' => totranslate("1/4 deck"),
+                'description' => totranslate("Play with only one quarter of the deck (50 cards)")
+            ),
+            CHOICE_LENGTH_THIRD => array(
+                'name' => totranslate("1/3 deck"),
+                'tm_display' => totranslate("1/3 deck"),
+                'description' => totranslate("Play with only one third of the deck (67 cards)")
+            ),
+        ),
+        'default' => CHOICE_LENGTH_ALL
+    ),
 );
-
 

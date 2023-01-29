@@ -17,6 +17,13 @@ CREATE TABLE IF NOT EXISTS `log` (
     PRIMARY KEY(`log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
+
+CREATE TABLE IF NOT EXISTS `game` (
+    `game_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `game_option` text NULL,
+    PRIMARY KEY(`game_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
 CREATE TABLE IF NOT EXISTS `card` (
   `card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `card_class` varchar(255) NOT NULL COMMENT 'Type of the card (matches the class name the card need to be instanciated with)',

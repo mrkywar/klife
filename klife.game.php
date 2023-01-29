@@ -2,7 +2,7 @@
 
 use Core\Managers\PlayerManager;
 use SmileLife\Game\Card\Core\CardManager;
-use SmileLife\Game\Deck\Deck;
+use SmileLife\Game\Game\GameManager;
 
 /**
  * ------
@@ -68,6 +68,12 @@ class Klife extends Table {
      */
     private $cardManager;
 
+    /**
+     * 
+     * @var GameManager
+     */
+    private $gameManager;
+
     function __construct() {
         parent::__construct();
 
@@ -75,6 +81,7 @@ class Klife extends Table {
 
         $this->playerManager = new PlayerManager();
         $this->cardManager = new CardManager();
+        $this->gameManager = new GameManager();
 
         self::initGameStateLabels(array(
                 //    "my_first_global_variable" => 10,
@@ -101,6 +108,7 @@ class Klife extends Table {
 
     protected function setupNewGame($players, $options = array()) {
         $this->playerManager->initNewGame($players, $options);
+        $this->gameManager->initNewGame($options);
         $this->cardManager->initNewGame($options);
 
         //Logger::log("Message", "Test");
@@ -124,7 +132,6 @@ class Klife extends Table {
         $result = array();
 
         // $this->cardManager->tryCard();
-        
 //        $deck = new Deck();
 //        $deck->generateDeck(array());
         //var_dump($deck);
@@ -338,6 +345,10 @@ class Klife extends Table {
 
     public function getPlayerManager(): PlayerManager {
         return $this->playerManager;
+    }
+
+    public function getGameManager(): GameManager {
+        return $this->gameManager;
     }
 
 }

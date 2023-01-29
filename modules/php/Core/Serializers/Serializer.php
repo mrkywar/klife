@@ -132,6 +132,9 @@ class Serializer {
                 return \DateTime::createFromFormat(DBField::DATETIME_STRING_FORMAT, $value);
             case DBField::BOOLEAN_FORMAT:
                 return 1 === $value;
+            case DBField::JSON_FORMAT:
+//                var_dump($value,json_decode($value));
+                return json_decode($value, true);
             default:
                 return $value;
         }

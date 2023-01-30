@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `game` (
 CREATE TABLE IF NOT EXISTS `player_attributes`(
     `attributes_player_id` int(10) UNSIGNED NOT NULL,
     `attributes_max_cards` int(1) UNSIGNED NOT NULL,
+    PRIMARY KEY(`attributes_player_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `card` (

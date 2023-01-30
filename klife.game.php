@@ -145,9 +145,10 @@ class Klife extends Table {
 //        $deck->generateDeck(array());
         //var_dump($deck);
 //        die('OK');
-        echo '<pre>';
-        $this->getCardManager()->getAllCardsInDeck();
-        die('G');
+//        echo '<pre>';
+        
+//        $this->getCardManager()->getAllCardsInDeck();
+//        die('G');
 
         $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
         // Get information about players

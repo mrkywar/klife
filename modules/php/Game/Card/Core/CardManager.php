@@ -76,19 +76,13 @@ class CardManager extends SuperManager {
      * ---------------------------------------------------------------------- */
 
     public function getAllCardsInDeck() {
-        $cards = $this->getAllCardsInLocation(CardPosition::DECK);
-        var_dump($cards);
-        return $cards;
+        return $this->getAllCardsInLocation(CardPosition::DECK);
     }
 
     private function getAllCardsInLocation(string $location, int $locationArg = null) {
-//        $this->;
-//        $criterias = [
-//            "location" => $location
-//        ];
         $qb = $this->prepareFindBy()
                 ->addClause(DBFieldsRetriver::retriveFieldByPropertyName("location", Card::class), $location)
-                ->addOrderBy(DBFieldsRetriver::retriveFieldByPropertyName("locarionArg", Card::class), QueryString::ORDER_DESC);
+                ->addOrderBy(DBFieldsRetriver::retriveFieldByPropertyName("locationArg", Card::class), QueryString::ORDER_DESC);
 
         if (null !== $locationArg) {
             $qb->addClause(DBFieldsRetriver::retriveFieldByPropertyName("locationArg", Card::class), $locationArg);

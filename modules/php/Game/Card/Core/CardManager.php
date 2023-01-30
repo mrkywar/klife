@@ -2,9 +2,18 @@
 
 namespace SmileLife\Game\Card\Core;
 
+use Core\DB\Fields\DBFieldsRetriver;
+use Core\DB\QueryString;
 use Core\Managers\Core\SuperManager;
 use Core\Serializers\Serializer;
 use SmileLife\Game\Card\Module\BaseGameCardRetriver;
+use const CHOICE_LENGTH_ALL;
+use const CHOICE_LENGTH_HALF;
+use const CHOICE_LENGTH_QUARTER;
+use const CHOICE_LENGTH_THIRD;
+use const CHOICE_LENGTH_THREE_QUARTERS;
+use const CHOICE_LENGTH_TWO_THIRDS;
+use const OPTION_LENGTH;
 
 /**
  * Description of CardManager
@@ -60,6 +69,34 @@ class CardManager extends SuperManager {
             default :
                 return $count;
         }
+    }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Classic calls
+     * ---------------------------------------------------------------------- */
+
+    public function getAllCardsInDeck() {
+        $cards = $this->getAllCardsInLocation(CardPosition::DECK);
+        var_dump($cards);
+        return $cards;
+    }
+
+    private function getAllCardsInLocation(string $location, int $locationArg = null) {
+//        $this->;
+//        $criterias = [
+//            "location" => $location
+//        ];
+        $qb = $this->prepareFindBy()
+                ->addClause(DBFieldsRetriver::retriveFieldByPropertyName("location", Card::class), $location)
+                ->addOrderBy(DBFieldsRetriver::retriveFieldByPropertyName("locarionArg", Card::class), QueryString::ORDER_DESC);
+
+        if (null !== $locationArg) {
+            $qb->addClause(DBFieldsRetriver::retriveFieldByPropertyName("locationArg", Card::class), $locationArg);
+        }
+
+        return $this->execute($qb);
+//        return $this->prepareFindBy()
+//                ->add
     }
 
     /* -------------------------------------------------------------------------

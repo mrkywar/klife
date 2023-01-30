@@ -58,11 +58,11 @@ class PlayerAttributes extends Model {
         $this->maxCards = $maxCards;
         return $this;
     }
-    
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Shortcut
      * ---------------------------------------------------------------------- */
-    
+
     public function setPlayer(Player $player) {
         return $this->setPlayerId($player->getId());
     }
@@ -71,6 +71,18 @@ class PlayerAttributes extends Model {
         return Desperados::getInstance()
                         ->getPlayerManager()
                         ->findBy(["id" => $this->getPlayerId()]);
+    }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Abstract
+     * ---------------------------------------------------------------------- */
+
+    public function getId(): ?int {
+        return $this->getPlayerId();
+    }
+
+    public function setId(int $id) {
+        return $this->setPlayerId($id);
     }
 
 }

@@ -31,8 +31,11 @@ class CardManager extends SuperManager {
         CardLoader::load();
     }
 
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Game Initialization 
+     * ---------------------------------------------------------------------- */
+    
     public function initNewGame(array $options) {
-//        $this->setIsDebug(true); 
         $cards = BaseGameCardRetriver::retrive();
 
         $aviablePositions = range(1, $this->getCardToKeepCount($cards, $options));
@@ -70,6 +73,8 @@ class CardManager extends SuperManager {
                 return $count;
         }
     }
+    
+//    private function distributeFirstCards()
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Classic calls

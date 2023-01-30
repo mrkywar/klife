@@ -93,7 +93,7 @@ abstract class Card extends Model {
      * ---------------------------------------------------------------------- */
 
     public function __construct() {
-        $this->setLocation("deck")
+        $this->setLocation(CardPosition::DECK)
                 ->setIsFlipped(false)
                 ->setIsRotated(false);
 

@@ -26,8 +26,16 @@ class CardManager extends SuperManager {
 //        $this->setIsDebug(true); 
         $cards = BaseGameCardRetriver::retrive();
 
-        //** TODO To redo Cards To keep from options 
+        $aviablePositions = range(1, $this->getCardToKeepCount($cards, $options));
+        shuffle($aviablePositions);
 
+        foreach ($cards as &$card) {
+            if (!empty($aviablePositions)) {
+                $card->setLocationArg(array_shift($aviablePositions));
+            } else {
+                $card->setLocation(CardPosition::TRASH); //card isn't playable
+            }
+        }
 
         $this->create($cards);
     }
@@ -43,6 +51,12 @@ class CardManager extends SuperManager {
                 return round($count / 2);
             case CHOICE_LENGTH_THREE_QUARTERS:
                 return round($count * 3 / 4);
+            case CHOICE_LENGTH_TWO_THIRDS:
+                return round($count * 2 / 3);
+            case CHOICE_LENGTH_QUARTER:
+                return round($count / 4);
+            case CHOICE_LENGTH_THIRD:
+                return round($count / 3);
             default :
                 return $count;
         }

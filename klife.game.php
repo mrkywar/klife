@@ -3,6 +3,7 @@
 use Core\Managers\PlayerManager;
 use SmileLife\Game\Card\Core\CardManager;
 use SmileLife\Game\Game\GameManager;
+use SmileLife\Game\PlayerAttributes\PlayerAttributesManager;
 
 /**
  * ------
@@ -74,6 +75,12 @@ class Klife extends Table {
      */
     private $gameManager;
 
+    /**
+     * 
+     * @var PlayerAttributesManager
+     */
+    private $playerAttributesManager;
+
     function __construct() {
         parent::__construct();
 
@@ -82,6 +89,7 @@ class Klife extends Table {
         $this->playerManager = new PlayerManager();
         $this->cardManager = new CardManager();
         $this->gameManager = new GameManager();
+        $this->playerAttributesManager = new PlayerAttributesManager();
 
         self::initGameStateLabels(array(
                 //    "my_first_global_variable" => 10,
@@ -109,6 +117,7 @@ class Klife extends Table {
     protected function setupNewGame($players, $options = array()) {
         $this->playerManager->initNewGame($players, $options);
         $this->gameManager->initNewGame($options);
+        $this->playerAttributesManager->initNewGame();
         $this->cardManager->initNewGame($options);
 
         //Logger::log("Message", "Test");
@@ -137,7 +146,8 @@ class Klife extends Table {
         //var_dump($deck);
 //        die('OK');
         echo '<pre>';
-        $this->getCardManager()->getAllCardsInDeck();die('G');
+        $this->getCardManager()->getAllCardsInDeck();
+        die('G');
 
         $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
         // Get information about players
@@ -352,11 +362,13 @@ class Klife extends Table {
     public function getGameManager(): GameManager {
         return $this->gameManager;
     }
-    
+
     public function getCardManager(): CardManager {
         return $this->cardManager;
     }
 
-
+    public function getPlayerAttributesManager(): PlayerAttributesManager {
+        return $this->playerAttributesManager;
+    }
 
 }

@@ -146,7 +146,6 @@ class Klife extends Table {
         //var_dump($deck);
 //        die('OK');
 //        echo '<pre>';
-        
 //        $this->getCardManager()->getAllCardsInDeck();
 //        die('G');
 
@@ -174,8 +173,20 @@ class Klife extends Table {
 
     function getGameProgression() {
         // TODO: compute and return the game progression
+        $game = $this->getGameManager()->findBy();
+        $remingingCards = count($this->getCardManager()->getAllCardsInDeck());
 
-        return 0;
+        $maxCards = $game->getAviableCards();
+
+        return intval(100 * round(
+                        ($maxCards - $remingingCards) / $maxCards
+        ));
+
+//        return intval(round(
+//                        count($remingingCards) - 
+//        ));
+//
+//        return 0;
     }
 
 //////////////////////////////////////////////////////////////////////////////

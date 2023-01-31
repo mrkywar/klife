@@ -32,10 +32,6 @@ abstract class Studies extends Card {
         throw new CardException("C-Studies-01 : check if the max studies are not reached");
     }
 
-    public function getClass(): string {
-        return self::class;
-    }
-
     public function getSmilePoints(): int {
         return self::SMILE_POINT;
     }

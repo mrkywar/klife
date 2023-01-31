@@ -17,6 +17,10 @@ class Studies2 extends Studies implements BaseGame {
     public function getLevel(): int {
         return 2;
     }
+    
+    public function getClass(): string {
+        return self::class;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame

@@ -5,6 +5,7 @@ namespace SmileLife\Game\Card\Core;
 use Core\DB\Fields\DBFieldsRetriver;
 use Core\DB\QueryString;
 use Core\Managers\Core\SuperManager;
+use Core\Models\Player;
 use Core\Serializers\Serializer;
 use Klife;
 use SmileLife\Game\Card\Core\Exception\CardException;
@@ -39,9 +40,15 @@ class CardManager extends SuperManager {
 
     public function initNewGame(array $options) {
         $cards = BaseGameCardRetriver::retrive();
+        $maxCards = $this->getCardToKeepCount($cards, $options);
 
-        $aviablePositions = range(1, $this->getCardToKeepCount($cards, $options));
+        $aviablePositions = range(1, $maxCards);
         shuffle($aviablePositions);
+
+        $gameManager = Klife::getInstance()->getGameManager();
+        $game = $gameManager->findBy();
+        $game->setAviableCards($maxCards);
+        $gameManager->update($game);
 
         foreach ($cards as &$card) {
             if (!empty($aviablePositions)) {
@@ -52,7 +59,7 @@ class CardManager extends SuperManager {
         }
 
         $this->create($cards);
-        $this->distribute();
+        $this->distributeInitialsCards();
     }
 
     private function getCardToKeepCount(array $cards, array $options) {
@@ -77,20 +84,19 @@ class CardManager extends SuperManager {
         }
     }
 
-    private function distribute() {
+    private function distributeInitialsCards() {
         $cardManager = Klife::getInstance()->getCardManager();
         $players = Klife::getInstance()->getPlayerManager()->findBy();
 
         foreach ($players as $player) {
             $rawcards = Klife::getInstance()->getCardManager()->drawCard(5);
             $cards = $cardManager->getSerializer()->unserialize($rawcards);
-            
+
             $cardsIds = [];
-            foreach ($cards as $card){
+            foreach ($cards as $card) {
                 $cardsIds[] = $card->getId();
             }
 
-            $this->setIsDebug(true);
             $qb = $this->prepareUpdate($cards)
                     ->addSetter(DBFieldsRetriver::retriveFieldByPropertyName("location", Card::class), CardPosition::PLAYER_HAND)
                     ->addSetter(DBFieldsRetriver::retriveFieldByPropertyName("locationArg", Card::class), $player->getId())
@@ -98,11 +104,6 @@ class CardManager extends SuperManager {
             ;
 
             $this->execute($qb);
-//            foreach ($cards as &$card){
-//                $card->setLocation(CardPosition::PLAYER_HAND)
-//                        ->setLocationArg($player->getId());
-//            }
-//            $this->update($cards);
         }
     }
 
@@ -120,6 +121,10 @@ class CardManager extends SuperManager {
             throw new CardException("Not enouth cards aviable");
         }
         return $cards;
+    }
+
+    public function getPlayerCards(Player $player) {
+        return $this->getAllCardsInLocation(CardPosition::PLAYER_HAND, $player->getId());
     }
 
     private function getAllCardsInLocation(string $location, int $locationArg = null, $limit = null) {

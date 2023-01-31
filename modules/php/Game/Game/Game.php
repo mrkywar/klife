@@ -30,9 +30,15 @@ class Game extends Model {
      * 
      * @var array
      * @ORM\Column{"type":"json", "name":"game_option"}
-     * @ORM\Id
      */
     private $options;
+
+    /**
+     * 
+     * @var float
+     * @ORM\Column{"type":"float", "name":"game_aviable_cards", "exclude":["insert"]}
+     */
+    private $aviableCards;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -53,6 +59,15 @@ class Game extends Model {
 
     public function setOptions(array $options) {
         $this->options = $options;
+        return $this;
+    }
+
+    public function getAviableCards(): float {
+        return $this->aviableCards;
+    }
+
+    public function setAviableCards(float $aviableCards) {
+        $this->aviableCards = $aviableCards;
         return $this;
     }
 

@@ -25,7 +25,6 @@ class PlayerManager extends SuperManager {
             $color = array_shift($defaultColors);
             $player->setColor($color);
         }
-//        $this->setIsDebug(true);
         $this->create($players);
 
         Klife::getInstance()->reattributeColorsBasedOnPreferences($rawPlayers, $gameinfos['player_colors']);

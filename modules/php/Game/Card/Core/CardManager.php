@@ -80,15 +80,29 @@ class CardManager extends SuperManager {
     private function distribute() {
         $cardManager = Klife::getInstance()->getCardManager();
         $players = Klife::getInstance()->getPlayerManager()->findBy();
-        
+
         foreach ($players as $player) {
             $rawcards = Klife::getInstance()->getCardManager()->drawCard(5);
             $cards = $cardManager->getSerializer()->unserialize($rawcards);
-            foreach ($cards as &$card){
-                $card->setLocation(CardPosition::PLAYER_HAND)
-                        ->setLocationArg($player->getId());
+            
+            $cardsIds = [];
+            foreach ($cards as $card){
+                $cardsIds[] = $card->getId();
             }
-            $this->update($cards);
+
+            $this->setIsDebug(true);
+            $qb = $this->prepareUpdate($cards)
+                    ->addSetter(DBFieldsRetriver::retriveFieldByPropertyName("location", Card::class), CardPosition::PLAYER_HAND)
+                    ->addSetter(DBFieldsRetriver::retriveFieldByPropertyName("locationArg", Card::class), $player->getId())
+                    ->addClause(DBFieldsRetriver::retriveFieldByPropertyName("id", Card::class), $cardsIds)
+            ;
+
+            $this->execute($qb);
+//            foreach ($cards as &$card){
+//                $card->setLocation(CardPosition::PLAYER_HAND)
+//                        ->setLocationArg($player->getId());
+//            }
+//            $this->update($cards);
         }
     }
 
@@ -103,7 +117,7 @@ class CardManager extends SuperManager {
     public function drawCard($numberCards = 1) {
         $cards = $this->getAllCardsInLocation(CardPosition::DECK, null, $numberCards);
         if (sizeof($cards) < $numberCards) {
-            throw CardException("Not enouth cards aviable");
+            throw new CardException("Not enouth cards aviable");
         }
         return $cards;
     }
@@ -119,7 +133,7 @@ class CardManager extends SuperManager {
         if (null !== $limit) {
             $qb->setLimit($limit);
         }
-        
+
         return $this->execute($qb);
 //        return $this->prepareFindBy()
 //                ->add

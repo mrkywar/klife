@@ -115,7 +115,7 @@ abstract class QueryStatementFactory {
     private static function createUpdateQuery(QueryBuilder $qb, &$statement) {
         $statement .= QueryString::TYPE_UPDATE;
         $statement .= " `" . $qb->getTableName() . "` ";
-
+        
         //-- Setter
         $statement .= " SET ";
         $statement .= implode(",", $qb->getSetters());

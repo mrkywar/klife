@@ -52,7 +52,7 @@ class CardManager extends SuperManager {
         }
 
         $this->create($cards);
-        $this->distribute();
+        $this->distributeInitialsCards();
     }
 
     private function getCardToKeepCount(array $cards, array $options) {
@@ -77,7 +77,7 @@ class CardManager extends SuperManager {
         }
     }
 
-    private function distribute() {
+    private function distributeInitialsCards() {
         $cardManager = Klife::getInstance()->getCardManager();
         $players = Klife::getInstance()->getPlayerManager()->findBy();
 
@@ -98,11 +98,6 @@ class CardManager extends SuperManager {
             ;
 
             $this->execute($qb);
-//            foreach ($cards as &$card){
-//                $card->setLocation(CardPosition::PLAYER_HAND)
-//                        ->setLocationArg($player->getId());
-//            }
-//            $this->update($cards);
         }
     }
 

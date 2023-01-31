@@ -2,6 +2,7 @@
 
 use Core\Managers\PlayerManager;
 use SmileLife\Game\Card\Core\CardManager;
+use SmileLife\Game\Game\GameDataRetriver;
 use SmileLife\Game\Game\GameManager;
 use SmileLife\Game\PlayerAttributes\PlayerAttributesManager;
 
@@ -77,6 +78,12 @@ class Klife extends Table {
 
     /**
      * 
+     * @var GameDateRetriver
+     */
+    private $dataRetriver;
+
+    /**
+     * 
      * @var PlayerAttributesManager
      */
     private $playerAttributesManager;
@@ -90,6 +97,7 @@ class Klife extends Table {
         $this->cardManager = new CardManager();
         $this->gameManager = new GameManager();
         $this->playerAttributesManager = new PlayerAttributesManager();
+        $this->dataRetriver = new GameDataRetriver($this);
 
         self::initGameStateLabels(array(
                 //    "my_first_global_variable" => 10,
@@ -138,39 +146,8 @@ class Klife extends Table {
      */
 
     protected function getAllDatas() {
-
-        $currentPlayer = $this->playerManager->findBy([
-            "id" => self::getCurrentPlayerId()
-        ]); // !! We must only return informations visible by this player !!
-
-
-        $result["hand"] = $this->cardManager->getPlayerCards($currentPlayer);
-        
-//        echo "<pre>";
-//        var_dump($result);die;
-
-//        echo "<pre>";
-//        var_dump($cardsInHand);
-//        die;
-
-//        $result = array();
-//
-//        // $this->cardManager->tryCard();
-////        $deck = new Deck();
-////        $deck->generateDeck(array());
-//        //var_dump($deck);
-////        die('OK');
-////        echo '<pre>';
-////        $this->getCardManager()->getAllCardsInDeck();
-////        die('G');
-//
-//        $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
-//        // Get information about players
-//        // Note: you can retrieve some extra field you added for "player" table in "dbmodel.sql" if you need it.
-//        $sql = "SELECT player_id id, player_score score FROM player ";
-//        $result['players'] = self::getCollectionFromDb($sql);
-//
-//        // TODO: Gather all information about current game situation (visible by player $current_player_id).
+        // !! We must only return informations visible by this player !!
+        $result = $this->dataRetriver->retrive(self::getCurrentPlayerId());
 
         return $result;
     }

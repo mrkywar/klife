@@ -138,24 +138,39 @@ class Klife extends Table {
      */
 
     protected function getAllDatas() {
-        $result = array();
 
-        // $this->cardManager->tryCard();
-//        $deck = new Deck();
-//        $deck->generateDeck(array());
-        //var_dump($deck);
-//        die('OK');
-//        echo '<pre>';
-//        $this->getCardManager()->getAllCardsInDeck();
-//        die('G');
+        $currentPlayer = $this->playerManager->findBy([
+            "id" => self::getCurrentPlayerId()
+        ]); // !! We must only return informations visible by this player !!
 
-        $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
-        // Get information about players
-        // Note: you can retrieve some extra field you added for "player" table in "dbmodel.sql" if you need it.
-        $sql = "SELECT player_id id, player_score score FROM player ";
-        $result['players'] = self::getCollectionFromDb($sql);
 
-        // TODO: Gather all information about current game situation (visible by player $current_player_id).
+        $result["hand"] = $this->cardManager->getPlayerCards($currentPlayer);
+        
+//        echo "<pre>";
+//        var_dump($result);die;
+
+//        echo "<pre>";
+//        var_dump($cardsInHand);
+//        die;
+
+//        $result = array();
+//
+//        // $this->cardManager->tryCard();
+////        $deck = new Deck();
+////        $deck->generateDeck(array());
+//        //var_dump($deck);
+////        die('OK');
+////        echo '<pre>';
+////        $this->getCardManager()->getAllCardsInDeck();
+////        die('G');
+//
+//        $current_player_id = self::getCurrentPlayerId();    // !! We must only return informations visible by this player !!
+//        // Get information about players
+//        // Note: you can retrieve some extra field you added for "player" table in "dbmodel.sql" if you need it.
+//        $sql = "SELECT player_id id, player_score score FROM player ";
+//        $result['players'] = self::getCollectionFromDb($sql);
+//
+//        // TODO: Gather all information about current game situation (visible by player $current_player_id).
 
         return $result;
     }
@@ -172,7 +187,6 @@ class Klife extends Table {
      */
 
     function getGameProgression() {
-        // TODO: compute and return the game progression
         $game = $this->getGameManager()->findBy();
         $remingingCards = count($this->getCardManager()->getAllCardsInDeck());
 
@@ -181,12 +195,6 @@ class Klife extends Table {
         return intval(100 * round(
                         ($maxCards - $remingingCards) / $maxCards
         ));
-
-//        return intval(round(
-//                        count($remingingCards) - 
-//        ));
-//
-//        return 0;
     }
 
 //////////////////////////////////////////////////////////////////////////////

@@ -22,16 +22,23 @@ class GameDataRetriver {
     }
 
     public function retrive(int $playerId) {
-        $currentPlayer = $this->game->getPlayerManager()->findBy([
+        $playerManager = $this->game->getPlayerManager();
+        $cardManager = $this->game->getCardManager();
+
+        $currentPlayer = $playerManager->findBy([
             "id" => $playerId
         ]); // !! We must only return informations visible by this player !!
 
-        $cardManager = $this->game->getCardManager();
-
-        return [
-            "hand" => $cardManager->getPlayerCards($currentPlayer),
+        $result = [
+            "myhand" => $cardManager->getPlayerCards($currentPlayer),
             "deck" => count($cardManager->getAllCardsInDeck())
         ];
+
+        foreach ($playerManager->findBy() as $player) {
+            $result['player'][$player->getId()] = count($cardManager->getPlayerCards($player));
+        }
+
+        return $result;
     }
 
 }

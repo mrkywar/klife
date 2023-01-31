@@ -30,14 +30,24 @@ This is your game interface. You can edit this HTML in your ".tpl" file.
 
 
 <script type="text/javascript">
+    var jstpl_player_board = `
+        <div  class="playertable whiteblock playertable" id="player_board_\${player_id}" >
+            <div class="playertablename" style="color:#\${player_color}">
+                    \${player_name}
+            </div>
+            <div class="playertablecard" id="playertable_\${player_id}">
+            </div>
+            <div class="clear"></div>
+        </div>
+    `;
 
 // Javascript HTML templates
 
-/*
-// Example:
-var jstpl_some_game_item='<div class="my_game_item" id="my_game_item_${MY_ITEM_ID}"></div>';
-
-*/
+            /*
+             // Example:
+             var jstpl_some_game_item='<div class="my_game_item" id="my_game_item_${MY_ITEM_ID}"></div>';
+             
+             */
 
 </script>  
 

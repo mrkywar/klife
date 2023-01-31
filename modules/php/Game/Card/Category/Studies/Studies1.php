@@ -18,6 +18,10 @@ class Studies1 extends Studies implements BaseGame {
         return 1;
     }
 
+    public function getClass(): string {
+        return self::class;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

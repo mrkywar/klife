@@ -10,4 +10,5 @@ interface CardPosition {
 
     const DECK = "deck";
     const TRASH = "trash";
+    const PLAYER_HAND = "hand";
 }

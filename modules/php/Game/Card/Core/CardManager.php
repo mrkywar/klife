@@ -48,6 +48,7 @@ class CardManager extends SuperManager {
         $gameManager = Klife::getInstance()->getGameManager();
         $game = $gameManager->findBy();
         $game->setAviableCards($maxCards);
+        $gameManager->setIsDebug(true);
         $gameManager->update($game);
 
         foreach ($cards as &$card) {

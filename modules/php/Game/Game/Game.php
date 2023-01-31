@@ -37,7 +37,6 @@ class Game extends Model {
      * 
      * @var float
      * @ORM\Column{"type":"float", "name":"game_aviable_cards", "exclude":["insert"]}
-     * @ORM\Id
      */
     private $aviableCards;
 

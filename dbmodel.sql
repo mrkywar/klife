@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `log` (
 CREATE TABLE IF NOT EXISTS `game` (
     `game_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     `game_option` text NULL,
-    `game_aviable_cards` int(5) NULL,
+    `game_aviable_cards` float(5.2) NULL,
     PRIMARY KEY(`game_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 

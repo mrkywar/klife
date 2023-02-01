@@ -21,11 +21,13 @@ define([
     "ebg/counter",
 
     g_gamethemeurl + 'modules/js/Core/ToolsTrait.js',
+    g_gamethemeurl + 'modules/js/Game/CardTrait.js'
 ], function (dojo, declare) {
     return declare(
             "bgagame.klife",
             [
-                common.ToolsTrait
+                common.ToolsTrait,
+                smilelife.CardTrait
             ],
             {
                 //ebg.core.gamegui, {

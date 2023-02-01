@@ -53,26 +53,26 @@ define([
                  "gamedatas" argument contains all datas retrieved by your "getAllDatas" PHP method.
                  */
 
-                setup: function (gamedatas)
-                {
-                    this.debug("Starting game setup");
-                    this.debug(gamedatas);
-                    // Setting up player boards
-                    for (var player_id in gamedatas.players)
-                    {
-                        var player = gamedatas.players[player_id];
-
-                        // TODO: Setting up players boards if needed
-                    }
-
-                    // TODO: Set up your game interface here, according to "gamedatas"
-
-
-                    // Setup game notifications to handle (see "setupNotifications" method below)
-                    this.setupNotifications();
-
-                    this.debug("Ending game setup");
-                },
+//                setup: function (gamedatas)
+//                {
+//                    this.debug("Starting game setup");
+//                    this.debug(gamedatas);
+//                    // Setting up player boards
+//                    for (var player_id in gamedatas.players)
+//                    {
+//                        var player = gamedatas.players[player_id];
+//
+//                        // TODO: Setting up players boards if needed
+//                    }
+//
+//                    // TODO: Set up your game interface here, according to "gamedatas"
+//
+//
+//                    // Setup game notifications to handle (see "setupNotifications" method below)
+//                    this.setupNotifications();
+//
+//                    this.debug("Ending game setup");
+//                },
 
                 ///////////////////////////////////////////////////
                 //// Game & client states

@@ -10,6 +10,9 @@ const PREF_CHOICE_SIZE_XL = 1105;
 const PREF_CARD_SIZE = 110;
 const PREF_TOOLTIP_SIZE = 111;
 
+const SPRITE_NB_COLUMNS = 15;
+const SPRITE_NB_ROWS = 7;
+
 define([
     'dojo',
     'dojo/_base/declare',
@@ -35,7 +38,9 @@ define([
                         "XL": PREF_CHOICE_SIZE_XL
                     }; // Sizes among with the user can chose in the prefs: XS, S, M, L, XL
                     this.card_dimensions = this.computePossibleCardDimensions();  // Get the card dimensions for each size
-//                    dojo.subscribe('playNumber', this, "notifPlayNumber");
+
+                    this.sprite_nb_columns = SPRITE_NB_COLUMNS; // Number of images in the sprite
+                    this.sprite_nb_rows = SPRITE_NB_ROWS; // Number of images in the sprite
 
                     this.debug(this.card_dimensions);
                 },
@@ -47,6 +52,11 @@ define([
                     // Get user preferences for card size
                     this.card_size = this.getUserCardSizePreference(PREF_CARD_SIZE);
                     this.tooltip_card_size = this.getUserCardSizePreference(PREF_TOOLTIP_SIZE);
+
+                    // Apply user preferences in CSS
+                    this.applyCardSize(this.card_size, ".card");
+                    this.applyPlayerBoardMinimumSize(this.card_size);
+                    this.applyCardSize(this.tooltip_card_size, ".card.tooltip");
 
                     this.debug(this.card_size, this.tooltip_card_size);
 
@@ -85,6 +95,43 @@ define([
                     }
                     return null;
                 },
+
+                applyCardSize: function (size, HTML_class_list) {
+                    // Compute the size of the sprite in pixels
+                    var width = this.card_dimensions[size].width;
+                    var height = this.card_dimensions[size].height;
+                    var radius = this.card_dimensions[size].radius;
+
+                    var sprite_width = this.sprite_nb_columns * width;
+                    var sprite_height = this.sprite_nb_rows * height;
+
+                    // Create the CSS piece
+                    var css = dojo.string.substitute(`
+			${HTML_class_list} {
+				width: ${width}px !important;
+				height: ${height}px !important;
+				background-size: ${sprite_width}px ${sprite_height}px !important;
+				border-radius: ${radius}px;
+			}`);
+
+                    // Add this into the CSS
+                    this.insertCSS(css);
+                },
+
+                applyPlayerBoardMinimumSize: function (size) {
+                    // Get the height of a card
+                    var height = this.card_dimensions[size].height;
+
+                    // Create the CSS piece
+                    var css = dojo.string.substitute(`
+			.player_board {
+				min-height: ${height}px !important;
+			}`);
+
+                    // Add this into the CSS
+                    this.insertCSS(css);
+                },
+
             }
 
 

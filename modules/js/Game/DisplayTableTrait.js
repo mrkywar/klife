@@ -28,8 +28,9 @@ define([
 
                         dojo.place(this.format_block('jstpl_player_board', player), 'board');
                         
+                        
                     }
-
+                    dojo.place(this.format_block('jstpl_myhand'), 'board');
                     // Add this into the CSS
 
                 },

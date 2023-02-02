@@ -45,6 +45,17 @@
                 <div class="clear"></div>
             </div>
     `;
+    
+    var jstpl_card = `
+        <div class="cardontable card_\${card_type}" id="\${card_location}_card_\${card_id}" data-id="\${card_id}">
+        </div>
+    `;
+    
+    var jstpl_deck = `
+        <div class="cardontable card_0">
+            <div class="count-status">\${deck}</div>
+        </div>
+    `;
 
 // Javascript HTML templates
 

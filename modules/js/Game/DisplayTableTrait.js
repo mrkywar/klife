@@ -21,17 +21,20 @@ define([
                 displayTable: function (gamedatas) {
                     this.debug("setup Table", gamedatas);
 
+                    dojo.place(this.format_block('jstpl_myhand'), 'board');
 
                     for (var playerId in gamedatas.players) {
                         var player = gamedatas.players[playerId];
                         player['playerId'] = playerId;
 
                         dojo.place(this.format_block('jstpl_player_board', player), 'board');
-                        
-                        
+
                     }
-                    dojo.place(this.format_block('jstpl_myhand'), 'board');
-                    // Add this into the CSS
+
+                    for (var cardId in gamedatas.myhand) {
+                        this.debud(cardId, gamedatas.myhand[cardId]);
+                    }
+
 
                 },
             }

@@ -32,7 +32,7 @@ define([
                     }
 
                     for (var cardId in gamedatas.myhand) {
-                        this.debud(cardId, gamedatas.myhand[cardId]);
+                        this.debug(cardId, gamedatas.myhand[cardId]);
                     }
 
 

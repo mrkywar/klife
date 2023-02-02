@@ -21,13 +21,15 @@ define([
     "ebg/counter",
 
     g_gamethemeurl + 'modules/js/Core/ToolsTrait.js',
-    g_gamethemeurl + 'modules/js/Game/CardTrait.js'
+    g_gamethemeurl + 'modules/js/Game/CardTrait.js',
+    g_gamethemeurl + 'modules/js/Game/DisplayTableTrait.js',
 ], function (dojo, declare) {
     return declare(
             "bgagame.klife",
             [
                 common.ToolsTrait,
-                smilelife.CardTrait
+                smilelife.CardTrait,
+                smilelife.DisplayTableTrait
             ],
             {
                 //ebg.core.gamegui, {
@@ -52,6 +54,13 @@ define([
                  
                  "gamedatas" argument contains all datas retrieved by your "getAllDatas" PHP method.
                  */
+
+                setup: function (gamedatas) {
+                    this.debug("Setup", gamedatas);
+                    this.setupCard(gamedatas);
+                    this.displayTable(gamedatas);
+
+                },
 
 //                setup: function (gamedatas)
 //                {

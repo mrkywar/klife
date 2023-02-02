@@ -17,7 +17,10 @@ define([
     'dojo',
     'dojo/_base/declare',
     'ebg/core/gamegui',
+    
     g_gamethemeurl + 'modules/js/Core/ToolsTrait.js'
+    
+    
 ], function (dojo, declare) {
     return declare(
             'smilelife.CardTrait',
@@ -45,8 +48,8 @@ define([
                     this.debug(this.card_dimensions);
                 },
 
-                setup: function (gamedatas) {
-                    this.debug("Setup in trait", gamedatas);
+                setupCard: function (gamedatas) {
+                    this.debug("Setup Cards", gamedatas);
 
 
                     // Get user preferences for card size

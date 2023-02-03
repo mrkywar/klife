@@ -23,6 +23,10 @@ class SpecialBirthday extends Special implements BaseGame {
         throw new CardException("C-SpecialBirthday-01 : Not implemented yet");
     }
 
+    public function getType(): int {
+        return 91;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

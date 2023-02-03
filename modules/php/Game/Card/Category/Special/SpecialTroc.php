@@ -24,6 +24,11 @@ class SpecialTroc extends Special implements BaseGame{
         throw new CardException("C-SpecialTroc-01 : Not implemented yet");
     }
     
+    public function getType(): int {
+        return 99;
+    }
+
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

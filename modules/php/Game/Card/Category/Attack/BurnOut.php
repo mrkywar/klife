@@ -17,6 +17,10 @@ class BurnOut extends Attack implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
+    
+    public function getType(): int {
+        return 85;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame

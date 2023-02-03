@@ -23,6 +23,10 @@ class SpecialJobBoost extends Special implements BaseGame {
         throw new CardException("C-SpecialJobBoost-01 : Not implemented yet");
     }
 
+    public function getType(): int {
+        return 98;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

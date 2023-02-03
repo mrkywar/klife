@@ -18,6 +18,9 @@ class GradeRepetition extends Attack implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 90;
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

@@ -1,37 +1,42 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Acquisition;
+namespace SmileLife\Game\Card\Category\Acquisition\Travel;
 
+use SmileLife\Game\Card\Category\Acquisition\Acquisition;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Pet
+ * Description of Travel
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Pet extends Acquisition implements BaseGame {
+abstract class Travel extends Acquisition {
+
+    private const TRAVEL_PRICE = 3;
+    private const SMILE_POINTS = 1;
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
-
-    public function getPrice(): int {
-        return 0;
-    }
 
     public function getClass(): string {
         return self::class;
     }
 
+    public function getPrice(): int {
+        return self::TRAVEL_PRICE;
+    }
+
     public function getSmilePoints(): int {
-        return 1;
+        return self::SMILE_POINTS;
     }
 
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Implement BaseGame
+     *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */
 
     public function getBaseCardCount(): int {
-        return 4;
+        return 1;
     }
 
 }

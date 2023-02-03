@@ -26,8 +26,11 @@ class Waiter extends Interim implements BaseGame {
         return 0;
     }
 
+    public function getType(): int {
+        return 14;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
 }

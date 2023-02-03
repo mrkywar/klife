@@ -1,16 +1,16 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Love;
+namespace SmileLife\Game\Card\Category\Love\Wedding;
 
+use SmileLife\Game\Card\Category\Love\Love;
 use SmileLife\Game\Card\Core\Exception\CardException;
-use SmileLife\Game\Card\Module\BaseGame;
 
 /**
  * Description of Wedded
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Wedding extends Love implements BaseGame{
+abstract class Wedding extends Love {
 
     private const SMILE_POINTS = 3;
 
@@ -30,20 +30,16 @@ class Wedding extends Love implements BaseGame{
         return true;
     }
 
-    public function getClass(): string {
-        return self::class;
-    }
-
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
 
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Implement BaseGame
+     *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */
     
     public function getBaseCardCount(): int {
-        return 7;
+        return 1;
     }
 
 }

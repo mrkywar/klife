@@ -27,6 +27,9 @@ class Astronaut extends Job implements BaseGame {
         return 6;
     }
 
+    public function getType(): int {
+        return 17;
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

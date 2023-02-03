@@ -26,6 +26,9 @@ class Policeman extends Official implements BaseGame {
         return 1;
     }
 
+    public function getType(): int {
+        return 9;
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

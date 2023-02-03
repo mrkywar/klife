@@ -22,6 +22,10 @@ class Studies1 extends Studies implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 1;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

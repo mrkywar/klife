@@ -26,6 +26,10 @@ class Bandit extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 0;
     }
+    
+    public function getType(): int {
+        return 20;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

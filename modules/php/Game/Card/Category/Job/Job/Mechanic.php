@@ -26,6 +26,11 @@ class Mechanic extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 1;
     }
+    
+    public function getType(): int {
+        return 26;
+    }
+
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

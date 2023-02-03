@@ -33,6 +33,13 @@ abstract class Card extends Model {
     /**
      * 
      * @var int|null
+     * @ORM\Column{"type":"integer", "name":"card_type"}
+     */
+    private $type;
+    
+    /**
+     * 
+     * @var int|null
      * @ORM\Column{"type":"integer", "name":"card_owner_id"}
      */
     private $ownerId;
@@ -127,6 +134,8 @@ abstract class Card extends Model {
     abstract public function canBeAttacked(): bool;
 
     abstract public function getSmilePoints(): int;
+    
+    abstract public function getType():int ;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 

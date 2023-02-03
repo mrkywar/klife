@@ -26,6 +26,10 @@ class Architect extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 4;
     }
+    
+    public function getType(): int {
+        return 16;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

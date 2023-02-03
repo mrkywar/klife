@@ -26,6 +26,11 @@ class HeadOfPurchasing extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 3;
     }
+    
+    public function getType(): int {
+        return 24;
+    }
+
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

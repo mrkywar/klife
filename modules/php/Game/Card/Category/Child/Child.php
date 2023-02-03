@@ -33,7 +33,7 @@ abstract class Child extends Card{
     }
 
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Implement BaseGame
+     *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */
 
     public function getBaseCardCount(): int {

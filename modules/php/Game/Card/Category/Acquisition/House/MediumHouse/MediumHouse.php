@@ -1,15 +1,15 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Acquisition\Home;
+namespace SmileLife\Game\Card\Category\Acquisition\House\MediumHouse;
 
-use SmileLife\Game\Card\Module\BaseGame;
+use SmileLife\Game\Card\Category\Acquisition\House\House;
 
 /**
- * Description of Home1
+ * Description of MediumHouse
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Home1 extends Home implements BaseGame {
+abstract class MediumHouse extends House {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -19,19 +19,15 @@ class Home1 extends Home implements BaseGame {
     }
 
     public function getPrice(): int {
-        return 6;
+        return 8;
     }
 
     public function getSmilePoints(): int {
-        return 1;
+        return 2;
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */
-
-    public function getBaseCardCount(): int {
-        return 2;
-    }
 
 }

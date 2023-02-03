@@ -11,7 +11,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Child extends Card implements BaseGame {
+abstract class Child extends Card{
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -37,7 +37,7 @@ class Child extends Card implements BaseGame {
      * ---------------------------------------------------------------------- */
 
     public function getBaseCardCount(): int {
-        return 10;
+        return 1;
     }
 
 }

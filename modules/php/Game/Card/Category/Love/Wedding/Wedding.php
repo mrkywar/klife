@@ -33,6 +33,10 @@ abstract class Wedding extends Love {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
+    
+    public function getRefClass(): string {
+        return self::class;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)

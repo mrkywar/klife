@@ -28,6 +28,10 @@ abstract class Special extends Card implements CardEffectInterface{
         return 0;
     }
     
+    public function getRefClass(): string {
+        return self::class;
+    }
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Base Game Forced (1 card in each special card)
      * ---------------------------------------------------------------------- */

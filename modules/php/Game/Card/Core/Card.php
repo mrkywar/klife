@@ -36,7 +36,7 @@ abstract class Card extends Model {
      * @ORM\Column{"type":"integer", "name":"card_type"}
      */
     private $type;
-    
+
     /**
      * 
      * @var int|null
@@ -78,6 +78,13 @@ abstract class Card extends Model {
      * @ORM\Column{"type":"bool", "name":"card_is_rotated", "default":"false"}
      */
     private $isRotated;
+
+    /**
+     * 
+     * @var string|null
+     * @ORM\Column{"type":"string", "name":"card_title"}
+     */
+    private $title;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Unpersisted property
@@ -134,8 +141,15 @@ abstract class Card extends Model {
     abstract public function canBeAttacked(): bool;
 
     abstract public function getSmilePoints(): int;
-    
-    abstract public function getType():int ;
+
+    abstract public function getType(): int;
+
+    abstract public function getRefClass(): string;
+
+    public function getTitle(): string {
+        $class = $this->getRefClass();
+        return substr($class, strrpos($class, "\\") + 1);
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -218,13 +232,17 @@ abstract class Card extends Model {
     public function getHelps(): array {
         return $this->helps;
     }
-    
+
     public function setType(?int $type) {
         $this->type = $type;
         return $this;
     }
 
-    
+    public function setTitle(?string $title) {
+        $this->title = $title;
+        return $this;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Array Add Item
      * ---------------------------------------------------------------------- */

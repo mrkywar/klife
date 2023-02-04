@@ -28,6 +28,10 @@ class ExcellenceReward extends Reward implements BaseGame {
         return self::class;
     }
 
+    public function getRefClass(): string {
+        return self::class;
+    }
+
     public function getSmilePoints(): int {
         return 4;
     }

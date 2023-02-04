@@ -30,4 +30,7 @@ abstract class Flirt extends Love {
         return self::SMILE_POINTS;
     }
 
+    public function getRefClass(): string {
+        return $this->getClass();
+    }
 }

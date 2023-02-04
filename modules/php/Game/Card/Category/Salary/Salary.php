@@ -13,7 +13,7 @@ use SmileLife\Game\Card\Core\Exception\CardException;
 abstract class Salary extends Card {
 
     private const SMILE_POINTS = 1;
-    
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - new Abstract
      * ---------------------------------------------------------------------- */
@@ -34,6 +34,10 @@ abstract class Salary extends Card {
 
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
+    }
+
+    public function getRefClass(): string {
+        return self::class;
     }
 
 }

@@ -35,5 +35,9 @@ abstract class Studies extends Card {
     public function getSmilePoints(): int {
         return self::SMILE_POINT;
     }
+    
+    public function getRefClass(): string {
+        return self::class;
+    }
 
 }

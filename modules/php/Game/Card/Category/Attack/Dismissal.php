@@ -22,6 +22,10 @@ class Dismissal extends Attack implements BaseGame {
         return 87;
     }
 
+    public function getRefClass(): string {
+        return self::class;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

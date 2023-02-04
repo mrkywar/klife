@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `card` (
   `card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `card_class` varchar(255) NOT NULL COMMENT 'Type of the card (matches the class name the card need to be instanciated with)',
   `card_type` int(10) NULL COMMENT 'Type of the card to display',
+  `card_title` varchar(255) NULL COMMENT 'Title of the card to display',
   `card_owner_id` int(10) NULL COMMENT 'The id of the owner it it means something. 0 otherwise',
   `card_location` varchar(50) NULL COMMENT 'deck, hand, discard, removed, or a specific location on board',
   `card_location_arg` int(10) NULL COMMENT 'Position in the given location (+ owner if there is one). Bottom is 0, top is max.',

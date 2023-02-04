@@ -11,6 +11,14 @@ use SmileLife\Game\Card\Category\Acquisition\Acquisition;
  */
 abstract class House extends Acquisition {
     /* -------------------------------------------------------------------------
+     *                  BEGIN - new Abstract
+     * ---------------------------------------------------------------------- */
+
+    public function getRefClass(): string {
+        return self::class;
+    }
+
+    /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */
 

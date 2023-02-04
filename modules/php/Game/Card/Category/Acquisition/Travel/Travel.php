@@ -19,16 +19,16 @@ abstract class Travel extends Acquisition {
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    public function getClass(): string {
-        return self::class;
-    }
-
     public function getPrice(): int {
         return self::TRAVEL_PRICE;
     }
 
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
+    }
+
+    public function getRefClass(): string {
+        return $this->getClass();
     }
 
     /* -------------------------------------------------------------------------

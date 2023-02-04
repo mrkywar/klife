@@ -37,9 +37,13 @@ class Adultery extends Love implements BaseGame {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
-    
+
     public function getType(): int {
         return 54;
+    }
+
+    public function getRefClass(): string {
+        return self::class;
     }
 
     /* -------------------------------------------------------------------------

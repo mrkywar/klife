@@ -22,6 +22,10 @@ class Divorce extends Attack implements BaseGame {
         return 88;
     }
 
+    public function getRefClass(): string {
+        return self::class;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

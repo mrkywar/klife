@@ -21,6 +21,11 @@ class GradeRepetition extends Attack implements BaseGame {
     public function getType(): int {
         return 90;
     }
+
+    public function getRefClass(): string {
+        return self::class;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */
@@ -28,4 +33,5 @@ class GradeRepetition extends Attack implements BaseGame {
     public function getBaseCardCount(): int {
         return 5;
     }
+
 }

@@ -27,6 +27,10 @@ abstract class Child extends Card{
     public function getSmilePoints(): int {
         return 2;
     }
+    
+    public function getRefClass(): string {
+        return $this->getClass();
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)

@@ -19,6 +19,13 @@
             <div id="myhand_wrap" class="whiteblock">
                 <h3>{MY_HAND}</h3>
                 <div id="myhand">
+                    <!-- BEGIN myhand_card -->
+                    <div class="cardontable card_{type} card_{shortclass}" id="{location}_card_{id}" data-id="{id}">
+
+                        <span class="card_name">{title}</span>
+                        <span class="debug">{type}</span>
+                    </div>
+                    <!-- END myhand_card -->
                 </div>
                 <div class="clear"></div>
             </div>
@@ -28,7 +35,7 @@
                 <div class="playertablename" style="color:#{color}">
                     {name}
                 </div>
-                <div class="playertablecard" id="playertable_{playerId}">
+                <div class="playertablecard" id="playertable_{id}">
                 </div>
                 <div class="clear"></div>
             </div>

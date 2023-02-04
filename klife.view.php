@@ -2,6 +2,7 @@
 
 use Core\Managers\PlayerManager;
 use Core\Models\Player;
+use SmileLife\Game\Card\Core\Card;
 
 /**
  * ------
@@ -39,35 +40,51 @@ class view_klife_klife extends game_view {
     function build_page($viewArgs) {
         global $g_user;
         $this->page->begin_block("klife_klife", "player");
-        $this->page->begin_block("klife_klife", "myhand");
+//        $this->page->begin_block("klife_klife", "myhand");
+        $this->page->begin_block("klife_klife", "myhand_card");
+
         /**
          * @var PlayerManager
          */
         $playerManager = $this->game->getPlayerManager();
         $cardManager = $this->game->getCardManager();
-        
-        $this->page->insert_block("myhand",[
-            "MY_HAND" => clienttranslate('MY_HAND')
-        ]);
+        $cardSerializer = $cardManager->getSerializer();
+
+        $this->tpl['MY_HAND'] = self::_("My hand");
 
         $players = $playerManager->findBy();
         $connectedPlayer = $playerManager->findBy([
             "id" => $g_user->get_id()
         ]);
 
-//        var_dump($connectedPlayer);
+        $cardsInHand = $cardSerializer->unserialize(
+                $cardManager->getPlayerCards($connectedPlayer)
+        );
+
+        foreach ($cardsInHand as $card) {
+            $this->buildCard($card);
+        }
 
         foreach ($players as $player) {
             $this->buildPlayer($player);
         }
-
     }
 
     private function buildPlayer(Player $player) {
         return $this->page->insert_block("player", [
-                    'playerId' => $player->getId(),
+                    'id' => $player->getId(),
                     'color' => $player->getColor(),
                     'name' => $player->getName(),
+        ]);
+    }
+
+    private function buildCard(Card $card) {
+        return $this->page->insert_block("myhand_card", [
+                    "id" => $card->getId(),
+                    "type" => $card->getType(),
+                    "shortclass" => $card->getClass(),
+                    "location" => $card->getLocation(),
+                    "title" => clienttranslate($card->getTitle())
         ]);
     }
 

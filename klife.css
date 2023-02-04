@@ -70,21 +70,31 @@
 /*-----------------------------------------------------------------------------
             BEGIN - cards on table 
 ------------------------------------------------------------------------------*/
+
+
 .cardontable {
     position: relative;
     display: block;
+    float: left;
+    border: 1px black solid;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+}
+
+/*--------------------------------------------------------------------------
+                BEGIN - cards size M
+--------------------------------------------------------------------------*/
+.card_m .cardontable {
     width: 100px;
     height: 150px;
     background-image: url('img/cards-2-num.jpg');
-    float: left;
     margin-bottom: 5px; 
     margin-right: 5px;
+    border-radius: 5px;
 }
 
-
-/*-----------------------------------------------------------------------------
-            BEGIN - cards display COL 
-------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------
+                BEGIN - cards display COL 
+--------------------------------------------------------------------------*/
 .card_1, .card_16, .card_31, .card_46, .card_61, .card_76, .card_91{
     background-position-x: -100px;
 }
@@ -127,45 +137,36 @@
 .card_14, .card_29, .card_44, .card_59, .card_74, .card_89, .card_104{
     background-position-x: -1300px;
 }
-/*-----------------------------------------------------------------------------
+/*--------------------------------------------------------------------------
             BEGIN - cards display LINE 
-------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------*/
 .card_15, .card_16, .card_17, .card_18, .card_19, .card_20, .card_21, .card_22,
-.card_23, .card_24, .card_25, .card_26, .card_27, .card_28, .card_29
-{
+.card_23, .card_24, .card_25, .card_26, .card_27, .card_28, .card_29 {
     background-position-y: -150px;
 }
-
 .card_30, .card_31, .card_32, .card_33, .card_34, .card_35, .card_36, .card_37,
-.card_38, .card_39, .card_40, .card_41, .card_42, .card_43, .card_44
-{
+.card_38, .card_39, .card_40, .card_41, .card_42, .card_43, .card_44 {
     background-position-y: -300px;
 }
-
-
 .card_45, .card_46, .card_47, .card_48, .card_49, .card_50, .card_51, .card_52,
-.card_53, .card_54, .card_55, .card_56, .card_57, .card_58, .card_59
-{
+.card_53, .card_54, .card_55, .card_56, .card_57, .card_58, .card_59 {
     background-position-y: -450px;
 }
-
 .card_60, .card_61, .card_62, .card_63, .card_64, .card_65, .card_66, .card_67,
-.card_68, .card_69, .card_70, .card_71, .card_72, .card_73, .card_74
-{
+.card_68, .card_69, .card_70, .card_71, .card_72, .card_73, .card_74 {
     background-position-y: -600px;
 }
-
 .card_75, .card_76, .card_77, .card_78, .card_79, .card_80, .card_81, .card_82,
-.card_83, .card_84, .card_85, .card_86, .card_87, .card_88, .card_89
-{
+.card_83, .card_84, .card_85, .card_86, .card_87, .card_88, .card_89 {
     background-position-y: -750px;
 }
-
 .card_90, .card_91, .card_92, .card_93, .card_94, .card_95, .card_96, .card_97,
-.card_98, .card_99, .card_100 /*, .card_101, .card_102, .card_103, .card_104*/
-{
+.card_98, .card_99, .card_100, .card_101, .card_102, .card_103, .card_104 {
     background-position-y: -900px;
 }
+
+
+
 
 
 /*-----------------------------------------------------------------------------

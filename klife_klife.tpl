@@ -1,5 +1,5 @@
 {OVERALL_GAME_HEADER}
-<div id="gamepanel">
+<div id="gamepanel" class="card_m tooltip_xl">
     <div class="container">
         <div id="carddeck" >
             <div class="">

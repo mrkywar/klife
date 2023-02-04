@@ -33,6 +33,10 @@ define([
 
                     for (var cardId in gamedatas.myhand) {
                         this.debug(cardId, gamedatas.myhand[cardId]);
+                        var card = gamedatas.myhand[cardId];
+                        card['cardId'] = cardId;
+                        
+                        dojo.place(this.format_block('jstpl_card', card), 'myhand');
                     }
 
 

@@ -1,5 +1,5 @@
 {OVERALL_GAME_HEADER}
-<div id="gamepanel">
+<div id="gamepanel" class="card_m tooltip_xl">
     <div class="container">
         <div id="carddeck" >
             <div class="">
@@ -48,6 +48,7 @@
     
     var jstpl_card = `
         <div class="cardontable card_\${card_type}" id="\${card_location}_card_\${card_id}" data-id="\${card_id}">
+            <span class="debug">\${card_type}</span>
         </div>
     `;
     

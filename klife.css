@@ -79,7 +79,14 @@
     border: 1px black solid;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
 }
-
+.card_name{
+    text-transform: uppercase;
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
 /*--------------------------------------------------------------------------
                 BEGIN - cards size M
 --------------------------------------------------------------------------*/
@@ -90,6 +97,10 @@
     margin-bottom: 5px; 
     margin-right: 5px;
     border-radius: 5px;
+}
+.card_m .card_name{
+    font-size: 8px;
+    margin-top: 18px;
 }
 
 /*--------------------------------------------------------------------------

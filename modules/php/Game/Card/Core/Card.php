@@ -146,10 +146,7 @@ abstract class Card extends Model {
 
     abstract public function getRefClass(): string;
 
-    public function getTitle(): string {
-        $class = $this->getRefClass();
-        return substr($class, strrpos($class, "\\") + 1);
-    }
+    abstract public function getClass(): string;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Getters & Setters 
@@ -159,7 +156,10 @@ abstract class Card extends Model {
         return $this->id;
     }
 
-    abstract public function getClass(): string;
+    public function getTitle(): string {
+        $class = $this->getRefClass();
+        return clienttranslate(substr($class, strrpos($class, "\\") + 1));
+    }
 
     public function getOwnerId(): ?int {
         return $this->ownerId;

@@ -18,6 +18,10 @@ class Illness extends Attack implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 86;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */
@@ -25,4 +29,5 @@ class Illness extends Attack implements BaseGame {
     public function getBaseCardCount(): int {
         return 5;
     }
+
 }

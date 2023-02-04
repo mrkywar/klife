@@ -10,14 +10,17 @@ use SmileLife\Game\Card\Module\BaseGame;
  * @author Mr_Kywar mr_kywar@gmail.com
  */
 class GreatTeacher extends Teacher implements BaseGame {
-    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Override
      * ---------------------------------------------------------------------- */
+
     public function canBePlayed(): bool {
         throw new CardException("C-GreatTeacher-01 : check the rules !");
     }
 
+    public function getType(): int {
+        return 7;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract

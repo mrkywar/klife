@@ -27,6 +27,10 @@ class Pharmacist extends Job implements BaseGame {
         return 5;
     }
 
+    public function getType(): int {
+        return 27;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

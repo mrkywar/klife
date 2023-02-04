@@ -22,6 +22,10 @@ class TheaterFlirt extends Flirt implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 45;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */
@@ -29,4 +33,5 @@ class TheaterFlirt extends Flirt implements BaseGame {
     public function getBaseCardCount(): int {
         return 2;
     }
+
 }

@@ -63,3 +63,30 @@ $game_options = array(
     ),
 );
 
+$game_preferences = array(
+    PREF_CARD_SIZE => array(
+        'name' => totranslate('Card size'),
+        'needReload' => true, // after user changes this preference game interface would auto-reload
+        'values' => array(
+            PREF_CHOICE_SIZE_XS => array('name' => totranslate('XS')),
+            PREF_CHOICE_SIZE_S => array('name' => totranslate('S')),
+            PREF_CHOICE_SIZE_M => array('name' => totranslate('M')),
+            PREF_CHOICE_SIZE_L => array('name' => totranslate('L')),
+            PREF_CHOICE_SIZE_XL => array('name' => totranslate('XL')),
+        ),
+        'default' => PREF_CHOICE_SIZE_S
+    ),
+    PREF_TOOLTIP_SIZE => array(
+        'name' => totranslate('Card size in tooltip'),
+        'needReload' => true, // after user changes this preference game interface would auto-reload
+        'values' => array(
+            PREF_CHOICE_SIZE_XS => array('name' => totranslate('XS')),
+            PREF_CHOICE_SIZE_S => array('name' => totranslate('S')),
+            PREF_CHOICE_SIZE_M => array('name' => totranslate('M')),
+            PREF_CHOICE_SIZE_L => array('name' => totranslate('L')),
+            PREF_CHOICE_SIZE_XL => array('name' => totranslate('XL')),
+        ),
+        'default' => PREF_CHOICE_SIZE_XL
+    )
+);
+

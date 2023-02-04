@@ -1,15 +1,16 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Acquisition\Home;
+namespace SmileLife\Game\Card\Category\Acquisition\Pet;
 
+use SmileLife\Game\Card\Category\Acquisition\Pet\Pet;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Home1
+ * Description of UnicornPet
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Home3 extends Home implements BaseGame {
+class UnicornPet extends Pet implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -18,20 +19,19 @@ class Home3 extends Home implements BaseGame {
         return self::class;
     }
 
-    public function getPrice(): int {
-        return 10;
+    public function getType(): int {
+        return 69;
     }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Override
+     * ---------------------------------------------------------------------- */
 
     public function getSmilePoints(): int {
         return 3;
     }
 
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Implement BaseGame
+     *                  BEGIN - Implement BaseGame is in Pet 
      * ---------------------------------------------------------------------- */
-
-    public function getBaseCardCount(): int {
-        return 1;
-    }
-
 }

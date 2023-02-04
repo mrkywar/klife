@@ -26,6 +26,11 @@ class Medium extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 0;
     }
+    
+    public function getType(): int {
+        return 29;
+    }
+
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

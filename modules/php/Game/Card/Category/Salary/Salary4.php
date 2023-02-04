@@ -22,6 +22,10 @@ class Salary4 extends Salary implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 36;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

@@ -25,6 +25,10 @@ class HistoryTeacher extends Teacher implements BaseGame {
     public function getRequiredStudies(): int {
         return 2;
     }
+    
+    public function getType(): int {
+        return 5;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

@@ -22,6 +22,9 @@ class WebFlirt extends Flirt implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 41;
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

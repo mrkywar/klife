@@ -52,6 +52,10 @@ class ExcellenceReward extends Reward implements BaseGame {
         return null;
     }
 
+    public function getType(): int {
+        return 80;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

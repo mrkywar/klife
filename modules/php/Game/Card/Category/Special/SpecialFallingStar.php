@@ -23,6 +23,10 @@ class SpecialFallingStar extends Special implements BaseGame {
         throw new CardException("C-SpecialFallingStar-01 : Not implemented yet");
     }
 
+    public function getType(): int {
+        return 97;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

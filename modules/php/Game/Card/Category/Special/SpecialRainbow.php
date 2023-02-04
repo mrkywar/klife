@@ -23,6 +23,10 @@ class SpecialRainbow extends Special implements BaseGame {
         throw new CardException("C-SpecialRainbow-01 : Not implemented yet");
     }
 
+    public function getType(): int {
+        return 95;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

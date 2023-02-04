@@ -26,8 +26,11 @@ class Plumber extends Interim implements BaseGame {
         return 1;
     }
 
+    public function getType(): int {
+        return 12;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
 }

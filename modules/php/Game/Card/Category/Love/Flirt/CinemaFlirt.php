@@ -21,6 +21,10 @@ class CinemaFlirt extends Flirt implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
+    
+    public function getType(): int {
+        return 39;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame

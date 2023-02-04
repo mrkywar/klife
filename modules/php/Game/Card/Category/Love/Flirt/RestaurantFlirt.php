@@ -21,6 +21,10 @@ class RestaurantFlirt extends Flirt implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
+    
+    public function getType(): int {
+        return 44;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame

@@ -9,7 +9,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Salary1 extends Salary implements BaseGame{
+class Salary1 extends Salary implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -21,7 +21,11 @@ class Salary1 extends Salary implements BaseGame{
     public function getClass(): string {
         return self::class;
     }
-    
+
+    public function getType(): int {
+        return 33;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

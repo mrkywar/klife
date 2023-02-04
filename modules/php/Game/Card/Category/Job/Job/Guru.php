@@ -27,6 +27,10 @@ class Guru extends Job implements BaseGame {
         return 0;
     }
 
+    public function getType(): int {
+        return 21;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

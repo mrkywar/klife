@@ -23,6 +23,10 @@ class SpecialLuck extends Special implements BaseGame {
         throw new CardException("C-SpecialLuck-01 : Not implemented yet");
     }
 
+    public function getType(): int {
+        return 94;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

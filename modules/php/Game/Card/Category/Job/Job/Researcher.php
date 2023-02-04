@@ -27,6 +27,10 @@ class Researcher extends Job implements BaseGame {
         return 6;
     }
 
+    public function getType(): int {
+        return 30;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

@@ -26,6 +26,10 @@ class EnglishTeacher extends Teacher implements BaseGame {
         return 2;
     }
 
+    public function getType(): int {
+        return 3;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

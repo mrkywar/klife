@@ -21,6 +21,10 @@ class ParcFlirt extends Flirt implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
+    
+    public function getType(): int {
+        return 43;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame

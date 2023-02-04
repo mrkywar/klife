@@ -27,6 +27,9 @@ class Doctor extends Job implements BaseGame {
         return 6;
     }
 
+    public function getType(): int {
+        return 19;
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

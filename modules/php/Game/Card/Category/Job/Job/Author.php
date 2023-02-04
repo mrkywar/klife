@@ -27,6 +27,10 @@ class Author extends Job implements BaseGame {
         return 0;
     }
 
+    public function getType(): int {
+        return 32;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

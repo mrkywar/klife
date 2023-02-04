@@ -1,37 +1,30 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Love;
+namespace SmileLife\Game\Card\Category\Acquisition\Travel;
 
-use SmileLife\Game\Card\Core\Exception\CardException;
+use SmileLife\Game\Card\Category\Acquisition\Acquisition;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Wedded
+ * Description of Travel
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Wedding extends Love implements BaseGame{
+abstract class Travel extends Acquisition {
 
-    private const SMILE_POINTS = 3;
+    private const TRAVEL_PRICE = 3;
+    private const SMILE_POINTS = 1;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    public function canBeAttacked(): bool {
-        return true;
-    }
-
-    public function canBePlayed(): bool {
-        throw new CardException("C-Wedding01 : Check that the player is not married and has already at least a flirt");
-    }
-
-    public function canGenerateChild(): bool {
-        return true;
-    }
-
     public function getClass(): string {
         return self::class;
+    }
+
+    public function getPrice(): int {
+        return self::TRAVEL_PRICE;
     }
 
     public function getSmilePoints(): int {
@@ -39,11 +32,11 @@ class Wedding extends Love implements BaseGame{
     }
 
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Implement BaseGame
+     *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */
-    
+
     public function getBaseCardCount(): int {
-        return 7;
+        return 1;
     }
 
 }

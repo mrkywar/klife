@@ -18,6 +18,10 @@ class Accident extends Attack implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 84;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

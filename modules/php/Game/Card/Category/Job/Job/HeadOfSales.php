@@ -27,6 +27,10 @@ class HeadOfSales extends Job implements BaseGame {
         return 3;
     }
 
+    public function getType(): int {
+        return 25;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

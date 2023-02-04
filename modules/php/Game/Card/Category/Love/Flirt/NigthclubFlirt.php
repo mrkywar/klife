@@ -22,6 +22,10 @@ class NigthclubFlirt extends Flirt implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 42;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

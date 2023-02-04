@@ -25,6 +25,10 @@ class Gardener extends Interim implements BaseGame {
     public function getRequiredStudies(): int {
         return 1;
     }
+    
+    public function getType(): int {
+        return 11;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

@@ -27,6 +27,9 @@ class Designer extends Job implements BaseGame {
         return 4;
     }
 
+    public function getType(): int {
+        return 18;
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

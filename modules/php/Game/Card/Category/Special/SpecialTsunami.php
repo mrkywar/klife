@@ -24,6 +24,10 @@ class SpecialTsunami extends Special implements BaseGame{
         throw new CardException("C-SpecialTsunami-01 : Not implemented yet");
     }
     
+    public function getType(): int {
+        return 100;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

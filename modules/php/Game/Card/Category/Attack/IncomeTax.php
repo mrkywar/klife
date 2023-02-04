@@ -17,6 +17,10 @@ class IncomeTax extends Attack implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
+    
+    public function getType(): int {
+        return 89;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame

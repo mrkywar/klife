@@ -46,6 +46,10 @@ class HonorLegionReward extends Reward implements BaseGame {
         ];
     }
 
+    public function getType(): int {
+        return 81;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

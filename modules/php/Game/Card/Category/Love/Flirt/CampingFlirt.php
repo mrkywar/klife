@@ -22,6 +22,10 @@ class CampingFlirt extends Flirt implements BaseGame {
         return self::class;
     }
 
+    public function getType(): int {
+        return 38;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

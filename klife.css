@@ -68,7 +68,21 @@
 */
 
 
-.cardontable{
-    border: 1px solid #black;
+.cardontable {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 150px;
+    background-image: url('img/cards-2.jpg');
+    float: left;
+    margin-bottom: 5px; 
+    margin-right: 5px;
 }
 
+
+
+/*
+    width: 68px;
+    height: 100px;
+    background-image: url('img/cards-1.jpg');
+*/

@@ -10,9 +10,13 @@ use SmileLife\Game\Card\Module\BaseGame;
  * @author Mr_Kywar mr_kywar@gmail.com
  */
 class RockyChild extends Child implements BaseGame {
-    
+
     public function getType(): int {
         return 63;
+    }
+
+    public function getClass(): string {
+        return self::class;
     }
 
     /* -------------------------------------------------------------------------

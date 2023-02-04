@@ -24,10 +24,6 @@ abstract class Child extends Card{
         throw new CardException("C-Child-01 : check if the required job are fulfilled");
     }
 
-    public function getClass(): string {
-        return self::class;
-    }
-
     public function getSmilePoints(): int {
         return 2;
     }

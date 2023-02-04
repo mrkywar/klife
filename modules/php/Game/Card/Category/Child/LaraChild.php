@@ -10,9 +10,13 @@ use SmileLife\Game\Card\Module\BaseGame;
  * @author Mr_Kywar mr_kywar@gmail.com
  */
 class LeiaChild extends Child implements BaseGame {
-    
+
     public function getType(): int {
         return 59;
+    }
+
+    public function getClass(): string {
+        return self::class;
     }
 
     /* -------------------------------------------------------------------------

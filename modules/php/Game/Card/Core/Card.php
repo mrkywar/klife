@@ -218,7 +218,13 @@ abstract class Card extends Model {
     public function getHelps(): array {
         return $this->helps;
     }
+    
+    public function setType(?int $type) {
+        $this->type = $type;
+        return $this;
+    }
 
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Array Add Item
      * ---------------------------------------------------------------------- */

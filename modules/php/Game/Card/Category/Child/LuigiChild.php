@@ -10,9 +10,13 @@ use SmileLife\Game\Card\Module\BaseGame;
  * @author Mr_Kywar mr_kywar@gmail.com
  */
 class LuigiChild extends Child implements BaseGame {
-    
+
     public function getType(): int {
         return 60;
+    }
+
+    public function getClass(): string {
+        return self::class;
     }
 
     /* -------------------------------------------------------------------------

@@ -2,6 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\Pet;
 
+use SmileLife\Game\Card\Module\BaseGame;
+
 /**
  * Description of CatPet
  *

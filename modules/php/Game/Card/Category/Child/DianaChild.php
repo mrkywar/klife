@@ -14,6 +14,10 @@ class DianaChild extends Child implements BaseGame {
     public function getType(): int {
         return 55;
     }
+    
+    public function getClass(): string {
+        return self::class;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Child 

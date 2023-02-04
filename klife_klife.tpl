@@ -15,7 +15,24 @@
 
         </div>
         <div id="board">
-
+            <!-- BEGIN myhand -->
+            <div id="myhand_wrap" class="whiteblock">
+                <h3>{MY_HAND}</h3>
+                <div id="myhand">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- END myhand -->
+            <!-- BEGIN player -->
+            <div  class="playertable whiteblock playertable" id="player_board_{id}" >
+                <div class="playertablename" style="color:#{color}">
+                    {name}
+                </div>
+                <div class="playertablecard" id="playertable_{playerId}">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- END player -->
         </div>
     </div>
     <div class="clear"></div>

@@ -1,6 +1,10 @@
 <?php
+
+use Core\Managers\PlayerManager;
+use Core\Models\Player;
+
 /**
- *------
+ * ------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
  * klife implementation : © <Your name here> <Your email address here>
  *
@@ -23,64 +27,48 @@
  * Note: if the HTML of your game interface is always the same, you don't have to place anything here.
  *
  */
-  
-require_once( APP_BASE_PATH."view/common/game.view.php" );
-  
-class view_klife_klife extends game_view
-{
-    protected function getGameName()
-    {
+require_once( APP_BASE_PATH . "view/common/game.view.php" );
+
+class view_klife_klife extends game_view {
+
+    protected function getGameName() {
         // Used for translations and stuff. Please do not modify.
         return "klife";
     }
-    
-  	function build_page( $viewArgs )
-  	{		
-  	    // Get players & players number
-        $players = $this->game->loadPlayersBasicInfos();
-        $players_nbr = count( $players );
 
-        /*********** Place your code below:  ************/
-
-
-        /*
+    function build_page($viewArgs) {
+        global $g_user;
+        $this->page->begin_block("klife_klife", "player");
+        $this->page->begin_block("klife_klife", "myhand");
+        /**
+         * @var PlayerManager
+         */
+        $playerManager = $this->game->getPlayerManager();
+        $cardManager = $this->game->getCardManager();
         
-        // Examples: set the value of some element defined in your tpl file like this: {MY_VARIABLE_ELEMENT}
+        $this->page->insert_block("myhand",[
+            "MY_HAND" => clienttranslate('MY_HAND')
+        ]);
 
-        // Display a specific number / string
-        $this->tpl['MY_VARIABLE_ELEMENT'] = $number_to_display;
+        $players = $playerManager->findBy();
+        $connectedPlayer = $playerManager->findBy([
+            "id" => $g_user->get_id()
+        ]);
 
-        // Display a string to be translated in all languages: 
-        $this->tpl['MY_VARIABLE_ELEMENT'] = self::_("A string to be translated");
+//        var_dump($connectedPlayer);
 
-        // Display some HTML content of your own:
-        $this->tpl['MY_VARIABLE_ELEMENT'] = self::raw( $some_html_code );
-        
-        */
-        
-        /*
-        
-        // Example: display a specific HTML block for each player in this game.
-        // (note: the block is defined in your .tpl file like this:
-        //      <!-- BEGIN myblock --> 
-        //          ... my HTML code ...
-        //      <!-- END myblock --> 
-        
-
-        $this->page->begin_block( "klife_klife", "myblock" );
-        foreach( $players as $player )
-        {
-            $this->page->insert_block( "myblock", array( 
-                                                    "PLAYER_NAME" => $player['player_name'],
-                                                    "SOME_VARIABLE" => $some_value
-                                                    ...
-                                                     ) );
+        foreach ($players as $player) {
+            $this->buildPlayer($player);
         }
-        
-        */
 
+    }
 
+    private function buildPlayer(Player $player) {
+        return $this->page->insert_block("player", [
+                    'playerId' => $player->getId(),
+                    'color' => $player->getColor(),
+                    'name' => $player->getName(),
+        ]);
+    }
 
-        /*********** Do not change anything below this line  ************/
-  	}
 }

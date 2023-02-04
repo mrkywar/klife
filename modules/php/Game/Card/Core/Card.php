@@ -158,7 +158,7 @@ abstract class Card extends Model {
 
     public function getTitle(): string {
         $class = $this->getRefClass();
-        return clienttranslate(substr($class, strrpos($class, "\\") + 1));
+        return substr($class, strrpos($class, "\\") + 1);
     }
 
     public function getOwnerId(): ?int {

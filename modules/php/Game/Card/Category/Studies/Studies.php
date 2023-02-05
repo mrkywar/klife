@@ -36,8 +36,4 @@ abstract class Studies extends Card {
         return self::SMILE_POINT;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Studies');
-    }
-
 }

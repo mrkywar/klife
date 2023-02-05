@@ -3,6 +3,7 @@
 namespace SmileLife\Game\Card\Category\Acquisition\House\BigHouse;
 
 use SmileLife\Game\Card\Category\Acquisition\House\House;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -13,7 +14,7 @@ use SmileLife\Game\Card\Module\BaseGame;
 class BigHouse extends House implements BaseGame {
 
     public function getType(): int {
-        return 79;
+        return CardType::HOUSE_BIG;
     }
 
     public function getClass(): string {

@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -20,11 +20,7 @@ class IncomeTax extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return 89;
-    }
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Income Tax');
+        return CardType::ATTACK_INCOME_TAX;
     }
 
     /* -------------------------------------------------------------------------

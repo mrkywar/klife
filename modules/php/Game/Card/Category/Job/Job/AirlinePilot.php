@@ -32,10 +32,6 @@ class AirlinePilot extends Job implements BaseGame {
         return 15;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Airline Pilot');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

@@ -26,17 +26,12 @@ class Stripteaser extends Interim implements BaseGame {
     public function getRequiredStudies(): int {
         return 0;
     }
-    
+
     public function getType(): int {
         return 13;
-    }
-    
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Stripteaser');
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
 }

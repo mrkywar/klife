@@ -26,14 +26,11 @@ class FrenchTeacher extends Teacher implements BaseGame {
     public function getRequiredStudies(): int {
         return 2;
     }
-    
+
     public function getType(): int {
         return 4;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('French teacher');
-    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

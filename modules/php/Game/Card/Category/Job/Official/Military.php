@@ -30,11 +30,7 @@ class Military extends Official implements BaseGame {
     public function getType(): int {
         return 8;
     }
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Military');
-    }
-
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

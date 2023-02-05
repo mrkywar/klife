@@ -23,10 +23,6 @@ class HonorLegionReward extends Reward implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
-    
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Honor Legion');
-    }
 
     public function getSmilePoints(): int {
         return 3;

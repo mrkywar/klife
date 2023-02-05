@@ -29,10 +29,6 @@ class SpecialBirthday extends Special implements BaseGame {
         return 91;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Birthday');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

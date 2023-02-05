@@ -28,10 +28,6 @@ abstract class Child extends Card {
         return 2;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Child');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */

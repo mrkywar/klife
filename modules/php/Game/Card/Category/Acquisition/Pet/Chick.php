@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\Pet;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -12,7 +13,7 @@ use SmileLife\Game\Card\Module\BaseGame;
 class Chick extends Pet implements BaseGame {
 
     public function getType(): int {
-        return 66;
+        return CardType::PET_CHICK;
     }
 
     public function getClass(): string {

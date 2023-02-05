@@ -28,11 +28,6 @@ class SpecialRainbow extends Special implements BaseGame {
     public function getType(): int {
         return 95;
     }
-    
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Rainbow');
-    }
-
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special

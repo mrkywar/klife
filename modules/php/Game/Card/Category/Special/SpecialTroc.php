@@ -29,10 +29,6 @@ class SpecialTroc extends Special implements BaseGame {
         return 99;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Troc');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

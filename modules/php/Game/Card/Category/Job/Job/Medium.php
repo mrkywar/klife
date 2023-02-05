@@ -32,10 +32,6 @@ class Medium extends Job implements BaseGame {
         return 29;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Medium');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

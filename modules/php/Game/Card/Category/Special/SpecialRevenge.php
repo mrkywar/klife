@@ -29,10 +29,6 @@ class SpecialRevenge extends Special implements BaseGame {
         return 96;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Revenge');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

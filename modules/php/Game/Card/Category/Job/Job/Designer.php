@@ -32,9 +32,6 @@ class Designer extends Job implements BaseGame {
         return 18;
     }
     
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Designer');
-    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

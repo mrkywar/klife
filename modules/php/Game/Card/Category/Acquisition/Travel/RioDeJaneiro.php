@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\Travel;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -12,7 +13,7 @@ use SmileLife\Game\Card\Module\BaseGame;
 class RioDeJaneiro extends Travel implements BaseGame {
 
     public function getType(): int {
-        return 73;
+        return CardType::TRAVEL_RIO;
     }
 
     public function getClass(): string {

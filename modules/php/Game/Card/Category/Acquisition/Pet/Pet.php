@@ -23,10 +23,6 @@ abstract class Pet extends Acquisition {
         return 1;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Pet');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */

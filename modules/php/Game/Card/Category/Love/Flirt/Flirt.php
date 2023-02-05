@@ -31,16 +31,5 @@ abstract class Flirt extends Love {
         return self::SMILE_POINTS;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Flirt');
-    }
-
-    /* -------------------------------------------------------------------------
-     *                  BEGIN - Override
-     * ---------------------------------------------------------------------- */
-
-//    public function getTitle($param) {
-//        return "Flirt";
-//    }
 
 }

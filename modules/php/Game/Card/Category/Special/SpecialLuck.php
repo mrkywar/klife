@@ -29,10 +29,6 @@ class SpecialLuck extends Special implements BaseGame {
         return 94;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Luck');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

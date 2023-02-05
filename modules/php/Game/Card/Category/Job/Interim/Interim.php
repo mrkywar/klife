@@ -17,12 +17,5 @@ abstract class Interim extends Job {
 
         $this->addHelp(Klife::getInstance()->i18n("A Interim can quit their job and play normally in the same turn."));
     }
-    
-    /* -------------------------------------------------------------------------
-     *                  BEGIN - Override
-     * ---------------------------------------------------------------------- */
-    public function getSubTitle(): string {
-        return Klife::getInstance()->i18n('Interim');
-    }
 
 }

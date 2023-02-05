@@ -24,9 +24,6 @@ class GreatTeacher extends Teacher implements BaseGame {
         return 7;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Great teacher');
-    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */

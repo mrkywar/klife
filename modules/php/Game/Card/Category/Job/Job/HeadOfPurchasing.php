@@ -32,10 +32,6 @@ class HeadOfPurchasing extends Job implements BaseGame {
         return 24;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Head of purshasing');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

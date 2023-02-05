@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -20,11 +20,7 @@ class GradeRepetition extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return 90;
-    }
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Grade Repetition');
+        return CardType::ATTACK_GRADE_REPETITION;
     }
 
     /* -------------------------------------------------------------------------

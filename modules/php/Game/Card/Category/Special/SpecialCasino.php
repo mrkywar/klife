@@ -29,10 +29,6 @@ class SpecialCasino extends Special implements BaseGame {
         return 92;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Casino');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

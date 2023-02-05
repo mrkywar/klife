@@ -29,10 +29,6 @@ class ExcellenceReward extends Reward implements BaseGame {
         return self::class;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Exellence Reward');
-    }
-
     public function getSmilePoints(): int {
         return 4;
     }

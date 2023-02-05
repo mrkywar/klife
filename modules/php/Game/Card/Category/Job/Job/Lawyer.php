@@ -31,10 +31,6 @@ class Lawyer extends Job implements BaseGame {
     public function getType(): int {
         return 23;
     }
-    
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Lawyer');
-    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

@@ -43,10 +43,6 @@ class Adultery extends Love implements BaseGame {
         return 54;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Adultery');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */

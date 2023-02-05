@@ -31,10 +31,6 @@ class HeadOfSales extends Job implements BaseGame {
     public function getType(): int {
         return 25;
     }
-    
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Head of sales');
-    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

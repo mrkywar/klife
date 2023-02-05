@@ -31,9 +31,6 @@ class Barman extends Interim implements BaseGame {
         return 10;
     }
     
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Barman');
-    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

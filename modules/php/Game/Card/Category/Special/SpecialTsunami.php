@@ -29,10 +29,6 @@ class SpecialTsunami extends Special implements BaseGame {
         return 100;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Tsunami');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

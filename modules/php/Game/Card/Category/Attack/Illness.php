@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -20,11 +20,7 @@ class Illness extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return 86;
-    }
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Illness');
+        return CardType::ATTACK_ILLNESS;
     }
 
     /* -------------------------------------------------------------------------

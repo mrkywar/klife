@@ -135,11 +135,7 @@ abstract class Card extends Model {
 
         return implode(" card_", $classes);
     }
-
-    public function getSubTitle(): string {
-        return "";
-    }
-
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -151,8 +147,6 @@ abstract class Card extends Model {
     abstract public function getSmilePoints(): int;
 
     abstract public function getType(): int;
-
-    abstract public function getTitle(): string;
 
     abstract public function getClass(): string;
 
@@ -238,11 +232,6 @@ abstract class Card extends Model {
 
     public function setType(?int $type) {
         $this->type = $type;
-        return $this;
-    }
-
-    public function setTitle(?string $title) {
-        $this->texts['title'] = $title;
         return $this;
     }
 

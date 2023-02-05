@@ -36,9 +36,4 @@ abstract class Salary extends Card {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Salary');
-    }
-
 }

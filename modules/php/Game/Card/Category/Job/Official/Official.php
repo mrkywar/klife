@@ -26,8 +26,4 @@ abstract class Official extends Job {
         return false;
     }
 
-    public function getSubTitle(): string {
-        return Klife::getInstance()->i18n('Official');
-    }
-
 }

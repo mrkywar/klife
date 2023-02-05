@@ -31,10 +31,6 @@ class Guru extends Job implements BaseGame {
     public function getType(): int {
         return 21;
     }
-    
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Guru');
-    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

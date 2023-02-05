@@ -29,10 +29,6 @@ class SpecialFallingStar extends Special implements BaseGame {
         return 97;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Falling star');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

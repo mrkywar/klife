@@ -12,14 +12,6 @@ use SmileLife\Game\Card\Category\Acquisition\Acquisition;
  */
 abstract class House extends Acquisition {
     /* -------------------------------------------------------------------------
-     *                  BEGIN - Abstract
-     * ---------------------------------------------------------------------- */
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('House');
-    }
-
-    /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */
 

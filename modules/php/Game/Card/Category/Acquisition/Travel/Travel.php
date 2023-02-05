@@ -27,10 +27,6 @@ abstract class Travel extends Acquisition {
         return self::SMILE_POINTS;
     }
     
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Travel');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */

@@ -32,9 +32,6 @@ class Astronaut extends Job implements BaseGame {
         return 17;
     }
     
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Astronaut');
-    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

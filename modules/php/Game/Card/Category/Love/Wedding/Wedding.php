@@ -34,10 +34,6 @@ abstract class Wedding extends Love {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
-    
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Wedding');
-    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)

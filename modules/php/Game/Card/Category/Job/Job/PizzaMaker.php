@@ -32,10 +32,6 @@ class PizzaMaker extends Job implements BaseGame {
         return 28;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Pizza maker');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

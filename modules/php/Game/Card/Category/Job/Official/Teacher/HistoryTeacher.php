@@ -31,10 +31,6 @@ class HistoryTeacher extends Teacher implements BaseGame {
         return 5;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('History teacher');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

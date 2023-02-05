@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -19,11 +20,7 @@ class Divorce extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return 88;
-    }
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Divorce');
+        return CardType::ATTACK_DIVORCE;
     }
 
     /* -------------------------------------------------------------------------

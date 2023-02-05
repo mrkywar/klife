@@ -31,10 +31,6 @@ class Plumber extends Interim implements BaseGame {
         return 12;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Plumber');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

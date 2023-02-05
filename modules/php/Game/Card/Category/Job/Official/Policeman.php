@@ -31,10 +31,6 @@ class Policeman extends Official implements BaseGame {
         return 9;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Policeman');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

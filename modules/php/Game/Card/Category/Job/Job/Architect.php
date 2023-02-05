@@ -32,10 +32,6 @@ class Architect extends Job implements BaseGame {
         return 16;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Architect');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

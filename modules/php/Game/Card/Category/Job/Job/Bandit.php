@@ -32,10 +32,6 @@ class Bandit extends Job implements BaseGame {
         return 20;
     }
     
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Bandit');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

@@ -32,10 +32,6 @@ class Author extends Job implements BaseGame {
         return 32;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Author');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

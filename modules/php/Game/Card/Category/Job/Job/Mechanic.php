@@ -32,10 +32,6 @@ class Mechanic extends Job implements BaseGame {
         return 26;
     }
 
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Mechanist');
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

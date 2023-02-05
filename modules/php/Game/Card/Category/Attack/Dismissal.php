@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -20,11 +20,7 @@ class Dismissal extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return 87;
-    }
-
-    public function getTitle(): string {
-        return Klife::getInstance()->i18n('Dismissal');
+        return CardType::ATTACK_DISMISSAL;
     }
 
     /* -------------------------------------------------------------------------

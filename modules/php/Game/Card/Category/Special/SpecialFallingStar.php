@@ -27,6 +27,10 @@ class SpecialFallingStar extends Special implements BaseGame {
         return 97;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Falling star');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

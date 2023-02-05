@@ -27,6 +27,10 @@ class SpecialBirthday extends Special implements BaseGame {
         return 91;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Birthday');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

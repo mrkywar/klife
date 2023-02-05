@@ -5,7 +5,6 @@ namespace SmileLife\Game\Card\Category\Studies;
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
-
 /**
  * Description of Studies
  *
@@ -35,9 +34,9 @@ abstract class Studies extends Card {
     public function getSmilePoints(): int {
         return self::SMILE_POINT;
     }
-    
-    public function getRefClass(): string {
-        return self::class;
+
+    public function getTitle(): string {
+        return clienttranslate('Studies');
     }
 
 }

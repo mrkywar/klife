@@ -36,8 +36,8 @@ abstract class Salary extends Card {
         return self::SMILE_POINTS;
     }
 
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Salary');
     }
 
 }

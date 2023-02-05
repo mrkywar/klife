@@ -29,7 +29,7 @@ abstract class Child extends Card {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Accident');
+        return clienttranslate('Child');
     }
 
     /* -------------------------------------------------------------------------

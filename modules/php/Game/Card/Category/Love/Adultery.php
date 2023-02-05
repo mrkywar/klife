@@ -42,8 +42,8 @@ class Adultery extends Love implements BaseGame {
         return 54;
     }
 
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Adultery');
     }
 
     /* -------------------------------------------------------------------------

@@ -22,11 +22,14 @@ class SpecialRevenge extends Special implements BaseGame {
     public function getEffect(): Effect {
         throw new CardException("C-SpecialRevenge-01 : Not implemented yet");
     }
-    
+
     public function getType(): int {
         return 96;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Revenge');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special

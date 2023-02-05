@@ -27,6 +27,10 @@ class SpecialHeritage extends Special implements BaseGame {
         return 93;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Heritage');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

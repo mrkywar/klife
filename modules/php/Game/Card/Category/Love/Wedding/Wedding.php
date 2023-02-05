@@ -34,8 +34,8 @@ abstract class Wedding extends Love {
         return self::SMILE_POINTS;
     }
     
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Wedding');
     }
 
     /* -------------------------------------------------------------------------

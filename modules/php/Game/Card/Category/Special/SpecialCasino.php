@@ -22,11 +22,14 @@ class SpecialCasino extends Special implements BaseGame {
     public function getEffect(): Effect {
         throw new CardException("C-SpecialCasino-01 : Not implemented yet");
     }
-    
+
     public function getType(): int {
         return 92;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Casino');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special

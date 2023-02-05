@@ -27,6 +27,10 @@ class SpecialJobBoost extends Special implements BaseGame {
         return 98;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Job boost');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

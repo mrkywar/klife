@@ -27,6 +27,10 @@ class SpecialLuck extends Special implements BaseGame {
         return 94;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Luck');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special
      * ---------------------------------------------------------------------- */

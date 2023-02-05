@@ -98,7 +98,8 @@ class view_klife_klife extends game_view {
                     "type" => $card->getType(),
                     "shortclass" => $card->getVisibleClasses(),
                     "location" => $card->getLocation(),
-                    "title" => clienttranslate($card->getTitle())
+                    "title" => $card->getTitle(),
+                    "subtitle" => $card->getSubTitle()
         ]);
     }
 

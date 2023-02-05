@@ -22,7 +22,8 @@
                     <!-- BEGIN myhand_card -->
                     <div class="cardontable card_{type} card_{shortclass}" id="{location}_card_{id}" data-id="{id}">
 
-                        <span class="card_name">{title}</span>
+                        <span class="card_title">{title}</span>
+                        <span class="card_title card_subtitle">{subtitle}</span>
                         <span class="debug">{type}</span>
                     </div>
                     <!-- END myhand_card -->

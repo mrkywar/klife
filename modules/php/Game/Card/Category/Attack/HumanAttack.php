@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
+use Klife;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -23,7 +24,7 @@ class HumanAttack extends Attack implements BaseGame {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Human Attack');
+        return Klife::getInstance()->i18n('Human Attack');
     }
 
     /* -------------------------------------------------------------------------

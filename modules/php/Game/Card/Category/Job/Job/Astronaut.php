@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Job;
 
+use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -32,7 +33,7 @@ class Astronaut extends Job implements BaseGame {
     }
     
     public function getTitle(): string {
-        return clienttranslate('Astronaut');
+        return Klife::getInstance()->i18n('Astronaut');
     }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

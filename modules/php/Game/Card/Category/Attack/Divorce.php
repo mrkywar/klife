@@ -23,7 +23,7 @@ class Divorce extends Attack implements BaseGame {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Divorce');
+        return Klife::getInstance()->i18n('Divorce');
     }
 
     /* -------------------------------------------------------------------------

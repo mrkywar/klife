@@ -368,4 +368,8 @@ class Klife extends Table {
         return $this->playerAttributesManager;
     }
 
+    public function i18n($text) {
+        return self::_($text);
+    }
+
 }

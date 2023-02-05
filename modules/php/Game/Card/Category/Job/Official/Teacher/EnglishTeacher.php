@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official\Teacher;
 
+use Klife;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -31,7 +32,7 @@ class EnglishTeacher extends Teacher implements BaseGame {
     }
     
     public function getTitle(): string {
-        return clienttranslate('English teacher');
+        return Klife::getInstance()->i18n('English teacher');
     }
 
     /* -------------------------------------------------------------------------

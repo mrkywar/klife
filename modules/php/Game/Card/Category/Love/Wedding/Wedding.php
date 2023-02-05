@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Love\Wedding;
 
+use Klife;
 use SmileLife\Game\Card\Category\Love\Love;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
@@ -35,7 +36,7 @@ abstract class Wedding extends Love {
     }
     
     public function getTitle(): string {
-        return clienttranslate('Wedding');
+        return Klife::getInstance()->i18n('Wedding');
     }
 
     /* -------------------------------------------------------------------------

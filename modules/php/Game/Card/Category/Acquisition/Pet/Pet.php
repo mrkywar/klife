@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\Pet;
 
+use Klife;
 use SmileLife\Game\Card\Category\Acquisition\Acquisition;
 
 /**
@@ -23,7 +24,7 @@ abstract class Pet extends Acquisition {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Pet');
+        return Klife::getInstance()->i18n('Pet');
     }
 
     /* -------------------------------------------------------------------------

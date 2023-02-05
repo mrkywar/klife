@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Interim;
 
+use Klife;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -31,7 +32,7 @@ class Gardener extends Interim implements BaseGame {
     }
     
     public function getTitle(): string {
-        return clienttranslate('Gardener');
+        return Klife::getInstance()->i18n('Gardener');
     }
 
     /* -------------------------------------------------------------------------

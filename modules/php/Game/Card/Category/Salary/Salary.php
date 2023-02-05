@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Salary;
 
+use Klife;
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
@@ -37,7 +38,7 @@ abstract class Salary extends Card {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Salary');
+        return Klife::getInstance()->i18n('Salary');
     }
 
 }

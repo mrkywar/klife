@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Reward;
 
+use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
 use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
@@ -29,7 +30,7 @@ class ExcellenceReward extends Reward implements BaseGame {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Exellence Reward');
+        return Klife::getInstance()->i18n('Exellence Reward');
     }
 
     public function getSmilePoints(): int {

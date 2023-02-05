@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official;
 
+use Klife;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -31,7 +32,7 @@ class Policeman extends Official implements BaseGame {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Policeman');
+        return Klife::getInstance()->i18n('Policeman');
     }
 
     /* -------------------------------------------------------------------------

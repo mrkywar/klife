@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Love;
 
+use Klife;
 use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -43,7 +44,7 @@ class Adultery extends Love implements BaseGame {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Adultery');
+        return Klife::getInstance()->i18n('Adultery');
     }
 
     /* -------------------------------------------------------------------------

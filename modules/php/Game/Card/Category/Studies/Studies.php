@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Studies;
 
+use Klife;
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
@@ -36,7 +37,7 @@ abstract class Studies extends Card {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Studies');
+        return Klife::getInstance()->i18n('Studies');
     }
 
 }

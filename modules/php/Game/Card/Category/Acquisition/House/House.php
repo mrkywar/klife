@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\House;
 
+use Klife;
 use SmileLife\Game\Card\Category\Acquisition\Acquisition;
 
 /**
@@ -15,7 +16,7 @@ abstract class House extends Acquisition {
      * ---------------------------------------------------------------------- */
 
     public function getTitle(): string {
-        return clienttranslate('House');
+        return Klife::getInstance()->i18n('House');
     }
 
     /* -------------------------------------------------------------------------

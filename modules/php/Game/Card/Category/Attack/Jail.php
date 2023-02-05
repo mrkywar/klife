@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
+use Klife;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -23,7 +24,7 @@ class Jail extends Attack implements BaseGame {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Jail');
+        return Klife::getInstance()->i18n('Jail');
     }
 
     /* -------------------------------------------------------------------------

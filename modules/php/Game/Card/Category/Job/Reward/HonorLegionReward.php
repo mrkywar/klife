@@ -2,8 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job\Reward;
 
+use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
-use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -25,7 +25,7 @@ class HonorLegionReward extends Reward implements BaseGame {
     }
     
     public function getTitle(): string {
-        return clienttranslate('Honor Legion');
+        return Klife::getInstance()->i18n('Honor Legion');
     }
 
     public function getSmilePoints(): int {

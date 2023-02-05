@@ -2,6 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official\Teacher;
 
+use Klife;
+use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -23,7 +25,7 @@ class GreatTeacher extends Teacher implements BaseGame {
     }
 
     public function getTitle(): string {
-        return clienttranslate('Great teacher');
+        return Klife::getInstance()->i18n('Great teacher');
     }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract

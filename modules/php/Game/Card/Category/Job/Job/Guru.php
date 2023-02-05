@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Job;
 
+use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -32,7 +33,7 @@ class Guru extends Job implements BaseGame {
     }
     
     public function getTitle(): string {
-        return clienttranslate('Guru');
+        return Klife::getInstance()->i18n('Guru');
     }
 
     /* -------------------------------------------------------------------------

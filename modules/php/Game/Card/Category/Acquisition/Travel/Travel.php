@@ -2,8 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\Travel;
 
+use Klife;
 use SmileLife\Game\Card\Category\Acquisition\Acquisition;
-use SmileLife\Game\Card\Module\BaseGame;
 
 /**
  * Description of Travel
@@ -28,7 +28,7 @@ abstract class Travel extends Acquisition {
     }
     
     public function getTitle(): string {
-        return clienttranslate('Travel');
+        return Klife::getInstance()->i18n('Travel');
     }
 
     /* -------------------------------------------------------------------------

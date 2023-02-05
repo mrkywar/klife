@@ -32,33 +32,47 @@ require_once( APP_BASE_PATH . "view/common/game.view.php" );
 
 class view_klife_klife extends game_view {
 
+    /**
+     * @var PlayerManager
+     */
+    private $playerManager;
+
+    /**
+     * @var CardManager
+     */
+    private $cardManager;
+
+    public function __construct(...$_) {
+        parent::__construct(...$_);
+        $this->cardManager = $this->getGame()->getCardManager();
+        $this->playerManager = $this->getGame()->getPlayerManager();
+    }
+
     protected function getGameName() {
         // Used for translations and stuff. Please do not modify.
         return "klife";
     }
 
+    protected function getGame(): Klife {
+        return Klife::getInstance();
+    }
+
     function build_page($viewArgs) {
         global $g_user;
         $this->page->begin_block("klife_klife", "player");
-//        $this->page->begin_block("klife_klife", "myhand");
         $this->page->begin_block("klife_klife", "myhand_card");
 
-        /**
-         * @var PlayerManager
-         */
-        $playerManager = $this->game->getPlayerManager();
-        $cardManager = $this->game->getCardManager();
-        $cardSerializer = $cardManager->getSerializer();
+        $cardSerializer = $this->cardManager->getSerializer();
 
         $this->tpl['MY_HAND'] = self::_("My hand");
 
-        $players = $playerManager->findBy();
-        $connectedPlayer = $playerManager->findBy([
+        $players = $this->playerManager->findBy();
+        $connectedPlayer = $this->playerManager->findBy([
             "id" => $g_user->get_id()
         ]);
 
         $cardsInHand = $cardSerializer->unserialize(
-                $cardManager->getPlayerCards($connectedPlayer)
+                $this->cardManager->getPlayerCards($connectedPlayer)
         );
 
         foreach ($cardsInHand as $card) {

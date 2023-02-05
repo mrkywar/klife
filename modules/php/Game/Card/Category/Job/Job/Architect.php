@@ -26,14 +26,16 @@ class Architect extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 4;
     }
-    
+
     public function getType(): int {
         return 16;
+    }
+
+    public function getTitle(): string {
+        return clienttranslate('Architect');
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
-    
 }

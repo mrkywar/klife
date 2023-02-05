@@ -22,8 +22,8 @@ class IncomeTax extends Attack implements BaseGame {
         return 89;
     }
 
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Income Tax');
     }
 
     /* -------------------------------------------------------------------------

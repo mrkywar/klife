@@ -30,6 +30,10 @@ class Plumber extends Interim implements BaseGame {
         return 12;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Plumber');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

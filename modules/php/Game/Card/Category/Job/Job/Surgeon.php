@@ -26,11 +26,14 @@ class Surgeon extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 6;
     }
-    
+
     public function getType(): int {
         return 31;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Surgeon');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

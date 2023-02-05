@@ -26,9 +26,9 @@ abstract class Travel extends Acquisition {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
-
-    public function getRefClass(): string {
-        return $this->getClass();
+    
+    public function getTitle(): string {
+        return clienttranslate('Travel');
     }
 
     /* -------------------------------------------------------------------------

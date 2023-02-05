@@ -30,6 +30,10 @@ class Designer extends Job implements BaseGame {
     public function getType(): int {
         return 18;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Designer');
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

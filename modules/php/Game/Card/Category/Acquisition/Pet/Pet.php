@@ -22,8 +22,8 @@ abstract class Pet extends Acquisition {
         return 1;
     }
 
-    public function getRefClass(): string {
-        return $this->getClass();
+    public function getTitle(): string {
+        return clienttranslate('Pet');
     }
 
     /* -------------------------------------------------------------------------

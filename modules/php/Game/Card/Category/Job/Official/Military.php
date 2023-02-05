@@ -29,6 +29,11 @@ class Military extends Official implements BaseGame {
     public function getType(): int {
         return 8;
     }
+
+    public function getTitle(): string {
+        return clienttranslate('Military');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

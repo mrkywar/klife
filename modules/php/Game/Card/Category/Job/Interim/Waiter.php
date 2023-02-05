@@ -29,6 +29,10 @@ class Waiter extends Interim implements BaseGame {
     public function getType(): int {
         return 14;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Waiter');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

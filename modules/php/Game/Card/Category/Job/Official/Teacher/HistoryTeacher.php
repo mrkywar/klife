@@ -25,9 +25,13 @@ class HistoryTeacher extends Teacher implements BaseGame {
     public function getRequiredStudies(): int {
         return 2;
     }
-    
+
     public function getType(): int {
         return 5;
+    }
+
+    public function getTitle(): string {
+        return clienttranslate('History teacher');
     }
 
     /* -------------------------------------------------------------------------

@@ -30,6 +30,9 @@ class FrenchTeacher extends Teacher implements BaseGame {
         return 4;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('French teacher');
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

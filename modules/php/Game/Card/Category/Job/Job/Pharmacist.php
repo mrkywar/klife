@@ -31,6 +31,10 @@ class Pharmacist extends Job implements BaseGame {
         return 27;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Pharmacist');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

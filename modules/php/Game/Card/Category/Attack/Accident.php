@@ -22,8 +22,8 @@ class Accident extends Attack implements BaseGame {
         return 84;
     }
 
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Accident');
     }
 
     /* -------------------------------------------------------------------------

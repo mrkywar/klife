@@ -79,13 +79,6 @@ abstract class Card extends Model {
      */
     private $isRotated;
 
-    /**
-     * 
-     * @var string|null
-     * @ORM\Column{"type":"string", "name":"card_title"}
-     */
-    private $title;
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Unpersisted property
      * ---------------------------------------------------------------------- */
@@ -143,6 +136,10 @@ abstract class Card extends Model {
         return implode(" card_", $classes);
     }
 
+    public function getSubTitle(): string {
+        return "";
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -155,7 +152,7 @@ abstract class Card extends Model {
 
     abstract public function getType(): int;
 
-    abstract public function getRefClass(): string;
+    abstract public function getTitle(): string;
 
     abstract public function getClass(): string;
 
@@ -165,11 +162,6 @@ abstract class Card extends Model {
 
     public function getId(): ?int {
         return $this->id;
-    }
-
-    public function getTitle(): string {
-        $class = $this->getRefClass();
-        return substr($class, strrpos($class, "\\") + 1);
     }
 
     public function getOwnerId(): ?int {
@@ -250,7 +242,7 @@ abstract class Card extends Model {
     }
 
     public function setTitle(?string $title) {
-        $this->title = $title;
+        $this->texts['title'] = $title;
         return $this;
     }
 

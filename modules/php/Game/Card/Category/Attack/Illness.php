@@ -22,8 +22,8 @@ class Illness extends Attack implements BaseGame {
         return 86;
     }
 
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Illness');
     }
 
     /* -------------------------------------------------------------------------

@@ -22,6 +22,9 @@ class GreatTeacher extends Teacher implements BaseGame {
         return 7;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Great teacher');
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */

@@ -26,11 +26,14 @@ class PizzaMaker extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 0;
     }
-    
+
     public function getType(): int {
         return 28;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Pizza maker');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

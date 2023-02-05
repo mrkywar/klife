@@ -5,7 +5,7 @@ namespace SmileLife\Game\Card\Category\Job\Official;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Military
+ * Description of Policeman
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
@@ -29,6 +29,11 @@ class Policeman extends Official implements BaseGame {
     public function getType(): int {
         return 9;
     }
+
+    public function getTitle(): string {
+        return clienttranslate('Policeman');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

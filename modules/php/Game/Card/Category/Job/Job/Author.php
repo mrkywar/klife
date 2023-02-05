@@ -31,6 +31,10 @@ class Author extends Job implements BaseGame {
         return 32;
     }
 
+    public function getTitle(): string {
+        return clienttranslate('Author');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

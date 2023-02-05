@@ -53,10 +53,6 @@ abstract class Job extends Card {
         return self::SMILE_POINTS;
     }
 
-    public function getRefClass(): string {
-        return $this->getClass();
-    }
-
     /* -------------------------------------------------------------------------
      *                  BEGIN - Base Game Forced (1 card in each job)
      * ---------------------------------------------------------------------- */

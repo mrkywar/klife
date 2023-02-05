@@ -29,6 +29,10 @@ class MathTeacher extends Teacher implements BaseGame {
     public function getType(): int {
         return 6;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Math teacher');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

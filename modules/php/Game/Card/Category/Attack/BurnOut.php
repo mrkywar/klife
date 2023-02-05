@@ -22,8 +22,8 @@ class BurnOut extends Attack implements BaseGame {
         return 85;
     }
 
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Burn Out');
     }
 
     /* -------------------------------------------------------------------------

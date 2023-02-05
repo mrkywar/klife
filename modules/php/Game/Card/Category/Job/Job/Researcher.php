@@ -6,7 +6,7 @@ use SmileLife\Game\Card\Category\Job\Job;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Surgeon
+ * Description of Researcher
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
@@ -29,6 +29,10 @@ class Researcher extends Job implements BaseGame {
 
     public function getType(): int {
         return 30;
+    }
+
+    public function getTitle(): string {
+        return clienttranslate('Researcher');
     }
 
     /* -------------------------------------------------------------------------

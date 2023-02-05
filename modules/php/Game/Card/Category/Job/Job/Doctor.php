@@ -30,6 +30,10 @@ class Doctor extends Job implements BaseGame {
     public function getType(): int {
         return 19;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Doctor');
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

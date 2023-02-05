@@ -30,6 +30,10 @@ class Bandit extends Job implements BaseGame {
     public function getType(): int {
         return 20;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Bandit');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

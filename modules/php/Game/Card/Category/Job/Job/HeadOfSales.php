@@ -30,6 +30,10 @@ class HeadOfSales extends Job implements BaseGame {
     public function getType(): int {
         return 25;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Head of sales');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

@@ -28,8 +28,8 @@ abstract class Child extends Card {
         return 2;
     }
 
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Accident');
     }
 
     /* -------------------------------------------------------------------------

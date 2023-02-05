@@ -30,6 +30,10 @@ class Guru extends Job implements BaseGame {
     public function getType(): int {
         return 21;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Guru');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

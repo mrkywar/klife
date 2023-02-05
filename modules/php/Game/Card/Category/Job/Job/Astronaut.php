@@ -30,6 +30,10 @@ class Astronaut extends Job implements BaseGame {
     public function getType(): int {
         return 17;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Astronaut');
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

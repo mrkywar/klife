@@ -24,8 +24,8 @@ class HonorLegionReward extends Reward implements BaseGame {
         return self::class;
     }
     
-    public function getRefClass(): string {
-        return self::class;
+    public function getTitle(): string {
+        return clienttranslate('Honor Legion');
     }
 
     public function getSmilePoints(): int {

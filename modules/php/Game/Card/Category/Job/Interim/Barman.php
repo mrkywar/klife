@@ -29,6 +29,10 @@ class Barman extends Interim implements BaseGame {
     public function getType(): int {
         return 10;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Barman');
+    }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

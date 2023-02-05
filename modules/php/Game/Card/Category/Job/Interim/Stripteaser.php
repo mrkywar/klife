@@ -29,6 +29,10 @@ class Stripteaser extends Interim implements BaseGame {
     public function getType(): int {
         return 13;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Stripteaser');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

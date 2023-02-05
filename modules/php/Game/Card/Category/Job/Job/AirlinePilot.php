@@ -30,9 +30,12 @@ class AirlinePilot extends Job implements BaseGame {
     public function getType(): int {
         return 15;
     }
+
+    public function getTitle(): string {
+        return clienttranslate('Airline Pilot');
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
-    
 }

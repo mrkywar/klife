@@ -16,5 +16,12 @@ abstract class Interim extends Job {
 
         $this->addHelp(clienttranslate("A Interim can quit their job and play normally in the same turn."));
     }
+    
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Override
+     * ---------------------------------------------------------------------- */
+    public function getSubTitle(): string {
+        return clienttranslate('Interim');
+    }
 
 }

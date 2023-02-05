@@ -30,6 +30,10 @@ class Journalist extends Job implements BaseGame {
     public function getType(): int {
         return 22;
     }
+    
+    public function getTitle(): string {
+        return clienttranslate('Journalist');
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

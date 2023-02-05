@@ -96,7 +96,7 @@ class view_klife_klife extends game_view {
         return $this->page->insert_block("myhand_card", [
                     "id" => $card->getId(),
                     "type" => $card->getType(),
-                    "shortclass" => $card->getClass(),
+                    "shortclass" => $card->getVisibleClasses(),
                     "location" => $card->getLocation(),
                     "title" => clienttranslate($card->getTitle())
         ]);

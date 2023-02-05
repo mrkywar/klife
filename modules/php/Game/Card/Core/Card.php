@@ -115,7 +115,7 @@ abstract class Card extends Model {
         $this->helps = [];
     }
 
-    function __toString() {
+    public function __toString() {
         $str = get_class($this);
         $str .= '<br />';
         $str .= $this->getSmilePoints() . ($this->getSmilePoints() <= 1 ? ' smile' : ' smiles');
@@ -130,6 +130,17 @@ abstract class Card extends Model {
             $str .= implode('<br />', $this->getHelps());
         }
         return $str;
+    }
+
+    public function getVisibleClasses() {
+        $searcheString = "Card\\Category";
+        $classname = substr(
+                $this->getClass(),
+                strpos($this->getClass(), $searcheString) + strlen($searcheString) + 1
+        );
+        $classes = explode("\\", strtolower($classname));
+
+        return implode(" card_", $classes);
     }
 
     /* -------------------------------------------------------------------------

@@ -79,7 +79,7 @@
     border: 1px black solid;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
 }
-.card_name{
+.card_title{
     color: white;
     display: block;
     width: 100%;
@@ -89,11 +89,11 @@
 .card_salary{
     text-transform: uppercase;
 }
-.card_wedding .card_name,
-.card_child .card_name{
+.card_wedding .card_title,
+.card_child .card_title{
     color: #bc0e6f; /*pink*/
 }
-.card_flirt .card_name{
+.card_flirt .card_title{
     color: #c0171c; /*red*/
 }
 /*--------------------------------------------------------------------------
@@ -107,7 +107,7 @@
     margin-right: 5px;
     border-radius: 5px;
 }
-.card_m .card_name{
+.card_m .card_title{
     font-size: 8px;
     margin-top: 18px;
 }

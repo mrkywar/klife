@@ -13,32 +13,32 @@
 $gameinfos = array( 
 
 // Name of the game in English (will serve as the basis for translation) 
-'game_name' => "My Great Game",
+'game_name' => "Smile Life",
 
 // Game designer (or game designers, separated by commas)
-'designer' => 'John Doe',       
+'designer' => 'Alexandre Seba',       
 
 // Game artist (or game artists, separated by commas)
-'artist' => 'Jane Doe',         
+'artist' => 'Alexandre Seba',         
 
 // Year of FIRST publication of this game. Can be negative.
-'year' => 2000,                 
+'year' => 2018,                 
 
 // Game publisher (use empty string if there is no publisher)
-'publisher' => 'My Publishing Company',                     
+'publisher' => 'Smile Life',                     
 
 // Url of game publisher website
-'publisher_website' => 'http://www.mypublishingcompany.com/',   
+'publisher_website' => 'https://www.smilelife.fr',   
 
 // Board Game Geek ID of the publisher
-'publisher_bgg_id' => 1234,
+'publisher_bgg_id' => 4, // (Self-published)
 
 // Board game geek ID of the game
 'bgg_id' => 281663,
 
 
 // Players configuration that can be played (ex: 2 to 4 players)
-'players' => array( 2,3,4 ),    
+'players' => array(2, 3, 4, 5, 6),    
 
 // Suggest players to play with this number of players. Must be null if there is no such advice, or if there is only one possible player configuration.
 // NB: the automatic lobby will try first the lowest number of players if this is not specified. So you _have to_ specify this parameter if the lowest player number is not compatible with the default options.
@@ -46,8 +46,6 @@ $gameinfos = array(
 
 // Discourage players to play with these numbers of players. Must be null if there is no such advice.
 'not_recommend_player_number' => null,
-// 'not_recommend_player_number' => array( 2, 3 ),      // <= example: this is not recommended to play this game with 2 or 3 players
-
 
 // Estimated game duration, in minutes (used only for the launch, afterward the real duration is computed)
 'estimated_duration' => 30,           
@@ -88,19 +86,32 @@ $gameinfos = array(
 'language_dependency' => false,
 
 // Complexity of the game, from 0 (extremely simple) to 5 (extremely complex)
-'complexity' => 3,    
+'complexity' => 2,    
 
 // Luck of the game, from 0 (absolutely no luck in this game) to 5 (totally luck driven)
-'luck' => 3,    
+'luck' => 4,    
 
 // Strategy of the game, from 0 (no strategy can be setup) to 5 (totally based on strategy)
-'strategy' => 3,    
+'strategy' => 2,    
 
 // Diplomacy of the game, from 0 (no interaction in this game) to 5 (totally based on interaction and discussion between players)
 'diplomacy' => 3,    
 
 // Colors attributed to players
-'player_colors' => array( "ff0000", "008000", "0000ff", "ffa500", "773300" ),
+'player_colors' => array( // Can use the exact colors in preferences because Smile Life has no game element player color based
+    '0000ff', // Blue
+    'ff0000', // Red
+    '008000', // Green
+    'ffa500', // Yellow
+    '000000', // Black
+    'ffffff', // White
+    'e94190', // Pink
+    '982fff', // Purple
+    '72c3b1', // Cyan
+    'f07f16', // Orange
+    'bdd002', // Khaki green
+    '7b7b7b', // Gray
+),
 
 // Favorite colors support : if set to "true", support attribution of favorite colors based on player's preferences (see reattributeColorsBasedOnPreferences PHP method)
 // NB: this parameter is used only to flag games supporting this feature; you must use (or not use) reattributeColorsBasedOnPreferences PHP method to actually enable or disable the feature.
@@ -134,18 +145,20 @@ $gameinfos = array(
 'presentation' => array(
 //    totranslate("This wonderful game is about geometric shapes!"),
 //    totranslate("It was awarded best triangle game of the year in 2005 and nominated for the Spiel des Jahres."),
-//    ...
+//    
+	totranslate("Try to succeed your life while roting others'!"),	
+	totranslate("Love, career, studies, hobbies, money, family... Play the right cards to cumulate smiles and become the happiest."),
+	totranslate("But beware of unforseen events: accident, divorce, tax, burn out, dismissal, sickness... The other players won't miss an opportunity to ransack your hapiness!"),
 ),
 
-// Games tags (categories)
-//  You can attribute a maximum of ten "tags" for your game.
+// Games categories
+//  You can attribute a maximum of FIVE "tags" for your game.
 //  Each tag has a specific ID (ex: 22 for the category "Prototype", 101 for the tag "Science-fiction theme game")
 //  Please see the "Game meta information" entry in the BGA Studio documentation for a full list of available tags:
-//  https://en.doc.boardgamearena.com/Game_meta-information:_gameinfos.inc.php#Tags
+//  http://en.doc.boardgamearena.com/Game_meta-information:_gameinfos.inc.php
 //  IMPORTANT: this list should be ORDERED, with the most important tag first.
-//  NOTE: tags are only read during the first deploy from the file gameinfos.inc.php; afterwards, BGA is responsible for setting tags for a game.
-
-'tags' => array( 2 ),
+//  IMPORTANT: it is mandatory that the FIRST tag is 1, 2, 3 and 4 (= game category)
+'tags' => array(2, 11, 200, 210),
 
 
 //////// BGA SANDBOX ONLY PARAMETERS (DO NOT MODIFY)

@@ -31,6 +31,15 @@ abstract class Flirt extends Love {
     }
 
     public function getRefClass(): string {
-        return $this->getClass();
+        return self::class;
     }
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - Override
+     * ---------------------------------------------------------------------- */
+
+//    public function getTitle($param) {
+//        return "Flirt";
+//    }
+
 }

@@ -11,7 +11,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-abstract class Child extends Card{
+abstract class Child extends Card {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -27,9 +27,9 @@ abstract class Child extends Card{
     public function getSmilePoints(): int {
         return 2;
     }
-    
+
     public function getRefClass(): string {
-        return $this->getClass();
+        return self::class;
     }
 
     /* -------------------------------------------------------------------------

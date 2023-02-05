@@ -89,7 +89,8 @@
 .card_salary{
     text-transform: uppercase;
 }
-.card_wedding .card_name{
+.card_wedding .card_name,
+.card_child .card_name{
     color: #bc0e6f; /*pink*/
 }
 .card_flirt .card_name{

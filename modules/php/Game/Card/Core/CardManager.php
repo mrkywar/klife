@@ -44,6 +44,7 @@ class CardManager extends SuperManager {
 
         $aviablePositions = range(1, $maxCards);
         shuffle($aviablePositions);
+        shuffle($cards); //double shuffle
 
         $gameManager = Klife::getInstance()->getGameManager();
         $game = $gameManager->findBy();

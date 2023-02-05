@@ -89,6 +89,12 @@
 .card_salary{
     text-transform: uppercase;
 }
+.card_job .card_title{
+    color:black;
+}
+.card_job .card_subtitle{
+    color: white;
+}
 .card_wedding .card_title,
 .card_child .card_title{
     color: #bc0e6f; /*pink*/
@@ -111,7 +117,12 @@
     font-size: 8px;
     margin-top: 18px;
 }
-
+.card_m .card_job .card_title{
+    margin-top: 7px;
+}
+.card_m .card_job .card_subtitle{
+    margin-top: 0px;
+}
 /*--------------------------------------------------------------------------
                 BEGIN - cards display COL 
 --------------------------------------------------------------------------*/

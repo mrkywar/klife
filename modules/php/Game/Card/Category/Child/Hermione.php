@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Child;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -9,10 +10,10 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class HermioneChild extends Child implements BaseGame {
+class Hermione extends Child implements BaseGame {
 
     public function getType(): int {
-        return 57;
+        return CardType::CHILD_HERMIONE;
     }
 
     public function getClass(): string {

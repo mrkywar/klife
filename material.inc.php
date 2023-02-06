@@ -25,6 +25,65 @@ require_once 'modules/constants.inc.php';
 
 $this->cardProperty = array(
     /* -------------------------------------------------------------------------
+     *                  BEGIN - ATTACK
+     * ---------------------------------------------------------------------- */
+    CardType::ATTACK_ACCIDENT => [
+        "title" => clienttranslate('Accident'),
+        "subtitle" => "",
+        "text" => clienttranslate("Take a turn"),
+        "text2" => clienttranslate(""),
+    ],
+    CardType::ATTACK_BURN_OUT => [
+        "title" => clienttranslate('Burn out'),
+        "subtitle" => "",
+        "text" => clienttranslate("Take a turn if you're working"),
+        "text2" => clienttranslate(""),
+    ],
+    CardType::ATTACK_DISMISSAL => [
+        "title" => clienttranslate('Dismissal'),
+        "subtitle" => "",
+        "text" => clienttranslate("You lose your job"),
+        "text2" => clienttranslate(""),
+    ],
+    CardType::ATTACK_DIVORCE => [
+        "title" => clienttranslate('Divorce'),
+        "subtitle" => "",
+        "text" => clienttranslate("You lose your marriage"),
+        "text2" => clienttranslate(""),
+    ],
+    CardType::ATTACK_GRADE_REPETITION => [
+        "title" => clienttranslate('Grade repetition'),
+        "subtitle" => "",
+        "text" => clienttranslate("Discard last study card "
+                . "(if you are a student)"),
+        "text2" => clienttranslate(""),
+    ],
+    CardType::ATTACK_HUMAN_ATTACK => [
+        "title" => clienttranslate('Human Attack'),
+        "subtitle" => "",
+        "text" => clienttranslate("Discard all child cards including your own"),
+        "text2" => "",
+    ],
+    CardType::ATTACK_ILLNESS => [
+        "title" => clienttranslate('Illness'),
+        "subtitle" => "",
+        "text" => clienttranslate("Take a turn"),
+        "text2" => "",
+    ],
+    CardType::ATTACK_INCOME_TAX => [
+        "title" => clienttranslate('Income tax'),
+        "subtitle" => "",
+        "text" => clienttranslate("Discard your last salary card if you work"),
+        "text2" => "",
+    ],
+    CardType::ATTACK_JAIL => [
+        "title" => clienttranslate('Jail'),
+        "subtitle" => "",
+        "text" => clienttranslate("Skip 3 turns if you are a bandit then "
+                . "discard both cards"),
+        "text2" => "",
+    ],
+    /* -------------------------------------------------------------------------
      *                  BEGIN - PET
      * ---------------------------------------------------------------------- */
     CardType::PET_CAT => [
@@ -123,6 +182,23 @@ $this->cardProperty = array(
         "subtitle" => "",
         "text" => clienttranslate("Minimum intake"),
         "text2" => clienttranslate("Half price if you are married"),
+    ],
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - REWARD
+     * ---------------------------------------------------------------------- */
+    CardType::REWARD_EXCELLENCE => [
+        "title" => clienttranslate('Grand Prize of Excellence'),
+        "subtitle" => "",
+        "text" => clienttranslate("Attribution reserved for writers, "
+                . "researchers, journalists"),
+        "text2" => clienttranslate("You can play salaries from 1 to 4 as long "
+                . "as you practice the rewarded profession"),
+    ],
+    CardType::REWARD_HONOR_LEGION => [
+        "title" => clienttranslate('Honor Legion'),
+        "subtitle" => "",
+        "text" => clienttranslate("The nation decorates you (all except bandit)"),
+        "text2" => "",
     ],
 );
 

@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Child;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -9,10 +10,10 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Leia extends Child implements BaseGame {
+class Lara extends Child implements BaseGame {
 
     public function getType(): int {
-        return 59;
+        return CardType::CHILD_LARA;
     }
 
     public function getClass(): string {

@@ -2,8 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job\Reward;
 
-use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -54,7 +54,7 @@ class ExcellenceReward extends Reward implements BaseGame {
     }
 
     public function getType(): int {
-        return 80;
+        return CardType::REWARD_EXCELLENCE;
     }
 
     /* -------------------------------------------------------------------------

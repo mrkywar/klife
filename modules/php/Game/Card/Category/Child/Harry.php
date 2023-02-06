@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Child;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -12,7 +13,7 @@ use SmileLife\Game\Card\Module\BaseGame;
 class Harry extends Child implements BaseGame {
 
     public function getType(): int {
-        return 56;
+        return CardType::CHILD_HARRY;
     }
 
     public function getClass(): string {

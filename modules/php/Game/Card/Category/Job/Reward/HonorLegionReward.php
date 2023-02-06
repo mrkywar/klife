@@ -2,8 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job\Reward;
 
-use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -47,7 +47,7 @@ class HonorLegionReward extends Reward implements BaseGame {
     }
 
     public function getType(): int {
-        return 81;
+        return CardType::REWARD_HONOR_LEGION;
     }
 
     /* -------------------------------------------------------------------------

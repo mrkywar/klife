@@ -1,21 +1,21 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Salary;
+namespace SmileLife\Game\Card\Category\Wage;
 
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of Salary1
+ * Description of WageLevel4
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Salary1 extends Salary implements BaseGame {
+class WageLevel4 extends Wage implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
     public function getAmount(): int {
-        return 1;
+        return 4;
     }
 
     public function getClass(): string {
@@ -23,7 +23,7 @@ class Salary1 extends Salary implements BaseGame {
     }
 
     public function getType(): int {
-        return 33;
+        return CardType::WAGE_LEVEL_4;
     }
 
     /* -------------------------------------------------------------------------

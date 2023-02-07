@@ -9,9 +9,14 @@ namespace SmileLife\Game\Card\Core;
  */
 abstract class CardType {
     /* -------------------------------------------------------------------------
-     *                  BEGIN - JOB
+     *                  BEGIN - STUDIES
      * ---------------------------------------------------------------------- */
 
+    const STUDY_SINGLE = 1;
+    const STUDY_DOUBLE = 2;
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - JOB
+     * ---------------------------------------------------------------------- */
     //-- Official
     const JOB_ENGLISH_TEACHER = 3;
     const JOB_FRENCH_TEACHER = 4;
@@ -45,6 +50,38 @@ abstract class CardType {
     const JOB_RESEARCHER = 30;
     const JOB_SURGEON = 31;
     const JOB_WRITER = 32;
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - WAGES
+     * ---------------------------------------------------------------------- */
+    const WAGE_LEVEL_1 = 33;
+    const WAGE_LEVEL_2 = 34;
+    const WAGE_LEVEL_3 = 35;
+    const WAGE_LEVEL_4 = 36;
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - FLIRTS
+     * ---------------------------------------------------------------------- */
+    const FLIRT_BAR = 37;
+    const FLIRT_CAMPING = 38;
+    const FLIRT_CINEMA = 39;
+    const FLIRT_HOTEL = 40;
+    const FLIRT_WEB = 41;
+    const FLIRT_NIGTHCLUB = 42;
+    const FLIRT_PARC = 43;
+    const FLIRT_RESTAURANT = 44;
+    const FLIRT_THEATER = 45;
+    const FLIRT_ZOO = 46;
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - WEDDING
+     * ---------------------------------------------------------------------- */
+    const WEDDING_BOURG_LA_REINE = 47;
+    const WEDDING_BOURG_MADAME = 48;
+    const WEDDING_CORPS_NUDS = 49;
+    const WEDDING_FOURQUEUX = 50;
+    const WEDDING_MONTCUQ = 51;
+    const WEDDING_MONTETON = 52;
+    const WEDDING_SAINTE_VERGE = 53;
+    
+    const ADULTERY = 54;
     /* -------------------------------------------------------------------------
      *                  BEGIN - CHILD
      * ---------------------------------------------------------------------- */

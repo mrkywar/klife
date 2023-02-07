@@ -1,17 +1,17 @@
 <?php
 
-namespace SmileLife\Game\Card\Category\Salary;
+namespace SmileLife\Game\Card\Category\Wage;
 
 use Klife;
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
 /**
- * Description of Salary
+ * Description of Wage
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-abstract class Salary extends Card {
+abstract class Wage extends Card {
 
     private const SMILE_POINTS = 1;
 

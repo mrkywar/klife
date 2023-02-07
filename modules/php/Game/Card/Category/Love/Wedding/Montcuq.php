@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Love\Wedding;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -16,7 +17,7 @@ class Montcuq extends Wedding implements BaseGame {
     }
 
     public function getType(): int {
-        return 51;
+        return CardType::WEDDING_MONTCUQ;
     }
 
     /* -------------------------------------------------------------------------

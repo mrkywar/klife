@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Love\Flirt;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -23,7 +24,7 @@ class Bar extends Flirt implements BaseGame {
     }
 
     public function getType(): int {
-        return 37;
+        return CardType::FLIRT_BAR;
     }
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame

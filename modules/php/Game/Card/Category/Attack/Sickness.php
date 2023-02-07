@@ -10,7 +10,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Illness extends Attack implements BaseGame {
+class Sickness extends Attack implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -20,7 +20,7 @@ class Illness extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return CardType::ATTACK_ILLNESS;
+        return CardType::ATTACK_SICKNESS;
     }
 
     /* -------------------------------------------------------------------------

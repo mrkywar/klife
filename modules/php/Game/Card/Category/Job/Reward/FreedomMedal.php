@@ -7,11 +7,11 @@ use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of HonorLegionReward
+ * Description of FreedomMedal
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class HonorLegionReward extends Reward implements BaseGame {
+class FreedomMedal extends Reward implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -47,7 +47,7 @@ class HonorLegionReward extends Reward implements BaseGame {
     }
 
     public function getType(): int {
-        return CardType::REWARD_HONOR_LEGION;
+        return CardType::REWARD_FREEDOM_MEDAL;
     }
 
     /* -------------------------------------------------------------------------

@@ -58,8 +58,8 @@ abstract class CardType {
     /* -------------------------------------------------------------------------
      *                  BEGIN - REWARD
      * ---------------------------------------------------------------------- */
-    const REWARD_EXCELLENCE = 80;
-    const REWARD_HONOR_LEGION = 81;
+    const REWARD_NATIONAL_MEDAL = 80;
+    const REWARD_FREEDOM_MEDAL = 81;
     /* -------------------------------------------------------------------------
      *                  BEGIN - ATTACK
      * ---------------------------------------------------------------------- */
@@ -67,7 +67,7 @@ abstract class CardType {
     const ATTACK_JAIL = 83;
     const ATTACK_ACCIDENT = 84;
     const ATTACK_BURN_OUT = 85;
-    const ATTACK_ILLNESS = 86;
+    const ATTACK_SICKNESS = 86;
     const ATTACK_DISMISSAL = 87;
     const ATTACK_DIVORCE = 88;
     const ATTACK_INCOME_TAX = 89;

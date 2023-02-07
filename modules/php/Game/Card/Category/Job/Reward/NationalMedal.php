@@ -8,11 +8,11 @@ use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
- * Description of ExcellenceReward
+ * Description of NationalMedal
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class ExcellenceReward extends Reward implements BaseGame {
+class NationalMedal extends Reward implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -54,7 +54,7 @@ class ExcellenceReward extends Reward implements BaseGame {
     }
 
     public function getType(): int {
-        return CardType::REWARD_EXCELLENCE;
+        return CardType::REWARD_NATIONAL_MEDAL;
     }
 
     /* -------------------------------------------------------------------------

@@ -11,18 +11,43 @@ abstract class CardType {
     /* -------------------------------------------------------------------------
      *                  BEGIN - JOB
      * ---------------------------------------------------------------------- */
+
+    //-- Official
+    const JOB_ENGLISH_TEACHER = 3;
+    const JOB_FRENCH_TEACHER = 4;
+    const JOB_HISTORY_TEACHER = 5;
+    const JOB_MATH_TEACHER = 6;
+    const JOB_GRAND_PROF = 7;
+    const JOB_MILITARY = 8;
+    const JOB_POLICEMEN = 9;
+    //-- Interim
     const JOB_BARMAN = 10;
     const JOB_GARDENER = 11;
-
-
-
-
-
-
+    const JOB_PLUMBER = 12;
+    const JOB_STRIPTEASER = 13;
+    const JOB_WAITER = 14;
+    //-- Normal
+    const JOB_AIRLINE_PILOT = 15;
+    const JOB_ARCHTECT = 16;
+    const JOB_ASTRONAUT = 17;
+    const JOB_DESIGNER = 18;
+    const JOB_DOCTOR = 19;
+    const JOB_BANDIT = 20;
+    const JOB_GURU = 21;
+    const JOB_JOURNALIST = 22;
+    const JOB_LAWYER = 23;
+    const JOB_HEAD_OF_PURCHASING = 24;
+    const JOB_HEAD_OF_SALES = 25;
+    const JOB_MECHANIC = 26;
+    const JOB_PHARMACIST = 27;
+    const JOB_PIZZA_MAKER = 28;
+    const JOB_MEDIUM = 29;
+    const JOB_RESEARCHER = 30;
+    const JOB_SURGEON = 31;
+    const JOB_WRITER = 32;
     /* -------------------------------------------------------------------------
      *                  BEGIN - CHILD
      * ---------------------------------------------------------------------- */
-
     const CHILD_DIANA = 55;
     const CHILD_HARRY = 56;
     const CHILD_HERMIONE = 57;

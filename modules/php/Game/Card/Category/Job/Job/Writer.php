@@ -2,8 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job\Job;
 
-use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -11,7 +11,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class Author extends Job implements BaseGame {
+class Writer extends Job implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -29,7 +29,7 @@ class Author extends Job implements BaseGame {
     }
 
     public function getType(): int {
-        return 32;
+        return CardType::JOB_WRITER;
     }
 
     /* -------------------------------------------------------------------------

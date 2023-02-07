@@ -2,8 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Job\Job;
 
-use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -29,7 +29,7 @@ class Medium extends Job implements BaseGame {
     }
 
     public function getType(): int {
-        return 29;
+        return CardType::JOB_MEDIUM;
     }
 
     /* -------------------------------------------------------------------------

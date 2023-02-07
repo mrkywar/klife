@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Interim;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -28,7 +28,7 @@ class Stripteaser extends Interim implements BaseGame {
     }
 
     public function getType(): int {
-        return 13;
+        return CardType::JOB_STRIPTEASER;
     }
 
     /* -------------------------------------------------------------------------

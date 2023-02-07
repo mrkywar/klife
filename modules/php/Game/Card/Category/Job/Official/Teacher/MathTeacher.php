@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official\Teacher;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -28,7 +28,7 @@ class MathTeacher extends Teacher implements BaseGame {
     }
     
     public function getType(): int {
-        return 6;
+        return CardType::JOB_MATH_TEACHER;
     }
 
     /* -------------------------------------------------------------------------

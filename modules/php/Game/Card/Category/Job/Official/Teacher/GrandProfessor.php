@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official\Teacher;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -11,7 +11,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class GreatTeacher extends Teacher implements BaseGame {
+class GrandProfessor extends Teacher implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Override
      * ---------------------------------------------------------------------- */
@@ -21,7 +21,7 @@ class GreatTeacher extends Teacher implements BaseGame {
     }
 
     public function getType(): int {
-        return 7;
+        return CardType::JOB_GRAND_PROF;
     }
 
     /* -------------------------------------------------------------------------

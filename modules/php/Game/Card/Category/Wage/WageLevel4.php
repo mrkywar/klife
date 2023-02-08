@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Wage;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**

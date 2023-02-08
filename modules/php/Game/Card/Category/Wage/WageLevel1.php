@@ -10,7 +10,7 @@ use SmileLife\Game\Card\Module\BaseGame;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-class WageLevel1 extends Wege implements BaseGame {
+class WageLevel1 extends Wage implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */

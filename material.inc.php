@@ -25,6 +25,74 @@ require_once 'modules/constants.inc.php';
 
 $this->cardProperty = array(
     /* -------------------------------------------------------------------------
+     *                  BEGIN - SPECIAL
+     * ---------------------------------------------------------------------- */
+    CardType::SPECIAL_BIRTHDAY => [
+        'title' => clienttranslate('Birthday'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Each player selects and gives you a paycheck '
+                . 'card (face down)'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_CASINO => [
+        'title' => clienttranslate('Casino'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Bet a paycheck card face down. If another 
+            player bets the same card, he wins. If they bet differently, you win'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_INHERITANCE => [
+        'title' => clienttranslate('Inheritance'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('This money is yours to keep'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_JOB_BOOST => [
+        'title' => clienttranslate('String-pulling'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('put down a job card without the requisite '
+                . 'level of education'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_LUCK => [
+        'title' => clienttranslate('Luck'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Take three cards, keep one and play'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_RAINBOW => [
+        'title' => clienttranslate('Rainbow'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Play up to 3 cards at once then pick '
+                . 'a new card'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_REVENGE => [
+        'title' => clienttranslate('Revenge'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Inflict a penalty on another player'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_SHOOTING_STAR=> [
+        'title' => clienttranslate('Shooting star'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Take any card from the discard pile and '
+                . 'play it'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_TROC => [
+        'title' => clienttranslate('Swap'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Exchange a card randomly with another player'),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::SPECIAL_TSUNAMI => [
+        'title' => clienttranslate('Tsunami'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Mix and re-distribute all cards held'),
+        'text2' => clienttranslate(''),
+    ],
+    /* -------------------------------------------------------------------------
      *                  BEGIN - FLIRTS
      * ---------------------------------------------------------------------- */
     CardType::FLIRT_BAR => [

@@ -80,7 +80,6 @@ abstract class CardType {
     const WEDDING_MONTCUQ = 51;
     const WEDDING_MONTETON = 52;
     const WEDDING_SAINTE_VERGE = 53;
-    
     const ADULTERY = 54;
     /* -------------------------------------------------------------------------
      *                  BEGIN - CHILD
@@ -134,5 +133,19 @@ abstract class CardType {
     const ATTACK_DIVORCE = 88;
     const ATTACK_INCOME_TAX = 89;
     const ATTACK_GRADE_REPETITION = 90;
+
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - SPECIALS
+     * ---------------------------------------------------------------------- */
+    const SPECIAL_BIRTHDAY = 91;
+    const SPECIAL_CASINO = 92;
+    const SPECIAL_INHERITANCE = 93;
+    const SPECIAL_LUCK = 94;
+    const SPECIAL_RAINBOW = 95;
+    const SPECIAL_REVENGE = 96;
+    const SPECIAL_SHOOTING_STAR = 97;
+    const SPECIAL_JOB_BOOST = 98;
+    const SPECIAL_TROC = 99;
+    const SPECIAL_TSUNAMI = 100;
 
 }

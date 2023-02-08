@@ -2,7 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Special;
 
-use Klife;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Effect\Effect;
 use SmileLife\Game\Card\Module\BaseGame;
@@ -26,7 +26,7 @@ class SpecialTsunami extends Special implements BaseGame {
     }
 
     public function getType(): int {
-        return 100;
+        return CardType::SPECIAL_TSUNAMI;
     }
 
     /* -------------------------------------------------------------------------

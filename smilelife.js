@@ -389,28 +389,28 @@ function (dojo, declare) {
 			}
 			return null;
 		},
-		
-		applyCardSize: function(size, HTML_class_list) {
-			// Compute the size of the sprite in pixels
-			var width = this.card_dimensions[size].width;
-			var height = this.card_dimensions[size].height;
-			var radius = this.card_dimensions[size].radius;
-			
-			var sprite_width = this.sprite_nb_columns * width;
-			var sprite_height = this.sprite_nb_rows * height;
-			
-			// Create the CSS piece
-			var css = dojo.string.substitute(`
-			${HTML_class_list} {
-				width: ${width}px !important;
-				height: ${height}px !important;
-				background-size: ${sprite_width}px ${sprite_height}px !important;
-				border-radius: ${radius}px;
-			}`);
-			
-			// Add this into the CSS
-			this.insertCSS(css);
-		},
+
+//		applyCardSize: function(size, HTML_class_list) {
+//			// Compute the size of the sprite in pixels
+//			var width = this.card_dimensions[size].width;
+//			var height = this.card_dimensions[size].height;
+//			var radius = this.card_dimensions[size].radius;
+//			
+//			var sprite_width = this.sprite_nb_columns * width;
+//			var sprite_height = this.sprite_nb_rows * height;
+//			
+//			// Create the CSS piece
+//			var css = dojo.string.substitute(`
+//			${HTML_class_list} {
+//				width: ${width}px !important;
+//				height: ${height}px !important;
+//				background-size: ${sprite_width}px ${sprite_height}px !important;
+//				border-radius: ${radius}px;
+//			}`);
+//			
+//			// Add this into the CSS
+//			this.insertCSS(css);
+//		},
 		
 		applyPlayerBoardMinimumSize: function(size) {
 			// Get the height of a card

@@ -18,19 +18,39 @@
 -- Note: The database schema is created from this file when the game starts. If you modify this file,
 --       you have to restart a game to see your changes in database.
 
-CREATE TABLE IF NOT EXISTS `card` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `class` varchar(32) NOT NULL COMMENT 'Type of the card (matches the class name the card need to be instanciated with)',
-  `owner_id` int(11) NOT NULL COMMENT 'The id of the owner it it means something. 0 otherwise',
-  `location` varchar(16) NOT NULL COMMENT 'deck, hand, discard, removed, or a specific location on board',
-  `position` int(11) NOT NULL COMMENT 'Position in the given location (+ owner if there is one). Bottom is 0, top is max.',
-  `discarder_id` int(11) NOT NULL COMMENT 'The id of the player who discarded the card, only if the card is in discard location. That player cannot take this card back. 0 otherwise',
-  `is_flipped` BOOLEAN NOT NULL COMMENT 'FALSE if the card is face up, TRUE if the card is flipped (ie. in deck or protected in player location)',
-  `is_rotated` BOOLEAN NOT NULL COMMENT 'FALSE if the card is vertical, TRUE if the card is rotated 90 degrees (used for flirts enabling children, when that card was used to have a child)',
-  PRIMARY KEY (`id`)
+CREATE TABLE IF NOT EXISTS `log` (
+    `log_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `log_date` varchar(50) NOT NULL,
+    `log_category` varchar(50) NOT NULL,
+    `log_content` text NOT NULL,
+    PRIMARY KEY(`log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
--- Example 2: add a custom field to the standard "player" table
--- ALTER TABLE `player` ADD `player_my_custom_field` INT UNSIGNED NOT NULL DEFAULT '0';
+CREATE TABLE IF NOT EXISTS `game` (
+    `game_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `game_option` text NULL,
+    `game_aviable_cards` float(5.2) NULL,
+    PRIMARY KEY(`game_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `player_attributes`(
+    `attributes_player_id` int(10) UNSIGNED NOT NULL,
+    `attributes_max_cards` int(1) UNSIGNED NOT NULL,
+    PRIMARY KEY(`attributes_player_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `card` (
+  `card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `card_class` varchar(255) NOT NULL COMMENT 'Type of the card (matches the class name the card need to be instanciated with)',
+  `card_type` int(10) NULL COMMENT 'Type of the card to display',
+  `card_owner_id` int(10) NULL COMMENT 'The id of the owner it it means something. 0 otherwise',
+  `card_location` varchar(50) NULL COMMENT 'deck, hand, discard, removed, or a specific location on board',
+  `card_location_arg` int(10) NULL COMMENT 'Position in the given location (+ owner if there is one). Bottom is 0, top is max.',
+  `card_discarder_id` int(10) NULL COMMENT 'The id of the player who discarded the card, only if the card is in discard location. That player cannot take this card back. 0 otherwise',
+  `card_is_flipped` BOOLEAN NOT NULL COMMENT 'FALSE if the card is face up, TRUE if the card is flipped (ie. in deck or protected in player location)',
+  `card_is_rotated` BOOLEAN NOT NULL COMMENT 'FALSE if the card is vertical, TRUE if the card is rotated 90 degrees (used for flirts enabling children, when that card was used to have a child)',
+  PRIMARY KEY (`card_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
 

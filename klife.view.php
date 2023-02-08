@@ -3,6 +3,8 @@
 use Core\Managers\PlayerManager;
 use Core\Models\Player;
 use SmileLife\Game\Card\Core\Card;
+use SmileLife\Game\Card\Core\CardManager;
+use SmileLife\Game\Card\Core\Exception\CardException;
 
 /**
  * ------
@@ -29,6 +31,7 @@ use SmileLife\Game\Card\Core\Card;
  *
  */
 require_once( APP_BASE_PATH . "view/common/game.view.php" );
+require( __DIR__ . '/material.inc.php' );
 
 class view_klife_klife extends game_view {
 
@@ -93,6 +96,13 @@ class view_klife_klife extends game_view {
     }
 
     private function buildCard(Card $card) {
+        var_dump($cardProperty);
+        die;
+        if (!isset($cardProperty[$card->getType()])) {
+            throw new CardException("KLVE-01 : No I18N finded for " . $card->getType());
+        }
+        $refStrings = $cardProperty[$card->getType()];
+
         return $this->page->insert_block("myhand_card", [
                     "id" => $card->getId(),
                     "type" => $card->getType(),

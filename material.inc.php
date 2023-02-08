@@ -216,25 +216,25 @@ $this->cardProperty = array(
     CardType::WAGE_LEVEL_1 => [
         'title' => clienttranslate('Wage'),
         'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', [level => 1]),
+        'text' => clienttranslate('Level ${level}', ['level' => 1]),
         'text2' => clienttranslate(''),
     ],
     CardType::WAGE_LEVEL_2 => [
         'title' => clienttranslate('Wage'),
         'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', [level => 2]),
+        'text' => clienttranslate('Level ${level}', ['level' => 2]),
         'text2' => clienttranslate(''),
     ],
     CardType::WAGE_LEVEL_3 => [
         'title' => clienttranslate('Wage'),
         'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', [level => 3]),
+        'text' => clienttranslate('Level ${level}', ['level' => 3]),
         'text2' => clienttranslate(''),
     ],
     CardType::WAGE_LEVEL_4 => [
         'title' => clienttranslate('Wage'),
         'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', [level => 4]),
+        'text' => clienttranslate('Level ${level}', ['level' => 4]),
         'text2' => clienttranslate(''),
     ],
     /* -------------------------------------------------------------------------
@@ -595,7 +595,7 @@ $this->cardProperty = array(
     /* -------------------------------------------------------------------------
      *                  BEGIN - REWARD
      * ---------------------------------------------------------------------- */
-    CardType::REWARD_EXCELLENCE => [
+    CardType::REWARD_NATIONAL_MEDAL => [
         'title' => clienttranslate('Grand Prize of Excellence'),
         'subtitle' => '',
         'text' => clienttranslate('Can only be attributed to writers, '
@@ -603,7 +603,7 @@ $this->cardProperty = array(
         'text2' => clienttranslate('You may pocket paychecks from 1 to 4 while '
                 . 'you work in the awarded job.'),
     ],
-    CardType::REWARD_HONOR_LEGION => [
+    CardType::REWARD_FREEDOM_MEDAL => [
         'title' => clienttranslate('Medal of Freedom'),
         'subtitle' => '',
         'text' => clienttranslate('You are awarded by the nation'

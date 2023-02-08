@@ -24,6 +24,8 @@
 
                         <span class="card_title">{title}</span>
                         <span class="card_title card_subtitle">{subtitle}</span>
+                        <span class="card_title card_text1">{text1}</span>
+                        <span class="card_title card_text2">{text2}</span>
                         <span class="debug">{type}</span>
                     </div>
                     <!-- END myhand_card -->

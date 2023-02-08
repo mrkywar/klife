@@ -84,16 +84,24 @@ abstract class Card extends Model {
      * ---------------------------------------------------------------------- */
 
     /**
-     * 
-     * @var array
+     * @var string
      */
-    private $texts;
+    protected $title;
 
     /**
-     * 
-     * @var array
+     * @var string
      */
-    private $helps;
+    protected $subtitle;
+
+    /**
+     * @var string
+     */
+    protected $text1;
+
+    /**
+     * @var string
+     */
+    protected $text2;
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Constructor & Display
@@ -102,10 +110,11 @@ abstract class Card extends Model {
     public function __construct() {
         $this->setLocation(CardPosition::DECK)
                 ->setIsFlipped(false)
-                ->setIsRotated(false);
-
-        $this->texts = [];
-        $this->helps = [];
+                ->setIsRotated(false)
+                ->setTitle("")
+                ->setSubtitle("")
+                ->setText1("")
+                ->setText2("");
     }
 
     public function __toString() {
@@ -135,7 +144,7 @@ abstract class Card extends Model {
 
         return implode(" card_", $classes);
     }
-    
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
@@ -232,6 +241,42 @@ abstract class Card extends Model {
 
     public function setType(?int $type) {
         $this->type = $type;
+        return $this;
+    }
+
+    public function getTitle(): string {
+        return $this->title;
+    }
+
+    public function getSubtitle(): string {
+        return $this->subtitle;
+    }
+
+    public function getText1(): string {
+        return $this->text1;
+    }
+
+    public function getText2(): string {
+        return $this->text2;
+    }
+
+    public function setTitle(string $title) {
+        $this->title = $title;
+        return $this;
+    }
+
+    public function setSubtitle(string $subtitle) {
+        $this->subtitle = $subtitle;
+        return $this;
+    }
+
+    public function setText1(string $text1) {
+        $this->text1 = $text1;
+        return $this;
+    }
+
+    public function setText2(string $text2) {
+        $this->text2 = $text2;
         return $this;
     }
 

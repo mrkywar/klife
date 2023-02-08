@@ -15,6 +15,12 @@ abstract class Wage extends Card {
 
     private const SMILE_POINTS = 1;
 
+    public function __construct() {
+        parent::__construct();
+
+        $this->setTitle(clienttranslate('Wage'));
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - new Abstract
      * ---------------------------------------------------------------------- */
@@ -36,4 +42,5 @@ abstract class Wage extends Card {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
+
 }

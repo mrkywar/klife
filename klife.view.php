@@ -96,20 +96,22 @@ class view_klife_klife extends game_view {
     }
 
     private function buildCard(Card $card) {
-        var_dump($cardProperty);
-        die;
-        if (!isset($cardProperty[$card->getType()])) {
-            throw new CardException("KLVE-01 : No I18N finded for " . $card->getType());
-        }
-        $refStrings = $cardProperty[$card->getType()];
+//        var_dump($cardProperty);
+//        die;
+//        if (!isset($cardProperty[$card->getType()])) {
+//            throw new CardException("KLVE-01 : No I18N finded for " . $card->getType());
+//        }
+//        $refStrings = $cardProperty[$card->getType()];
 
         return $this->page->insert_block("myhand_card", [
                     "id" => $card->getId(),
                     "type" => $card->getType(),
                     "shortclass" => $card->getVisibleClasses(),
                     "location" => $card->getLocation(),
-//                    "title" => $card->getTitle(),
-//                    "subtitle" => $card->getSubTitle()
+                    "title" => $card->getTitle(),
+                    "subtitle" => $card->getSubTitle(),
+                    "text1" => $card->getText1(),
+                    "text2" => $card->getText2()
         ]);
     }
 

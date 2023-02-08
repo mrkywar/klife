@@ -210,33 +210,7 @@ $this->cardProperty = array(
             put down. Loss of children in the case of divorce.'),
         'text2' => clienttranslate(''),
     ],
-    /* -------------------------------------------------------------------------
-     *                  BEGIN - WAGES
-     * ---------------------------------------------------------------------- */
-    CardType::WAGE_LEVEL_1 => [
-        'title' => clienttranslate('Wage'),
-        'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', ['level' => 1]),
-        'text2' => clienttranslate(''),
-    ],
-    CardType::WAGE_LEVEL_2 => [
-        'title' => clienttranslate('Wage'),
-        'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', ['level' => 2]),
-        'text2' => clienttranslate(''),
-    ],
-    CardType::WAGE_LEVEL_3 => [
-        'title' => clienttranslate('Wage'),
-        'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', ['level' => 3]),
-        'text2' => clienttranslate(''),
-    ],
-    CardType::WAGE_LEVEL_4 => [
-        'title' => clienttranslate('Wage'),
-        'subtitle' => clienttranslate(''),
-        'text' => clienttranslate('Level ${level}', ['level' => 4]),
-        'text2' => clienttranslate(''),
-    ],
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - STUDIES
      * ---------------------------------------------------------------------- */
@@ -672,6 +646,37 @@ $this->cardProperty = array(
         'subtitle' => '',
         'text' => clienttranslate('Zelda'),
         'text2' => '',
+    ],
+    
+    
+    
+    
+    /* -------------------------------------------------------------------------
+     *                  BEGIN - WAGES
+     * ---------------------------------------------------------------------- */
+    CardType::WAGE_LEVEL_1 => [
+        'title' => clienttranslate('Wage'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Level ${level}', ['level' => 1]),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::WAGE_LEVEL_2 => [
+        'title' => clienttranslate('Wage'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Level ${level}', ['level' => 2]),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::WAGE_LEVEL_3 => [
+        'title' => clienttranslate('Wage'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Level ${level}', ['level' => 3]),
+        'text2' => clienttranslate(''),
+    ],
+    CardType::WAGE_LEVEL_4 => [
+        'title' => clienttranslate('Wage'),
+        'subtitle' => clienttranslate(''),
+        'text' => clienttranslate('Level ${level}', ['level' => 4]),
+        'text2' => clienttranslate(''),
     ],
 );
 

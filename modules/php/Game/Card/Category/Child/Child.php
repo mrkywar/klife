@@ -12,6 +12,13 @@ use SmileLife\Game\Card\Core\Exception\CardException;
  * @author Mr_Kywar mr_kywar@gmail.com
  */
 abstract class Child extends Card {
+
+    public function __construct() {
+        parent::__construct();
+
+        $this->setTitle(clienttranslate('Child'));
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */

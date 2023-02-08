@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Wage;
 
+use Klife;
 use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -11,6 +12,13 @@ use SmileLife\Game\Card\Module\BaseGame;
  * @author Mr_Kywar mr_kywar@gmail.com
  */
 class WageLevel4 extends Wage implements BaseGame {
+
+    public function __construct() {
+        parent::__construct();
+
+        $this->setText1(clienttranslate('Level ${level}', ['level' => 4]));
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */

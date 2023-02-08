@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Interim;
 
+use Klife;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -25,7 +26,7 @@ class Gardener extends Interim implements BaseGame {
     public function getRequiredStudies(): int {
         return 1;
     }
-    
+
     public function getType(): int {
         return 11;
     }
@@ -33,5 +34,4 @@ class Gardener extends Interim implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
 }

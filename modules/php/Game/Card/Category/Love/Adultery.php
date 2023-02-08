@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Love;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -37,9 +38,9 @@ class Adultery extends Love implements BaseGame {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
-    
+
     public function getType(): int {
-        return 54;
+        return CardType::ADULTERY;
     }
 
     /* -------------------------------------------------------------------------

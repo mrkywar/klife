@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job;
 
+use Klife;
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
@@ -17,7 +18,7 @@ abstract class Job extends Card {
     public function __construct() {
         parent::__construct();
 
-        $this->addHelp(clienttranslate("This is a job card, you can play it to earn money. The max wage is indicated on the card."));
+        $this->addHelp(Klife::getInstance()->i18n("This is a job card, you can play it to earn money. The max wage is indicated on the card."));
     }
 
     /* -------------------------------------------------------------------------

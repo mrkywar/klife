@@ -1,6 +1,13 @@
 <?php
+
+use Core\Managers\PlayerManager;
+use Core\Models\Player;
+use SmileLife\Game\Card\Core\Card;
+use SmileLife\Game\Card\Core\CardManager;
+use SmileLife\Game\Card\Core\Exception\CardException;
+
 /**
- *------
+ * ------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
  * klife implementation : © <Your name here> <Your email address here>
  *
@@ -23,64 +30,89 @@
  * Note: if the HTML of your game interface is always the same, you don't have to place anything here.
  *
  */
-  
-require_once( APP_BASE_PATH."view/common/game.view.php" );
-  
-class view_klife_klife extends game_view
-{
-    protected function getGameName()
-    {
+require_once( APP_BASE_PATH . "view/common/game.view.php" );
+require( __DIR__ . '/material.inc.php' );
+
+class view_klife_klife extends game_view {
+
+    /**
+     * @var PlayerManager
+     */
+    private $playerManager;
+
+    /**
+     * @var CardManager
+     */
+    private $cardManager;
+
+    public function __construct(...$_) {
+        parent::__construct(...$_);
+        $this->cardManager = $this->getGame()->getCardManager();
+        $this->playerManager = $this->getGame()->getPlayerManager();
+    }
+
+    protected function getGameName() {
         // Used for translations and stuff. Please do not modify.
         return "klife";
     }
-    
-  	function build_page( $viewArgs )
-  	{		
-  	    // Get players & players number
-        $players = $this->game->loadPlayersBasicInfos();
-        $players_nbr = count( $players );
 
-        /*********** Place your code below:  ************/
+    protected function getGame(): Klife {
+        return Klife::getInstance();
+    }
 
+    function build_page($viewArgs) {
+        global $g_user;
+        $this->page->begin_block("klife_klife", "player");
+        $this->page->begin_block("klife_klife", "myhand_card");
 
-        /*
-        
-        // Examples: set the value of some element defined in your tpl file like this: {MY_VARIABLE_ELEMENT}
+        $cardSerializer = $this->cardManager->getSerializer();
 
-        // Display a specific number / string
-        $this->tpl['MY_VARIABLE_ELEMENT'] = $number_to_display;
+        $this->tpl['MY_HAND'] = self::_("My hand");
 
-        // Display a string to be translated in all languages: 
-        $this->tpl['MY_VARIABLE_ELEMENT'] = self::_("A string to be translated");
+        $players = $this->playerManager->findBy();
+        $connectedPlayer = $this->playerManager->findBy([
+            "id" => $g_user->get_id()
+        ]);
 
-        // Display some HTML content of your own:
-        $this->tpl['MY_VARIABLE_ELEMENT'] = self::raw( $some_html_code );
-        
-        */
-        
-        /*
-        
-        // Example: display a specific HTML block for each player in this game.
-        // (note: the block is defined in your .tpl file like this:
-        //      <!-- BEGIN myblock --> 
-        //          ... my HTML code ...
-        //      <!-- END myblock --> 
-        
+        $cardsInHand = $cardSerializer->unserialize(
+                $this->cardManager->getPlayerCards($connectedPlayer)
+        );
 
-        $this->page->begin_block( "klife_klife", "myblock" );
-        foreach( $players as $player )
-        {
-            $this->page->insert_block( "myblock", array( 
-                                                    "PLAYER_NAME" => $player['player_name'],
-                                                    "SOME_VARIABLE" => $some_value
-                                                    ...
-                                                     ) );
+        foreach ($cardsInHand as $card) {
+            $this->buildCard($card);
         }
-        
-        */
 
+        foreach ($players as $player) {
+            $this->buildPlayer($player);
+        }
+    }
 
+    private function buildPlayer(Player $player) {
+        return $this->page->insert_block("player", [
+                    'id' => $player->getId(),
+                    'color' => $player->getColor(),
+                    'name' => $player->getName(),
+        ]);
+    }
 
-        /*********** Do not change anything below this line  ************/
-  	}
+    private function buildCard(Card $card) {
+//        var_dump($cardProperty);
+//        die;
+//        if (!isset($cardProperty[$card->getType()])) {
+//            throw new CardException("KLVE-01 : No I18N finded for " . $card->getType());
+//        }
+//        $refStrings = $cardProperty[$card->getType()];
+
+        return $this->page->insert_block("myhand_card", [
+                    "id" => $card->getId(),
+                    "type" => $card->getType(),
+                    "shortclass" => $card->getVisibleClasses(),
+                    "location" => $card->getLocation(),
+                    "title" => $card->getTitle(),
+                    "subtitle" => $card->getSubTitle(),
+                    "text1" => $card->getText1(),
+                    "text2" => $card->getText2()
+        ]);
+    }
+
 }

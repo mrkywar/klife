@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Interim;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -27,7 +28,7 @@ class Waiter extends Interim implements BaseGame {
     }
 
     public function getType(): int {
-        return 14;
+        return CardType::JOB_WAITER;
     }
 
     /* -------------------------------------------------------------------------

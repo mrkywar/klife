@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\Pet;
 
+use Klife;
 use SmileLife\Game\Card\Category\Acquisition\Acquisition;
 
 /**
@@ -9,17 +10,13 @@ use SmileLife\Game\Card\Category\Acquisition\Acquisition;
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-abstract class Pet extends Acquisition{
+abstract class Pet extends Acquisition {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
     public function getPrice(): int {
         return 0;
-    }
-
-    public function getClass(): string {
-        return self::class;
     }
 
     public function getSmilePoints(): int {

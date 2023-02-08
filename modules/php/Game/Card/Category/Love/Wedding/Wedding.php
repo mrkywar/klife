@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Love\Wedding;
 
+use Klife;
 use SmileLife\Game\Card\Category\Love\Love;
 use SmileLife\Game\Card\Core\Exception\CardException;
 

@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -27,8 +28,9 @@ class Military extends Official implements BaseGame {
     }
 
     public function getType(): int {
-        return 8;
+        return CardType::JOB_MILITARY;
     }
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

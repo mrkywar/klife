@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\House\MediumHouse;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -12,12 +13,10 @@ use SmileLife\Game\Card\Module\BaseGame;
 class WhiteMediumHouse extends MediumHouse implements BaseGame {
 
     public function getType(): int {
-        return 78;
+        return CardType::HOUSE_MEDIUM_2;
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in House 
      * ---------------------------------------------------------------------- */
-
-
 }

@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -17,9 +18,9 @@ class IncomeTax extends Attack implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
-    
+
     public function getType(): int {
-        return 89;
+        return CardType::ATTACK_INCOME_TAX;
     }
 
     /* -------------------------------------------------------------------------
@@ -29,4 +30,5 @@ class IncomeTax extends Attack implements BaseGame {
     public function getBaseCardCount(): int {
         return 5;
     }
+
 }

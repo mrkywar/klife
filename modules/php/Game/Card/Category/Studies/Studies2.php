@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Studies;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -23,7 +24,7 @@ class Studies2 extends Studies implements BaseGame {
     }
     
     public function getType(): int {
-        return 1;
+        return CardType::STUDY_DOUBLE;
     }
 
     /* -------------------------------------------------------------------------

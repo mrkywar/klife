@@ -79,7 +79,29 @@
     border: 1px black solid;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
 }
-
+.card_title{
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.card_salary{
+    text-transform: uppercase;
+}
+.card_job .card_title{
+    color:black;
+}
+.card_job .card_subtitle{
+    color: white;
+}
+.card_wedding .card_title,
+.card_child .card_title{
+    color: #bc0e6f; /*pink*/
+}
+.card_flirt .card_title{
+    color: #c0171c; /*red*/
+}
 /*--------------------------------------------------------------------------
                 BEGIN - cards size M
 --------------------------------------------------------------------------*/
@@ -91,7 +113,16 @@
     margin-right: 5px;
     border-radius: 5px;
 }
-
+.card_m .card_title{
+    font-size: 8px;
+    margin-top: 18px;
+}
+.card_m .card_job .card_title{
+    margin-top: 7px;
+}
+.card_m .card_job .card_subtitle{
+    margin-top: 0px;
+}
 /*--------------------------------------------------------------------------
                 BEGIN - cards display COL 
 --------------------------------------------------------------------------*/
@@ -135,7 +166,7 @@
     background-position-x: -1300px;
 }
 .card_14, .card_29, .card_44, .card_59, .card_74, .card_89, .card_104{
-    background-position-x: -1300px;
+    background-position-x: -1400px;
 }
 /*--------------------------------------------------------------------------
             BEGIN - cards display LINE 

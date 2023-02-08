@@ -2,16 +2,23 @@
 
 namespace SmileLife\Game\Card\Category\Child;
 
+use Klife;
 use SmileLife\Game\Card\Core\Card;
 use SmileLife\Game\Card\Core\Exception\CardException;
-use SmileLife\Game\Card\Module\BaseGame;
 
 /**
  * Description of Child
  *
  * @author Mr_Kywar mr_kywar@gmail.com
  */
-abstract class Child extends Card{
+abstract class Child extends Card {
+
+    public function __construct() {
+        parent::__construct();
+
+        $this->setTitle(clienttranslate('Child'));
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */

@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -19,7 +20,7 @@ class Dismissal extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return 87;
+        return CardType::ATTACK_DISMISSAL;
     }
 
     /* -------------------------------------------------------------------------

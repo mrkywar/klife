@@ -2,6 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Special;
 
+use SmileLife\Game\Card\Core\CardType;
+use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Effect\Effect;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -22,11 +24,10 @@ class SpecialCasino extends Special implements BaseGame {
     public function getEffect(): Effect {
         throw new CardException("C-SpecialCasino-01 : Not implemented yet");
     }
-    
-    public function getType(): int {
-        return 92;
-    }
 
+    public function getType(): int {
+        return CardType::SPECIAL_CASINO;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Special

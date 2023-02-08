@@ -3,6 +3,7 @@
 namespace SmileLife\Game\Card\Category\Job\Job;
 
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -28,7 +29,7 @@ class Lawyer extends Job implements BaseGame {
     }
 
     public function getType(): int {
-        return 23;
+        return CardType::JOB_LAWYER;
     }
 
     /* -------------------------------------------------------------------------

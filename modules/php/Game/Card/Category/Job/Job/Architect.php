@@ -3,6 +3,7 @@
 namespace SmileLife\Game\Card\Category\Job\Job;
 
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -26,14 +27,12 @@ class Architect extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 4;
     }
-    
+
     public function getType(): int {
-        return 16;
+        return CardType::JOB_ARCHTECT;
     }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */
-
-    
 }

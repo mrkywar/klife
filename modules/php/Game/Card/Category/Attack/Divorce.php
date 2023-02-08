@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -17,9 +18,9 @@ class Divorce extends Attack implements BaseGame {
     public function getClass(): string {
         return self::class;
     }
-    
+
     public function getType(): int {
-        return 88;
+        return CardType::ATTACK_DIVORCE;
     }
 
     /* -------------------------------------------------------------------------

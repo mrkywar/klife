@@ -2,8 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\Travel;
 
+use Klife;
 use SmileLife\Game\Card\Category\Acquisition\Acquisition;
-use SmileLife\Game\Card\Module\BaseGame;
 
 /**
  * Description of Travel
@@ -19,10 +19,6 @@ abstract class Travel extends Acquisition {
      *                  BEGIN - Abstract
      * ---------------------------------------------------------------------- */
 
-    public function getClass(): string {
-        return self::class;
-    }
-
     public function getPrice(): int {
         return self::TRAVEL_PRICE;
     }
@@ -30,7 +26,7 @@ abstract class Travel extends Acquisition {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
-
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame (1 card in each type)
      * ---------------------------------------------------------------------- */

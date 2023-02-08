@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Attack;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -19,8 +20,9 @@ class GradeRepetition extends Attack implements BaseGame {
     }
 
     public function getType(): int {
-        return 90;
+        return CardType::ATTACK_GRADE_REPETITION;
     }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame
      * ---------------------------------------------------------------------- */
@@ -28,4 +30,5 @@ class GradeRepetition extends Attack implements BaseGame {
     public function getBaseCardCount(): int {
         return 5;
     }
+
 }

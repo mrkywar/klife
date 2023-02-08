@@ -3,6 +3,7 @@
 namespace SmileLife\Game\Card\Category\Job\Job;
 
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -26,11 +27,10 @@ class Medium extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 0;
     }
-    
-    public function getType(): int {
-        return 29;
-    }
 
+    public function getType(): int {
+        return CardType::JOB_MEDIUM;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

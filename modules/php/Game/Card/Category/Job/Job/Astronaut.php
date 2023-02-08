@@ -3,6 +3,7 @@
 namespace SmileLife\Game\Card\Category\Job\Job;
 
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -28,8 +29,9 @@ class Astronaut extends Job implements BaseGame {
     }
 
     public function getType(): int {
-        return 17;
+        return CardType::JOB_ASTRONAUT;
     }
+    
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job
      * ---------------------------------------------------------------------- */

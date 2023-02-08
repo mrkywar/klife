@@ -3,6 +3,7 @@
 namespace SmileLife\Game\Card\Category\Job\Job;
 
 use SmileLife\Game\Card\Category\Job\Job;
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -26,11 +27,10 @@ class HeadOfPurchasing extends Job implements BaseGame {
     public function getRequiredStudies(): int {
         return 3;
     }
-    
-    public function getType(): int {
-        return 24;
-    }
 
+    public function getType(): int {
+        return CardType::JOB_HEAD_OF_PURCHASING;
+    }
 
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in Job

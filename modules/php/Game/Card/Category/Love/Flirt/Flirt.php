@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Love\Flirt;
 
+use Klife;
 use SmileLife\Game\Card\Category\Love\Love;
 use SmileLife\Game\Card\Core\Exception\CardException;
 
@@ -29,5 +30,6 @@ abstract class Flirt extends Love {
     public function getSmilePoints(): int {
         return self::SMILE_POINTS;
     }
+
 
 }

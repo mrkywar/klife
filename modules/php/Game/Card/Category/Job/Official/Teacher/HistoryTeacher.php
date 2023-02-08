@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official\Teacher;
 
+use SmileLife\Game\Card\Core\CardType;
 use SmileLife\Game\Card\Module\BaseGame;
 
 /**
@@ -25,9 +26,9 @@ class HistoryTeacher extends Teacher implements BaseGame {
     public function getRequiredStudies(): int {
         return 2;
     }
-    
+
     public function getType(): int {
-        return 5;
+        return CardType::JOB_HISTORY_TEACHER;
     }
 
     /* -------------------------------------------------------------------------

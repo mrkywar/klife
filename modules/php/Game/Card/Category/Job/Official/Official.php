@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Official;
 
+use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
 
 /**
@@ -14,7 +15,7 @@ abstract class Official extends Job {
     public function __construct() {
         parent::__construct();
 
-        $this->addText(clienttranslate("An official cannot be fired (but can still quit)."));
+        $this->addText(Klife::getInstance()->i18n("An official cannot be fired (but can still quit)."));
     }
 
     /* -------------------------------------------------------------------------

@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Acquisition\House;
 
+use Klife;
 use SmileLife\Game\Card\Category\Acquisition\Acquisition;
 
 /**

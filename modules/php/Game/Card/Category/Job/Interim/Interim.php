@@ -2,6 +2,7 @@
 
 namespace SmileLife\Game\Card\Category\Job\Interim;
 
+use Klife;
 use SmileLife\Game\Card\Category\Job\Job;
 
 /**
@@ -14,7 +15,7 @@ abstract class Interim extends Job {
     public function __construct() {
         parent::__construct();
 
-        $this->addHelp(clienttranslate("A Interim can quit their job and play normally in the same turn."));
+        $this->addHelp(Klife::getInstance()->i18n("A Interim can quit their job and play normally in the same turn."));
     }
 
 }

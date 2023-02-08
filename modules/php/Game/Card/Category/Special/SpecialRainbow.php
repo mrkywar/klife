@@ -2,6 +2,8 @@
 
 namespace SmileLife\Game\Card\Category\Special;
 
+use SmileLife\Game\Card\Core\CardType;
+use SmileLife\Game\Card\Core\Exception\CardException;
 use SmileLife\Game\Card\Effect\Effect;
 use SmileLife\Game\Card\Module\BaseGame;
 
@@ -24,7 +26,7 @@ class SpecialRainbow extends Special implements BaseGame {
     }
 
     public function getType(): int {
-        return 95;
+        return CardType::SPECIAL_RAINBOW;
     }
 
     /* -------------------------------------------------------------------------

@@ -55,8 +55,8 @@ define([
 
                 setup: function (gamedatas) {
                     this.debug("Setup", gamedatas);
-                    this.setupCard(gamedatas);
-                    this.displayTable(gamedatas);
+                    //this.setupCard(gamedatas);
+                    //this.displayTable(gamedatas);
 
                 },
 

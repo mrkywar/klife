@@ -28,7 +28,7 @@ class GameDataRetriver {
         $currentPlayer = $playerManager->findBy([
             "id" => $playerId
         ]); // !! We must only return informations visible by this player !!
-        
+
         $result = [
             "myhand" => $cardManager->getPlayerCards($currentPlayer),
             "deck" => count($cardManager->getAllCardsInDeck())
@@ -37,6 +37,8 @@ class GameDataRetriver {
         foreach ($playerManager->findBy() as $player) {
             $result['player'][$player->getId()] = count($cardManager->getPlayerCards($player));
         }
+//        echo "<pre>";
+//        var_dump($result);
 
         return $result;
     }

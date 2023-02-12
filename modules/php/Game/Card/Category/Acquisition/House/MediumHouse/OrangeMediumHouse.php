@@ -12,6 +12,10 @@ use SmileLife\Game\Card\Module\BaseGame;
  */
 class OrangeMediumHouse extends MediumHouse implements BaseGame {
 
+    public function getClass(): string {
+        return self::class;
+    }
+
     public function getType(): int {
         return CardType::HOUSE_MEDIUM_1;
     }
@@ -19,6 +23,4 @@ class OrangeMediumHouse extends MediumHouse implements BaseGame {
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in House 
      * ---------------------------------------------------------------------- */
-
-
 }

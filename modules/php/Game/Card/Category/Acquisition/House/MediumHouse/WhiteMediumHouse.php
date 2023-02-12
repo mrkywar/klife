@@ -16,6 +16,10 @@ class WhiteMediumHouse extends MediumHouse implements BaseGame {
         return CardType::HOUSE_MEDIUM_2;
     }
 
+    public function getClass(): string {
+        return self::class;
+    }
+
     /* -------------------------------------------------------------------------
      *                  BEGIN - Implement BaseGame is in House 
      * ---------------------------------------------------------------------- */

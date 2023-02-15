@@ -21,7 +21,6 @@
                 <div id="myhand">
                     <!-- BEGIN myhand_card -->
                     <div class="cardontable card_{type} card_{shortclass}" id="{location}_card_{id}" data-id="{id}">
-
                         <span class="card_title">{title}</span>
                         <span class="card_title card_subtitle">{subtitle}</span>
                         <span class="card_title card_text1">{text1}</span>

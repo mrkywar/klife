@@ -53,7 +53,7 @@ class view_smilelife_smilelife extends game_view {
     function getGameName() {
         return "smilelife";
     }
-    
+
     protected function getGame(): SmileLife {
         return SmileLife::getInstance();
     }
@@ -77,7 +77,9 @@ class view_smilelife_smilelife extends game_view {
         );
 
         foreach ($cardsInHand as $card) {
+            $this->page->reset_subblocks("myhand_card");
             $this->buildCard($card);
+//            $this->page->
         }
 
         foreach ($players as $player) {

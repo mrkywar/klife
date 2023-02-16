@@ -76,12 +76,6 @@ class view_smilelife_smilelife extends game_view {
                 $this->cardManager->getPlayerCards($connectedPlayer)
         );
 
-        foreach ($cardsInHand as $card) {
-            $this->page->reset_subblocks("myhand_card");
-            $this->buildCard($card);
-//            $this->page->
-        }
-
         foreach ($players as $player) {
             $this->buildPlayer($player);
         }
@@ -92,26 +86,6 @@ class view_smilelife_smilelife extends game_view {
                     'id' => $player->getId(),
                     'color' => $player->getColor(),
                     'name' => $player->getName(),
-        ]);
-    }
-
-    private function buildCard(Card $card) {
-//        var_dump($cardProperty);
-//        die;
-//        if (!isset($cardProperty[$card->getType()])) {
-//            throw new CardException("KLVE-01 : No I18N finded for " . $card->getType());
-//        }
-//        $refStrings = $cardProperty[$card->getType()];
-
-        return $this->page->insert_block("myhand_card", [
-                    "id" => $card->getId(),
-                    "type" => $card->getType(),
-                    "shortclass" => $card->getVisibleClasses(),
-                    "location" => $card->getLocation(),
-                    "title" => $card->getTitle(),
-                    "subtitle" => $card->getSubTitle(),
-                    "text1" => $card->getText1(),
-                    "text2" => $card->getText2()
         ]);
     }
 

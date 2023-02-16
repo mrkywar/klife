@@ -54,9 +54,9 @@ class GameDataRetriver {
         foreach ($this->playerManager->findBy() as $player) {
             $result['player'][$player->getId()] = count($this->cardManager->getPlayerCards($player));
         }
-        echo "<pre>";
-        var_dump($result);
-        die;
+//        echo "<pre>";
+//        var_dump($result);
+//        die;
 
         return $result;
     }

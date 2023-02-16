@@ -1,7 +1,7 @@
 /**
  *------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
- * Smile Life implementation : © Jean Portemer <jportemer@mailz.org>
+ * Smile Life implementation : © Jean Portemer <jportemer@mailz.org> & Mr_Kywar <mr_kywar@gmail.com>
  *
  * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
  * See http://en.boardgamearena.com/#!doc/Studio for more information.
@@ -13,66 +13,13 @@
  *
  */
 
-/*
-    This is the CSS stylesheet of your game User Interface.
-    
-    Styles defined on this file will be applied to the HTML elements you define in your
-    HTML template (smilelife_smilelife.tpl), and to HTML elements you create dynamically
-    (in smilelife.js).
-    
-    Usually, you are using CSS to:
-    
-    1°) define the overall layout of your game
-        (ex: place the board on the top left, place player's hand beside, place the deck on the right, ...).
-
-    2°) create your CSS-sprites:
-        All images of your games should be gathered into a small number of image files. Then, using
-        background-image and background-position CSS properties, you create HTML blocks that can 
-        display these images correctly (see example below).
-    
-    3°) ... anything else:
-        It is really easy to add and remove CSS classes dynamically from your Javascript with
-        dojo.addClass and dojo.removeClass. It is also easy to check if an element has a class
-        (dojo.hasClass) or to get all elements with a specific class (dojo.query). This is why,
-        very often, using CSS classes for the logic of your user interface allow you to do complex
-        thing easily.
-        
-        
-     Note: on the production platform, this file will be compressed and comments will be removed.
-           Consequently, don't hesitate to put as many comments as necessary.
-*/
-
-
-/* Note: you must not use any @import directive */
-
-
-/********* You can start writing your CSS below this line: **********/
-
-
-/*
-    Example of CSS sprites (a black token and a white token, 20x20px each, embedded in the same "tokens.png" 40x20px image):
-
-    .white_token {
-        background-image: url('img/tokens.png');
-        background-position: 0px 0px;
-    }
-    .black_token {
-        background-image: url('img/tokens.png');
-        background-position: -20px 0px;
-    }
-    .token {
-        width: 20px;
-        height: 20px;
-        background-repeat: none;
-    }
-*/
 
 * {
-	/* Ensure that the text in game cannot be highlighted */
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */	
+    /* Ensure that the text in game cannot be highlighted */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */	
 }
 
 strong {
@@ -80,12 +27,12 @@ strong {
 }
 
 em {
-	font-style: italic;
+    font-style: italic;
 }
 
 .whiteblock {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .player {
@@ -94,27 +41,27 @@ em {
     border-radius: 20px;
     border-style: solid;
     padding: 5px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 /* Cards */
 .card {
-	display: inline-block;
-	box-shadow: 0 0 0 1px rgb(150, 150, 150);
+    display: inline-block;
+    box-shadow: 0 0 0 1px rgb(150, 150, 150);
 }
 
 .stockitem_selected { /* Selected card */
     border: none !important;
-	box-shadow: 0 0 0 2px rgb(0, 0, 200) !important;
+    box-shadow: 0 0 0 2px rgb(0, 0, 200) !important;
 }
 
 .card_text {
-	position: absolute;
+    position: absolute;
 }
 
 /* Player hand */
 #my_hand_wrap {
-	background-color: #f8f8f8;
+    background-color: #f8f8f8;
     position: relative;
 }
 
@@ -128,6 +75,8 @@ em {
     margin-bottom: 5px; 
     margin-right: 5px;
     border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 0 0 1px rgb(150, 150, 150);
 }
 .card_m .card_title{
     font-size: 8px;

@@ -2,7 +2,10 @@
 
 namespace SmileLife\Game\Game;
 
+use Core\Managers\PlayerManager;
 use SmileLife;
+use SmileLife\Game\Card\Core\CardDecorator;
+use SmileLife\Game\Card\Core\CardManager;
 
 /**
  * Description of GameDataRetriver
@@ -25,15 +28,15 @@ class GameDataRetriver {
 
     /**
      * 
-     * @var CardSerializer
+     * @var CardDecorator
      */
-    private $cardSerializer;
+    private $cardDecorator;
 
     public function __construct(SmileLife $game) {
 //        $this->game = $game;
         $this->playerManager = $game->getPlayerManager();
         $this->cardManager = $game->getCardManager();
-        $this->cardSerializer = $this->cardManager->getSerializer();
+        $this->cardDecorator = new CardDecorator($this->cardManager->getSerializer());
     }
 
     public function retrive(int $playerId) {
@@ -41,8 +44,10 @@ class GameDataRetriver {
             "id" => $playerId
         ]); // !! We must only return informations visible by this player !!
 
+        $rawHand = $this->cardManager->getPlayerCards($currentPlayer);
+
         $result = [
-            "myhand" => $this->cardManager->getPlayerCards($currentPlayer),
+            "myhand" => $this->cardDecorator->decorateRawCard($rawHand),
             "deck" => count($this->cardManager->getAllCardsInDeck())
         ];
 
